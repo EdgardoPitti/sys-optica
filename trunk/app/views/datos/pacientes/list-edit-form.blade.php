@@ -85,6 +85,10 @@
 		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
 				{{ Form::label('clasificacion', 'Clasificación:') }}		    
 				{{ Form::text('clasificacion', null, array('placeholder' => 'Clasificacion', 'class' => 'form-control')) }}
+		    </div>	
+		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
+				{{ Form::label('examen', 'Exámen:') }}		    
+				{{ Form::text('examen', null, array('placeholder' => 'Exámen', 'class' => 'form-control')) }}
 		    </div>		    	
 		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
 				{{ Form::label('referido_por', 'Referido por:') }}		    
