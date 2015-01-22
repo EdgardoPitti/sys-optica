@@ -1,11 +1,11 @@
 @extends('layout')
 
-@section('title') Registro de Pacientes @stop
+@section('title') Datos de Pacientes @stop
 
 @section('contenido')
-	<h2 class="titulo">Registro de Paciente</h2>
+	<h2 class="titulo">Datos de Pacientes</h2>
 
-	{{ Form::open(array('url' => 'registro'), array('role' => 'form')) }}
+	{{ Form::model($datos['paciente'], $datos['form'], array('role' => 'form')) }}
   	<div class="panel panel-default">
   		<div class="panel-heading">
   			<h4 class="panel-title"><i class="fa fa-user"></i> Datos Personales</h4>
@@ -33,32 +33,35 @@
 		    </div>
 		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
 		      {{ Form::label('sexo', 'Sexo:') }}
-		      {{ Form::select('sexo',  array('0' => 'FEMENINO', '1' => 'MASCULINO'), $datos['paciente'][0]->sexo, array('class' => 'form-control')); }}    
+		      {{ Form::select('sexo',  array('0' => 'FEMENINO', '1' => 'MASCULINO'), null, array('class' => 'form-control')); }}    
 		    </div>  		
 		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-		      {{ Form::label('id_tipo_sanguineo', 'Tipo de Sangre:') }}
-		      {{ Form::select('id_tipo_sanguineo',  array('0' => 'SELECCIONE EL TIPO DE SANGRE') + Tiposangre::lists('tipo_sangre', 'id_tipo_sanguineo'), $datos['paciente'][0]->id_tipo_sangre, array('class' => 'form-control')); }}    
+		      {{ Form::label('id_tipo_sangre', 'Tipo de Sangre:') }}
+		      {{ Form::select('id_tipo_sangre',  array('0' => 'SELECCIONE EL TIPO DE SANGRE') + TipoSangre::lists('tipo_sangre', 'id'), null, array('class' => 'form-control')); }}    
 		    </div> 	                       		    
   		</div>
   	</div>
-  	<div class="panel panel-default">
+	<div class="panel panel-default">
   		<div class="panel-heading">
   			<h4 class="panel-title"><i class="fa fa-phone"></i> Datos de Contacto</h4>
   		</div>
   		<div class="panel-body">
   			<div class="form-group col-sm-4 col-md-4 col-lg-4">
 		      {{ Form::label('celular', 'Celular:') }}
-		      {{ Form::select('celular', null, array('placeholder' => 'Celular', 'class' => 'form-control')); }}    
+		      {{ Form::text('celular', null, array('placeholder' => 'Celular', 'class' => 'form-control')); }}    
 		    </div>  
 		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
 		      {{ Form::label('telefono', 'Teléfono:') }}
-		      {{ Form::select('telefono', null, array('placeholder' => 'Teléfono', 'class' => 'form-control')); }}    
+		      {{ Form::text('telefono', null, array('placeholder' => 'Teléfono', 'class' => 'form-control')); }}    
 		    </div>  
 		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
 		      {{ Form::label('email', 'Correo Electrónico:') }}
-		      {{ Form::select('email', null, array('placeholder' => 'Correo Electrónico', 'class' => 'form-control')); }}    
-		    </div>  
+		      {{ Form::text('email', null, array('placeholder' => 'Correo Electrónico', 'class' => 'form-control')); }}    
+		    </div>
   		</div>
   	</div>
+  	<center>
+		{{ Form::button('Paciente', array('type' => 'submit', 'class' => 'btn btn-primary')) }}
+  	</center>
   	{{ Form::close() }}
 @stop

@@ -15,3 +15,6 @@ Route::get('/', function()
 {
 	return View::make('layout');
 });
+
+Route::resource('datos/pacientes','PacientesController');
+
