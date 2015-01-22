@@ -17,4 +17,4 @@ Route::get('/', function()
 });
 
 Route::resource('datos/pacientes','PacientesController');
-
+Route::post('getpacientes', 'DatosPacientesController@postPacientes');

@@ -9,6 +9,7 @@
 	{{ HTML::style('assets/css/font-awesome.min.css', array('media' => 'screen', 'rel' => 'stylesheet')) }}
 	{{ HTML::style('assets/css/style.css', array('media' => 'screen', 'rel' => 'stylesheet')) }}
 	{{ HTML::style('assets/css/base.css', array('media' => 'screen', 'rel' => 'stylesheet')) }}
+    {{ HTML::style('assets/css/bootstrap-table.css') }}	
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       {{ HTML::script('assets/js/html5shiv.js') }}
@@ -150,9 +151,16 @@
 			footer
 		</div>
 	{{ HTML::script('assets/js/jquery.js') }}
+ 	{{ HTML::script('assets/js/overthrow/overthrow-detect.js') }}
+   {{ HTML::script('assets/js/overthrow/overthrow-init.js') }}
+   {{ HTML::script('assets/js/overthrow/overthrow-polyfill.js') }}
+   {{ HTML::script('assets/js/overthrow/overthrow-toss.js') }}  
 	{{ HTML::script('assets/js/bootstrap.min.js') }}
 	{{ HTML::script('assets/js/jPushMenu.js') }}
     {{ HTML::script('assets/js/v2p.js') }}
+    {{ HTML::script('assets/js/bootstrap-table.js') }}
+    {{ HTML::script('assets/js/bootstrap-table-es.js') }}
+    {{ HTML::script('assets/js/dataGrid.js') }}
     <script type="text/javascript">
       //<![CDATA[
       $(document).ready(function(){
@@ -171,5 +179,3 @@
 
 </body>
 </html>
-
-
