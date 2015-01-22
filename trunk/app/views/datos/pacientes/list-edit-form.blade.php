@@ -5,6 +5,37 @@
 @section('contenido')
 	<h2 class="titulo">Datos de Pacientes</h2>
 
+	<div class="row">
+      <div class="col-md-12 col-sm-12 col-lg-12">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Lista de Pacientes</h3>
+            <div class="pull-right">
+              <span class="clickable filter" data-toggle="tooltip" title="Buscar Paciente" data-container="body">
+                <i class="glyphicon glyphicon-filter"></i>
+              </span>
+            </div>
+          </div>
+          <div class="panel-body" style="display:block;">            
+        	  <div class="overthrow" style="height:250px;">        
+					<table id="pacientes">
+					    <thead>
+						    <tr class="info">
+						        <th data-field="num" data-align="center">#</th>
+						        <th data-field="name" data-align="center">Nombre Completo</th>
+						        <th data-field="cel" data-align="center">Celular</th>
+						        <th data-field="tel" data-align="center">Teléfono</th>
+						        <th data-field="email" data-align="center">E-mail</th>
+						        <th data-field="url" data-align="center"></th>
+						    </tr>
+					    </thead>
+					</table>	        
+            </div>
+            <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+	</div>	
 	{{ Form::model($datos['paciente'], $datos['form'], array('role' => 'form')) }}
   	<div class="panel panel-default">
   		<div class="panel-heading">
