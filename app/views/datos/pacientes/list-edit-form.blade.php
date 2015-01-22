@@ -3,7 +3,7 @@
 @section('title') Registro de Pacientes @stop
 
 @section('contenido')
-	<h2 class="titulo">Registrar Paciente</h2>
+	<h2 class="titulo">Registro de Paciente</h2>
 
 	{{ Form::open(array('url' => 'registro'), array('role' => 'form')) }}
   	<div class="panel panel-default">
