@@ -13,6 +13,10 @@
   		</div>
   		<div class="panel-body">
 			<div class="form-group col-sm-4 col-md-4 col-lg-4">
+		      {{ Form::label('fecha_consulta', 'Fecha de la Consulta:') }}
+		      {{ Form::date('fecha_consulta', null, array('class' => 'form-control')) }}        
+		    </div> 
+			<div class="form-group col-sm-4 col-md-4 col-lg-4">
 		      {{ Form::label('interrogatorio', 'Interrogatorio:') }}
 		      {{ Form::textarea('interrogatorio', null, array('placeholder' => 'Interrogatorio', 'class' => 'form-control', 'size' => '3x1')) }}        
 		    </div>  
@@ -203,8 +207,76 @@
 			<div class="form-group col-sm-4 col-md-4 col-lg-4">
 		      {{ Form::label('instrucciones', 'Instrucciones para el Paciente:') }}
 		      {{ Form::textarea('instrucciones', null, array('placeholder' => 'Instrucciones para el Paciente', 'class' => 'form-control', 'size' => '3x1')) }}        
-		    </div>    	    
-  		</div>
+		    </div>    
+		    <table>
+		    	<tr>
+		    		<td></td>
+		    		<td>Esf.</td>
+		    		<td>Cil y Eje</td>
+		    		<td>Add.</td>
+		    		<td>D.I.</td>
+		    		<td>Prisma</td>
+		    		<td>Alt.O</td>
+		    		<td>Color Lente/Tipo</td>
+		    	</tr>
+		    	<tr>
+		    		<td>O.D.</td>
+		    		<td>{{ Form::text('od_esf', null, array('class' => 'form-control')) }}</td>
+		    		<td>{{ Form::text('od_cil_eje', null, array('class' => 'form-control')) }}</td>
+		    		<td>{{ Form::text('od_add', null, array('class' => 'form-control')) }}</td>
+		    		<td>{{ Form::text('od_di', null, array('class' => 'form-control')) }}</td>
+		    		<td>{{ Form::text('od_prisma', null, array('class' => 'form-control')) }}</td>
+		    		<td>{{ Form::text('od_alt', null, array('class' => 'form-control')) }}</td>
+		    		<td>{{ Form::text('od_color', null, array('class' => 'form-control')) }}</td>
+		    	</tr>
+		    	<tr>
+		    		<td>O.I.</td>
+		    		<td>{{ Form::text('oi_esf', null, array('class' => 'form-control')) }}</td>
+		    		<td>{{ Form::text('oi_cil_eje', null, array('class' => 'form-control')) }}</td>
+		    		<td>{{ Form::text('oi_add', null, array('class' => 'form-control')) }}</td>
+		    		<td>{{ Form::text('oi_di', null, array('class' => 'form-control')) }}</td>
+		    		<td>{{ Form::text('oi_prisma', null, array('class' => 'form-control')) }}</td>
+		    		<td>{{ Form::text('oi_alt', null, array('class' => 'form-control')) }}</td>
+		    		<td>{{ Form::text('oi_tipo', null, array('class' => 'form-control')) }}</td>
+		    	</tr>
+		    </table>
+			<div class="form-group col-sm-4 col-md-4 col-lg-4">
+		      {{ Form::label('observaciones', 'Observaciones:') }}
+		      {{ Form::textarea('observaciones', null, array('placeholder' => 'Observaciones', 'class' => 'form-control', 'size' => '3x1')) }}        
+		    </div>	
+		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
+				{{ Form::label('endurecido', 'Endurecido:') }}		    
+				{{ Form::text('endurecido', null, array('placeholder' => 'Endurecido', 'class' => 'form-control')) }}
+		    </div> 
+		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
+				{{ Form::label('tratam_uv', 'Tratamiento U.V:') }}		    
+				{{ Form::text('tratam_uv', null, array('placeholder' => 'Tratamiento U.V', 'class' => 'form-control')) }}
+		    </div>    
+		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
+				{{ Form::label('tratam_anti_rayas', 'Tratamiento Anti Rayas:') }}		    
+				{{ Form::text('tratam_anti_rayas', null, array('placeholder' => 'Tratamiento Anti Rayas', 'class' => 'form-control')) }}
+		    </div>   
+		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
+				{{ Form::label('tratam_anti_reflejos', 'Tratamiento Anti Reflejos:') }}		    
+				{{ Form::text('tratam_anti_reflejos', null, array('placeholder' => 'Tratamiento Anti Raeflejos', 'class' => 'form-control')) }}
+		    </div>
+		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
+				{{ Form::label('hi_index', 'Hi-Index:') }}		    
+				{{ Form::text('hi_index', null, array('placeholder' => 'Hi-Index', 'class' => 'form-control')) }}
+		    </div>
+		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
+				{{ Form::label('hi_lite', 'Hi-Lite:') }}		    
+				{{ Form::text('hi_lite', null, array('placeholder' => 'Hi-Lite', 'class' => 'form-control')) }}
+		    </div>
+			<div class="form-group col-sm-4 col-md-4 col-lg-4">
+				{{ Form::label('seg_bif', 'Seg. Bif:') }}		    
+				{{ Form::text('seg_bif', null, array('placeholder' => 'Seg. Bif', 'class' => 'form-control')) }}
+		    </div>
+			<div class="form-group col-sm-4 col-md-4 col-lg-4">
+				{{ Form::label('aro', 'Aro:') }}		    
+				{{ Form::text('aro', null, array('placeholder' => 'Aro', 'class' => 'form-control')) }}
+		    </div>
+  		</div>  		
   	</div>
   	<center>
 		 <a href="{{ route('datos.pacientes.index') }}" class="btn btn-default">Limpiar Campos</a>

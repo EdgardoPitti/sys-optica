@@ -34,7 +34,85 @@ class CitasController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		$data = Input::all();
+		$citas = new Cita;
+		$cita->id_paciente = 1;
+		$cita->interrogatorio = $data['interrogatorio'];
+		$cita->exploracion_conj = $data['exploracion_conj'];
+		$cita->esclerotica = $data['esclerotca'];
+		$cita->cornea = $data['cornea'];
+		$cita->parpados = $data['parpados'];
+		$cita->pestagna = $data['pestagna'];
+		$cita->pupilas = $data['pupilas'];
+		$cita->ref_pup = $data['ref_pup'];
+		$cita->av_sc_od_u = $data['av_sc_od_u'];
+		$cita->av_sc_od_d = $data['av_sc_od_d'];
+		$cita->av_sc_oi_u = $data['av_sc_oi_u'];
+		$cita->av_sc_oi_d = $data['av_sc_oi_d'];
+		$cita->av_cc_od = $data['av_cc_od'];
+		$cita->av_cc_oi = $data['av_cc_oi'];
+		$cita->av_cc_od_esf = $data['av_cc_od_esf'];
+		$cita->av_cc_od_cil = $data['av_cc_od_cil'];
+		$cita->av_cc_od_add = $data['av_cc_od_add'];
+		$cita->av_cc_oi_esf = $data['av_cc_oi_esf'];
+		$cita->av_cc_oi_cil = $data['av_cc_oi_cil'];
+		$cita->av_cc_oi_add = $data['av_cc_oi_add'];
+		$cita->oftalmoscopia_od = $data['oftalmoscopia_od'];
+		$cita->oftalmoscopia_oi = $data['oftalmoscopia_oi'];
+		$cita->queratometria_od = $data['queratometria_od'];
+		$cita->motilidad_ocular_od = $data['motilidad_ocular_od'];
+		$cita->motilidad_ocular_oi = $data['motilidad_ocular_oi'];
+		$cita->sentido_cromatico = $data['sentido_cromatico'];
+		$cita->tonometria_od = $data['tonometria_od'];
+		$cita->tonometria_oi = $data['tonometria_oi'];
+		$cita->grad_od_esf = $data['grad_od_esf'];
+		$cita->grad_od_cil = $data['grad_od_cil'];
+		$cita->grad_od_eje = $data['grad_od_eje'];
+		$cita->grad_od_av_u = $data['grad_od_av_u'];
+		$cita->grad_od_av_d = $data['grad_od_av_d'];
+		$cita->grad_oi_esf = $data['grad_oi_esf'];
+		$cita->grad_oi_cil = $data['grad_oi_cil'];
+		$cita->grad_oi_eje = $data['grad_oi_eje'];
+		$cita->grad_oi_av_u = $data['grad_oi_av_u'];
+		$cita->grad_oi_av_d = $data['grad_oi_av_d'];
+		$cita->grad_di = $data['grad_di'];
+		$cita->grad_add_od = $data['grad_add_od'];
+		$cita->grad_add_oi = $data['grad_add_oi'];
+		$cita->cerca_od_esf = $data['cerca_od_esf'];
+		$cita->cerca_od_cil = $data['cerca_od_cil'];
+		$cita->cerca_od_eje = $data['cerca_od_eje'];
+		$cita->cerca_oi_esf = $data['cerca_oi_esf'];
+		$cita->cerca_oi_cil = $data['cerca_oi_cil'];
+		$cita->cerca_oi_eje = $data['cerca_oi_eje'];
+		$cita->instrucciones = $data['instrucciones'];
+		$cita->od_esf = $data['od_esf'];
+		$cita->od_cil_eje = $data['od_cil_eje'];
+		$cita->od_add = $data['od_add'];
+		$cita->od_di = $data['od_di'];
+		$cita->od_prisma = $data['od_prisma'];
+		$cita->od_alt = $data['od_alt'];
+		$cita->od_color = $data['od_color'];
+		$cita->oi_esf = $data['oi_esf'];
+		$cita->oi_cil_eje = $data['oi_cil_eje'];
+		$cita->oi_add = $data['oi_add'];
+		$cita->oi_di = $data['oi_di'];
+		$cita->oi_prisma = $data['oi_prisma'];
+		$cita->oi_alt = $data['oi_alt'];
+		$cita->oi_tipo = $data['oi_tipo'];
+		$cita->observaciones = $data['observaciones'];
+		$cita->endurecido = $data['endurecido'];
+		$cita->tratam_uv = $data['tratam_uv'];
+		$cita->tratam_anti_rayas = $data['tratam_anti_rayas'];
+		$cita->tratam_anti_reflejos = $data['tratam_anti_reflejos'];
+		$cita->hi_index = $data['hi_index'];
+		$cita->hi_lite = $data['hi_lite'];
+		$cita->seg_bif = $data['seg_bif'];
+		$cita->aro = $data['aro'];
+		$cita->costo_consulta = $data['costo_consulta'];
+		$cita->examen_realizado = $data['examen_realizado'];
+		$cita->fecha_consulta = $data['fecha_consulta'];
+
+		return Redirect::route('datos.citas.index');
 	}
 
 
@@ -70,7 +148,85 @@ class CitasController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		$data = Input::all();
+		$citas = Cita::find($id);
+		$cita->id_paciente = 1;
+		$cita->interrogatorio = $data['interrogatorio'];
+		$cita->exploracion_conj = $data['exploracion_conj'];
+		$cita->esclerotica = $data['esclerotca'];
+		$cita->cornea = $data['cornea'];
+		$cita->parpados = $data['parpados'];
+		$cita->pestagna = $data['pestagna'];
+		$cita->pupilas = $data['pupilas'];
+		$cita->ref_pup = $data['ref_pup'];
+		$cita->av_sc_od_u = $data['av_sc_od_u'];
+		$cita->av_sc_od_d = $data['av_sc_od_d'];
+		$cita->av_sc_oi_u = $data['av_sc_oi_u'];
+		$cita->av_sc_oi_d = $data['av_sc_oi_d'];
+		$cita->av_cc_od = $data['av_cc_od'];
+		$cita->av_cc_oi = $data['av_cc_oi'];
+		$cita->av_cc_od_esf = $data['av_cc_od_esf'];
+		$cita->av_cc_od_cil = $data['av_cc_od_cil'];
+		$cita->av_cc_od_add = $data['av_cc_od_add'];
+		$cita->av_cc_oi_esf = $data['av_cc_oi_esf'];
+		$cita->av_cc_oi_cil = $data['av_cc_oi_cil'];
+		$cita->av_cc_oi_add = $data['av_cc_oi_add'];
+		$cita->oftalmoscopia_od = $data['oftalmoscopia_od'];
+		$cita->oftalmoscopia_oi = $data['oftalmoscopia_oi'];
+		$cita->queratometria_od = $data['queratometria_od'];
+		$cita->motilidad_ocular_od = $data['motilidad_ocular_od'];
+		$cita->motilidad_ocular_oi = $data['motilidad_ocular_oi'];
+		$cita->sentido_cromatico = $data['sentido_cromatico'];
+		$cita->tonometria_od = $data['tonometria_od'];
+		$cita->tonometria_oi = $data['tonometria_oi'];
+		$cita->grad_od_esf = $data['grad_od_esf'];
+		$cita->grad_od_cil = $data['grad_od_cil'];
+		$cita->grad_od_eje = $data['grad_od_eje'];
+		$cita->grad_od_av_u = $data['grad_od_av_u'];
+		$cita->grad_od_av_d = $data['grad_od_av_d'];
+		$cita->grad_oi_esf = $data['grad_oi_esf'];
+		$cita->grad_oi_cil = $data['grad_oi_cil'];
+		$cita->grad_oi_eje = $data['grad_oi_eje'];
+		$cita->grad_oi_av_u = $data['grad_oi_av_u'];
+		$cita->grad_oi_av_d = $data['grad_oi_av_d'];
+		$cita->grad_di = $data['grad_di'];
+		$cita->grad_add_od = $data['grad_add_od'];
+		$cita->grad_add_oi = $data['grad_add_oi'];
+		$cita->cerca_od_esf = $data['cerca_od_esf'];
+		$cita->cerca_od_cil = $data['cerca_od_cil'];
+		$cita->cerca_od_eje = $data['cerca_od_eje'];
+		$cita->cerca_oi_esf = $data['cerca_oi_esf'];
+		$cita->cerca_oi_cil = $data['cerca_oi_cil'];
+		$cita->cerca_oi_eje = $data['cerca_oi_eje'];
+		$cita->instrucciones = $data['instrucciones'];
+		$cita->od_esf = $data['od_esf'];
+		$cita->od_cil_eje = $data['od_cil_eje'];
+		$cita->od_add = $data['od_add'];
+		$cita->od_di = $data['od_di'];
+		$cita->od_prisma = $data['od_prisma'];
+		$cita->od_alt = $data['od_alt'];
+		$cita->od_color = $data['od_color'];
+		$cita->oi_esf = $data['oi_esf'];
+		$cita->oi_cil_eje = $data['oi_cil_eje'];
+		$cita->oi_add = $data['oi_add'];
+		$cita->oi_di = $data['oi_di'];
+		$cita->oi_prisma = $data['oi_prisma'];
+		$cita->oi_alt = $data['oi_alt'];
+		$cita->oi_tipo = $data['oi_tipo'];
+		$cita->observaciones = $data['observaciones'];
+		$cita->endurecido = $data['endurecido'];
+		$cita->tratam_uv = $data['tratam_uv'];
+		$cita->tratam_anti_rayas = $data['tratam_anti_rayas'];
+		$cita->tratam_anti_reflejos = $data['tratam_anti_reflejos'];
+		$cita->hi_index = $data['hi_index'];
+		$cita->hi_lite = $data['hi_lite'];
+		$cita->seg_bif = $data['seg_bif'];
+		$cita->aro = $data['aro'];
+		$cita->costo_consulta = $data['costo_consulta'];
+		$cita->examen_realizado = $data['examen_realizado'];
+		$cita->fecha_consulta = $data['fecha_consulta'];
+
+		return Redirect::route('datos.citas.index');
 	}
 
 
