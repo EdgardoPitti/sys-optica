@@ -93,8 +93,8 @@
                                 <i class="glyphicon glyphicon-chevron-down  pull-right"></i> 
                               </a>                                
                               <ul id="collapseOne" class="nav nav-pills submenu nav-stacked panel-collapse collapse"  role="tabpanel"  aria-labelledby="collapseOne">
-                                <li class="activo"><a href="#">Historia Clínico</a></li>
-                                <li><a href="#">Paciente Externo</a></li>
+                                <li class="activo"><a href="{{ route('datos.pacientes.index') }}">Historia Clínico</a></li>
+                                <li><a href="{{ route('datos.pacientes.index') }}">Paciente Externo</a></li>
                                 <li><a href="#">Reorganización</a></li>
                               </ul>
                           </div>
