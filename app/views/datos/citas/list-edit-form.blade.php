@@ -176,6 +176,34 @@
 				{{ Form::label('grad_add_oi', 'Graduación Add O.I:') }}		    
 				{{ Form::text('grad_add_oi', null, array('placeholder' => 'Graduación Add O.I', 'class' => 'form-control')) }}
 		    </div>
+		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
+				{{ Form::label('cerca_od_esf', 'Cerca O.D Esf:') }}		    
+				{{ Form::text('cerca_od_esf', null, array('placeholder' => 'Cerca O.D Esf', 'class' => 'form-control')) }}
+		    </div>
+		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
+				{{ Form::label('cerca_od_cil', 'Cerca O.D Cil:') }}		    
+				{{ Form::text('cerca_od_cil', null, array('placeholder' => 'Cerca O.D Cil', 'class' => 'form-control')) }}
+		    </div>
+		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
+				{{ Form::label('cerca_od_eje', 'Cerca O.D Eje:') }}		    
+				{{ Form::text('cerca_od_eje', null, array('placeholder' => 'Cerca O.D Eje', 'class' => 'form-control')) }}
+		    </div>
+		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
+				{{ Form::label('cerca_oi_esf', 'Cerca O.I Esf:') }}		    
+				{{ Form::text('cerca_oi_esf', null, array('placeholder' => 'Cerca O.I Esf', 'class' => 'form-control')) }}
+		    </div>	
+		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
+				{{ Form::label('cerca_oi_cil', 'Cerca O.I Cil:') }}		    
+				{{ Form::text('cerca_oi_cil', null, array('placeholder' => 'Cerca O.I Cil', 'class' => 'form-control')) }}
+		    </div>		
+		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
+				{{ Form::label('cerca_oi_eje', 'Cerca O.I Eje:') }}		    
+				{{ Form::text('cerca_oi_eje', null, array('placeholder' => 'Cerca O.I Eje', 'class' => 'form-control')) }}
+		    </div>
+			<div class="form-group col-sm-4 col-md-4 col-lg-4">
+		      {{ Form::label('instrucciones', 'Instrucciones para el Paciente:') }}
+		      {{ Form::textarea('instrucciones', null, array('placeholder' => 'Instrucciones para el Paciente', 'class' => 'form-control', 'size' => '3x1')) }}        
+		    </div>    	    
   		</div>
   	</div>
   	<center>
