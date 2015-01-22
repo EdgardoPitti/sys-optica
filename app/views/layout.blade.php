@@ -30,7 +30,7 @@
 					  <button id="dLabel" type="button" class="navbar-toggle navbar-toggle-right dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
 					  	<i class="glyphicon glyphicon-cog"></i>
 					  </button>
-					  <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dLabel">
+					  <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dLabel" style="margin:48px 5px 0px 0px;">
 					    <li><a href="#"><i class="fa fa-fw fa-power-off"></i> Cerrar Sesión</a></li>                            
 					  </ul>
 					</div>
@@ -86,13 +86,13 @@
                 <div class="row">
                     <div class="hidden-xs col-sm-3 col-md-3 col-lg-3">
                     
-                        <div class="list-group" id="accordion"  aria-multiselectable="true">
+                        <div class="list-group" id="accordion"  aria-multiselectable="false">
                           <div class="panel panel-default mg-panel" >
                               <a data-toggle="collapse" class="list-group-item" href="#collapseOne" data-parent="#accordion" aria-expanded="false" aria-controls="collapseOne">
                                 <i class="fa fa-sliders icon"></i> Mantenimiento
                                 <i class="glyphicon glyphicon-chevron-down  pull-right"></i> 
                               </a>                                
-                              <ul id="collapseOne" class="nav nav-pills submenu nav-stacked panel-collapse collapse"  role="tabpanel">
+                              <ul id="collapseOne" class="nav nav-pills submenu nav-stacked panel-collapse collapse"  role="tabpanel"  aria-labelledby="collapseOne">
                                 <li class="activo"><a href="#">Historia Clínico</a></li>
                                 <li><a href="#">Paciente Externo</a></li>
                                 <li><a href="#">Reorganización</a></li>
@@ -103,18 +103,18 @@
                                  <i class="fa fa-question-circle icon"></i> Reconsultas 
                                  <i class="glyphicon glyphicon-chevron-down  pull-right"></i>
                               </a>                                
-                              <ul id="collapseTwo" class="nav nav-pills submenu nav-stacked panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                              <ul id="collapseTwo" class="nav nav-pills submenu nav-stacked panel-collapse collapse" role="tabpanel" aria-labelledby="collapseTwo">
                                     <li><a href="#">Menu Item 1</a></li>
                                     <li><a href="#">Menu Item 2</a></li>
                                     <li><a href="#">Menu Item 3</a></li>
                               </ul>
                           </div>
                           <div class="panel panel-default mg-panel">
-                              <a data-toggle="collapse" class="list-group-item" href="#collapseThree" data-parent="#accor dion" aria-expanded="false" aria-controls="headingThree">
+                              <a data-toggle="collapse" class="list-group-item" href="#collapseThree" data-parent="#accordion" aria-expanded="false" aria-controls="collapseThree">
                                 <i class="fa fa-bar-chart icon"></i> Reportes 
                                 <i class="glyphicon glyphicon-chevron-down  pull-right"></i>
                               </a>
-                              <ul id="collapseThree" class="nav nav-pills submenu nav-stacked panel-collapse collapse" role="tabpanel" aria-labelleby="headingThree">
+                              <ul id="collapseThree" class="nav nav-pills submenu nav-stacked panel-collapse collapse" role="tabpanel" aria-labelleby="collapseThree">
                                     <li><a href="#">Listado Gral. de Pacientes</a></li>
                                     <li><a href="#">Listado de Pacientes Atendidos</a></li>
                                     <li><a href="#">Listado de Pacientes (Fecha Ingreso)</a></li>
