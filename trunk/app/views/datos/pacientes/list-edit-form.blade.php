@@ -48,7 +48,7 @@
 		    </div> 	
 			<div class="form-group col-sm-4 col-md-4 col-lg-4">
 		      {{ Form::label('fecha_nacimiento', 'Fecha Nacimiento:') }}
-		      {{ Form::text('fecha_nacimiento', null, array('class' => 'form-control', 'min' => '1950-01-01', 'max' => '2020-12-31')) }}
+		      {{ Form::date('fecha_nacimiento', null, array('class' => 'form-control', 'min' => '1950-01-01', 'max' => '2020-12-31')) }}
 		    </div> 
 		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
 				{{ Form::label('primer_nombre', 'Primer Nombre:') }}		    
@@ -84,11 +84,11 @@
 		    </div> 
 		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
 				{{ Form::label('clasificacion', 'Clasificación:') }}		    
-				{{ Form::text('clasificacion', null, array('placeholder' => 'Clasificacion', 'class' => 'form-control')) }}
+				{{ Form::select('clasificacion', array('PN' => 'PN', 'PA' => 'PA', 'PE' => 'PE'),null, array('class' => 'form-control')) }}
 		    </div>	
 		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
 				{{ Form::label('examen', 'Exámen:') }}		    
-				{{ Form::text('examen', null, array('placeholder' => 'Exámen', 'class' => 'form-control')) }}
+				{{ Form::select('examen', array('EG' => 'EG', 'LC' => 'LC', 'PC' => 'PC', 'EX' => 'EX'), null, array('class' => 'form-control')) }}
 		    </div>		    	
 		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
 				{{ Form::label('referido_por', 'Referido por:') }}		    
@@ -124,6 +124,7 @@
   		</div>
   	</div>
   	<center>
+		 <a href="{{ route('datos.pacientes.index') }}" class="btn btn-default">Limpiar Campos</a>
 		{{ Form::button('Guardar', array('type' => 'submit', 'class' => 'btn btn-default')) }}
   	</center>
   	{{ Form::close() }}
