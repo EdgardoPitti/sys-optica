@@ -95,6 +95,7 @@ class PacientesController extends \BaseController {
 	public function update($id)
 	{
 		$data = Input::all();
+		$paciente = Paciente::find($id);
 		$paciente->primer_nombre = $data['primer_nombre'];
 		$paciente->segundo_nombre = $data['segundo_nombre'];
 		$paciente->primer_apellido = $data['primer_apellido'];

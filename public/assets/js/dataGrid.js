@@ -2,7 +2,7 @@ $(function () {
  		var host = window.location.host; 
 	
   			$("#pacientes").bootstrapTable({
-				method: 'post',
+				method: 'get',
   				url: 'http://'+host+'/sys-optica/public/getpacientes',
   				height: 415,
   				search: true,

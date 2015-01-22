@@ -9,7 +9,10 @@ class CitasController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		$datos['cita'] = new Cita;
+		$datos['form'] = array('route' => 'datos.citas.store', 'method' => 'POST');
+		return View::make('datos/citas/list-edit-form')->with('datos', $datos);
+		
 	}
 
 
