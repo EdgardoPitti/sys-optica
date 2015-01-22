@@ -128,3 +128,22 @@ h2.titulo{
 	padding-bottom: 10px;
    border-bottom: 1px solid #dedede;
 }
+/*CSS DE LOS PANELES*/
+.row{
+    margin-top:40px;
+    padding: 0 10px;
+}
+.clickable{
+    cursor: pointer;   
+}
+
+.panel-heading div {
+  margin-top: -18px;
+  font-size: 15px;
+}
+.panel-heading div span{
+  margin-left:5px;
+}
+.panel-body{
+  display: none;
+}
