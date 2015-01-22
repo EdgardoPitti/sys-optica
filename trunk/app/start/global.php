@@ -78,4 +78,12 @@ App::down(function()
 |
 */
 
+Form::macro('date', function($name, $value = null, $options = array()) {
+    $value = ((is_null($value) or $value == '')) ? \Input::get($name) : $value;
+    $input =  '<input type="date" name="' . $name . '" value="' . $value . '"';
+    foreach ($options as $key => $value) {
+        $input .= ' ' . $key . '="' . $value . '"';
+    }
+    return $input.'>';
+});
 require app_path().'/filters.php';
