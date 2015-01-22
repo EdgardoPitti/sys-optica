@@ -95,7 +95,7 @@ CREATE TABLE `citas` (
   `observaciones` varchar(45) DEFAULT NULL,
   `endurecido` varchar(45) DEFAULT NULL,
   `tratam_uv` varchar(45) DEFAULT NULL,
-  `tratam_anit_rayas` varchar(45) DEFAULT NULL,
+  `tratam_anti_rayas` varchar(45) DEFAULT NULL,
   `tratam_anti_reflejos` varchar(45) DEFAULT NULL,
   `hi_index` varchar(45) DEFAULT NULL,
   `hi_lite` varchar(45) DEFAULT NULL,
