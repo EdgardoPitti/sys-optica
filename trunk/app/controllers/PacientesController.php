@@ -72,7 +72,9 @@ class PacientesController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		$datos['paciente'] = Paciente::find($id);
+		$datos['form'] = array('route' => array('datos.pacientes.update', $id), 'method' => 'PATCH');
+		return View::make('datos/pacientes/list-edit-form')->with('datos', $datos);
 	}
 
 
@@ -84,7 +86,21 @@ class PacientesController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		$data = Input::all();
+		$paciente = Paciente::find($id);
+		$paciente->primer_nombre = $data['primer_nombre'];
+		$paciente->segundo_nombre = $data['segundo_nombre'];
+		$paciente->primer_apellido = $data['primer_apellido'];
+		$paciente->segundo_apellido = $data['segundo_apellido'];
+		$paciente->cedula = $data['cedula'];
+		$paciente->sexo = $data['sexo'];
+		$paciente->id_tipo_sangre = $data['id_tipo_sangre'];
+		$paciente->telefono = $data['telefono'];
+		$paciente->celular = $data['celular'];
+		$paciente->email = $data['email'];
+		$paciente->save();
+		
+		return Redirect::route('datos.pacientes.index');
 	}
 
 
