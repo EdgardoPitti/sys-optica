@@ -137,25 +137,10 @@
 		                    	</div>
                     		</div>
                     	</div>
-                    	
+						
+						{{-- Contenido --}}
                     	@yield('contenido')
-                    	<h2 class="titulo">Mantenimientos</h2>
-                    	<div class="panel panel-default">
-                    		<div class="panel-heading">
-                    			<h4 class="panel-title"><i class="fa fa-book"></i> Historia Clínica</h4>
-                    		</div>
-                    		<div class="panel-body">
-                        	asdasdasdadsadasd<br>	asdasdafoajfoajsfoajsfoajfoajfoajfoafasdasdafoajfoajsfoajsfoajfoajfoajfoafasdasdafoajfoajsfoajsfoajfoajfoajfoafasdasdafoajfoajsfoajsfoajfoajfoajfoafasdasdafoajfoajsfoajsfoajfoajfoajfoafasdasdafoajfoajsfoajsfoajfoajfoajfoafasdasdafoajfoajsfoajsfoajfoajfoajfoafasdasdafoajfoajsfoajsfoajfoajfoajfoafasdasdafoajfoajsfoajsfoajfoajfoajfoafasdasdafoajfoajsfoajsfoajfoajfoajfoafasdasdafoajfoajsfoajsfoajfoajfoajfoaf			                       
-                    		</div>
-                    	</div>
-                    	<div class="panel panel-default">
-                    		<div class="panel-heading">
-                    			<h4 class="panel-title"><i class="fa fa-book"></i> Historia Clínica</h4>
-                    		</div>
-                    		<div class="panel-body">
-                        	asdasdasdadsadasd<br>	asdasdafoajfoajsfoajsfoajfoajfoajfoafasdasdafoajfoajsfoajsfoajfoajfoajfoafasdasdafoajfoajsfoajsfoajfoajfoajfoafasdasdafoajfoajsfoajsfoajfoajfoajfoafasdasdafoajfoajsfoajsfoajfoajfoajfoafasdasdafoajfoajsfoajsfoajfoajfoajfoafasdasdafoajfoajsfoajsfoajfoajfoajfoafasdasdafoajfoajsfoajsfoajfoajfoajfoafasdasdafoajfoajsfoajsfoajfoajfoajfoafasdasdafoajfoajsfoajsfoajfoajfoajfoafasdasdafoajfoajsfoajsfoajfoajfoajfoaf			                       
-                    		</div>
-                    	</div>
+  
                     </div>
                 </div>
             </div>

@@ -12,16 +12,20 @@
   		</div>
   		<div class="panel-body">
 			<div class="form-group col-sm-4 col-md-4 col-lg-4">
-		      {{ Form::label('cedula', 'N&uacute;mero de C&eacute;dula') }}
+		      {{ Form::label('cedula', 'N&uacute;mero de C&eacute;dula:') }}
 		      {{ Form::text('cedula', null, array('placeholder' => 'N&uacute;mero de C&eacute;dula', 'class' => 'form-control', 'required' => 'required')) }}
 		    </div> 	
+			<div class="form-group col-sm-4 col-md-4 col-lg-4">
+		      {{ Form::label('fecha_nacimiento', 'Fecha Nacimiento:') }}
+		      {{ Form::text('fecha_nacimiento', null, array('class' => 'form-control', 'min' => '1950-01-01', 'max' => '2020-12-31')) }}
+		    </div> 
 		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
 				{{ Form::label('primer_nombre', 'Primer Nombre:') }}		    
 				{{ Form::text('primer_nombre', null, array('placeholder' => 'Primer Nombre', 'class' => 'form-control', 'required' => 'required')) }}
 		    </div>			                       
   		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
 				{{ Form::label('segundo_nombre', 'Segundo Nombre:') }}		    
-				{{ Form::text('segundo_nombre', null, array('placeholder' => 'Segundo Nombre', 'class' => 'form-control', 'required' => 'required')) }}
+				{{ Form::text('segundo_nombre', null, array('placeholder' => 'Segundo Nombre', 'class' => 'form-control')) }}
 		    </div>			                       
 		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
 				{{ Form::label('primer_apellido', 'Primer Apellido:') }}		    
@@ -29,7 +33,7 @@
 		    </div>			                       		    
 		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
 				{{ Form::label('segundo_apellido', 'Segundo Apellido:') }}		    
-				{{ Form::text('segundo_apellido', null, array('placeholder' => 'Segundo Apellido', 'class' => 'form-control', 'required' => 'required')) }}
+				{{ Form::text('segundo_apellido', null, array('placeholder' => 'Segundo Apellido', 'class' => 'form-control')) }}
 		    </div>
 		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
 		      {{ Form::label('sexo', 'Sexo:') }}
@@ -38,7 +42,27 @@
 		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
 		      {{ Form::label('id_tipo_sangre', 'Tipo de Sangre:') }}
 		      {{ Form::select('id_tipo_sangre',  array('0' => 'SELECCIONE EL TIPO DE SANGRE') + TipoSangre::lists('tipo_sangre', 'id'), null, array('class' => 'form-control')); }}    
-		    </div> 	                       		    
+		    </div> 	
+		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
+				{{ Form::label('ocupacion', 'Ocupación:') }}		    
+				{{ Form::text('ocupacion', null, array('placeholder' => 'Ocupacion', 'class' => 'form-control')) }}
+		    </div>	
+		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
+		      {{ Form::label('diabetes', 'Diabetes:') }}
+		      {{ Form::select('diabetes',  array('0' => 'NO', '1' => 'SI'), null, array('class' => 'form-control')); }}    
+		    </div> 
+		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
+				{{ Form::label('clasificacion', 'Clasificación:') }}		    
+				{{ Form::text('clasificacion', null, array('placeholder' => 'Clasificacion', 'class' => 'form-control')) }}
+		    </div>		    	
+		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
+				{{ Form::label('referido_por', 'Referido por:') }}		    
+				{{ Form::text('referido_por', null, array('placeholder' => 'Referido', 'class' => 'form-control')) }}
+		    </div>
+			<div class="form-group col-sm-4 col-md-4 col-lg-4">
+		      {{ Form::label('observaciones', 'Observaciones:') }}
+		      {{ Form::textarea('observaciones', null, array('placeholder' => 'Observaciones', 'class' => 'form-control', 'size' => '3x1')) }}        
+		    </div>  
   		</div>
   	</div>
 	<div class="panel panel-default">
@@ -46,6 +70,10 @@
   			<h4 class="panel-title"><i class="fa fa-phone"></i> Datos de Contacto</h4>
   		</div>
   		<div class="panel-body">
+			<div class="form-group col-sm-4 col-md-4 col-lg-4">
+		      {{ Form::label('direccion', 'Dirección:') }}
+		      {{ Form::textarea('direccion', null, array('placeholder' => 'Dirección', 'class' => 'form-control', 'size' => '3x5')) }}        
+		    </div>  
   			<div class="form-group col-sm-4 col-md-4 col-lg-4">
 		      {{ Form::label('celular', 'Celular:') }}
 		      {{ Form::text('celular', null, array('placeholder' => 'Celular', 'class' => 'form-control')); }}    
@@ -61,7 +89,7 @@
   		</div>
   	</div>
   	<center>
-		{{ Form::button('Paciente', array('type' => 'submit', 'class' => 'btn btn-primary')) }}
+		{{ Form::button('Guardar', array('type' => 'submit', 'class' => 'btn btn-default')) }}
   	</center>
   	{{ Form::close() }}
 @stop
