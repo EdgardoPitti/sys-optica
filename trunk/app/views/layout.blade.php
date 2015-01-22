@@ -130,7 +130,7 @@
                         </div>                    	
                     </div>
                     <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
-                    	<div class="row titulo">
+                    	<div class="row fecha">
                     		<div class="col-xs-12">
 		                    	<div class="pull-right" id="tiempo">
 		                    		{{-- fecha actual --}}
@@ -138,7 +138,8 @@
                     		</div>
                     	</div>
                     	
-                    	<h2 class="panel-left">Mantenimientos</h2>
+                    	@yield('contenido')
+                    	<h2 class="titulo">Mantenimientos</h2>
                     	<div class="panel panel-default">
                     		<div class="panel-heading">
                     			<h4 class="panel-title"><i class="fa fa-book"></i> Historia Clínica</h4>
