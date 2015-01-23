@@ -4,7 +4,7 @@ $(function () {
 		$("#pacientes").bootstrapTable({
 			method: 'get',
 			url: 'http://'+host+'/sys-optica/public/getpacientes',
-			height: 415,
+			height: 320,
 			search: true,
 			sidePagination: 'server',
 			pagination: true

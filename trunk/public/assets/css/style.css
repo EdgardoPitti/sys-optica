@@ -211,6 +211,9 @@ h2.titulo{
     line-height: 1.33;
     padding: 10px 16px;
     width: 100%;
+}
+.margen-bottom{
+	margin-bottom: 15px;
 }/*
 .container-login button:hover,
 .container-login button:focus {
