@@ -140,3 +140,12 @@ h2.titulo{
 .panel-heading div span{
   margin-left:5px;
 }
+/*CSS PERFIL CITA*/
+.profile 
+{
+  min-height: 215px;
+  display: inline-block;
+}
+.avatar{
+  margin-top: 31px;
+}

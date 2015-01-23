@@ -7,276 +7,403 @@
 
 
 	{{ Form::model($datos['cita'], $datos['form'], array('role' => 'form')) }}
+	
+	<div class="row">
+		<div class="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
+	    	<div class="well profile">
+	            <div class="col-sm-12">
+	                <div class="col-xs-12 col-sm-8">
+	                    <h2>Nicole Pearson</h2>
+	                    <p><strong>Código: </strong> ********* </p>
+	                    <p><strong>Edad: </strong> ******* </p>
+	                    <p><strong>Fecha de la Consulta: </strong>
+	                        *******
+	                    </p>
+	                </div>             
+	                <div class="col-xs-12 col-sm-4 text-center">
+	                    <div class="avatar">
+	                        <img src="{{URL::to('img/avatar.png')}}" alt="" class="img-circle img-responsive">
+	                    </div>
+	                </div>
+	            </div>    
+	        </div>    
+		</div>
+	</div>
   	<div class="panel panel-default">
   		<div class="panel-heading">
-  			<h4 class="panel-title"><i class="fa fa-user"></i> Datos de la Cita</h4>
+  			<h4 class="panel-title"><i class="fa fa-book"></i> Datos de la Cita</h4>
   		</div>
   		<div class="panel-body">
-			<div class="form-group col-sm-4 col-md-4 col-lg-4">
-		      {{ Form::label('fecha_consulta', 'Fecha de la Consulta:') }}
-		      {{ Form::date('fecha_consulta', null, array('class' => 'form-control')) }}        
-		    </div> 
-			<div class="form-group col-sm-4 col-md-4 col-lg-4">
-		      {{ Form::label('interrogatorio', 'Interrogatorio:') }}
-		      {{ Form::textarea('interrogatorio', null, array('placeholder' => 'Interrogatorio', 'class' => 'form-control', 'size' => '3x1')) }}        
-		    </div>  
-			<div class="form-group col-sm-4 col-md-4 col-lg-4">
-		      {{ Form::label('exploracion_conj', 'Exploración Conj:') }}
-		      {{ Form::text('exploracion_conj', null, array('placeholder' => 'Exploración Conj', 'class' => 'form-control')) }}
-		    </div> 	
-			<div class="form-group col-sm-4 col-md-4 col-lg-4">
-		      {{ Form::label('cornea', 'Córnea:') }}
-		      {{ Form::text('cornea', null, array('placeholder' => 'Córnea', 'class' => 'form-control')) }}
-		    </div> 
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('parpados', 'Párpados:') }}		    
-				{{ Form::text('parpados', null, array('placeholder' => 'Párpados', 'class' => 'form-control', 'required' => 'required')) }}
-		    </div>			                       
-  		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('pestagna', 'Pestañas:') }}		    
-				{{ Form::text('pestagna', null, array('placeholder' => 'Pestañas', 'class' => 'form-control')) }}
-		    </div>			                       
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('pupilas', 'Pupilas:') }}		    
-				{{ Form::text('pupilas', null, array('placeholder' => 'Pupilas', 'class' => 'form-control', 'required' => 'required')) }}
-		    </div>			                       		    
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('ref_pup', 'Ref. Pup:') }}		    
-				{{ Form::text('ref_pup', null, array('placeholder' => 'Ref. Pup', 'class' => 'form-control')) }}
-		    </div>
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('av_sc_od_u', 'A V sc O.D Arriba:') }}		    
-				{{ Form::text('av_sc_od_u', null, array('placeholder' => ' A V sc O.D', 'class' => 'form-control')) }}
-		    </div>
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('av_sc_od_d', 'A V sc O.D Abajo:') }}		    
-				{{ Form::text('av_sc_od_d', null, array('placeholder' => ' A V sc O.D', 'class' => 'form-control')) }}
-		    </div>
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('av_sc_oi_u', 'A V sc O.I Arriba:') }}		    
-				{{ Form::text('av_sc_oi_u', null, array('placeholder' => ' A V sc O.I', 'class' => 'form-control')) }}
-		    </div>
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('av_sc_oi_d', 'A V sc O.I Abajo:') }}		    
-				{{ Form::text('av_sc_oi_d', null, array('placeholder' => ' A V sc O.I', 'class' => 'form-control')) }}
-		    </div>
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('cap_visual_od', 'Cap. Visual O.D:') }}		    
-				{{ Form::text('cap_visual_od', null, array('placeholder' => 'Cap. Visual O.D', 'class' => 'form-control')) }}
-		    </div>
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('cap_visual_oi', 'Cap. Visual O.I:') }}		    
-				{{ Form::text('cap_visual_oi', null, array('placeholder' => 'Cap. Visual O.I', 'class' => 'form-control')) }}
-		    </div>
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('av_cc_od', 'A V cc O.D:') }}		    
-				{{ Form::text('av_cc_od', null, array('placeholder' => 'A V cc O.D', 'class' => 'form-control')) }}
-		    </div>
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('av_cc_od_esf', 'A V cc O.D Esf:') }}		    
-				{{ Form::text('av_cc_od_esf', null, array('placeholder' => 'A V cc O.D Esf', 'class' => 'form-control')) }}
-		    </div>
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('av_cc_od_cil', 'A V cc O.D Cil:') }}		    
-				{{ Form::text('av_cc_od_cil', null, array('placeholder' => 'A V cc O.D Cil', 'class' => 'form-control')) }}
-		    </div>
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('av_cc_od_add', 'A V cc O.D Add:') }}		    
-				{{ Form::text('av_cc_od_add', null, array('placeholder' => 'A V cc O.D Add', 'class' => 'form-control')) }}
-		    </div>
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('av_cc_oi', 'A V cc O.I:') }}		    
-				{{ Form::text('av_cc_oi', null, array('placeholder' => 'A V cc O.I', 'class' => 'form-control')) }}
-		    </div>
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('av_cc_oi_esf', 'A V cc O.I Esf:') }}		    
-				{{ Form::text('av_cc_oi_esf', null, array('placeholder' => 'A V cc O.I Esf', 'class' => 'form-control')) }}
-		    </div>
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('av_cc_oi_cil', 'A V cc O.I Cil:') }}		    
-				{{ Form::text('av_cc_oi_cil', null, array('placeholder' => 'A V cc O.I Cil', 'class' => 'form-control')) }}
-		    </div>
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('av_cc_oi_add', 'A V cc O.I Add:') }}		    
-				{{ Form::text('av_cc_oi_add', null, array('placeholder' => 'A V cc O.I Add', 'class' => 'form-control')) }}
-		    </div>
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('oftalmoscopia_od', 'Oftalmoscopia O.D:') }}		    
-				{{ Form::text('oftalmoscopia_od', null, array('placeholder' => 'Oftalmoscopia O.D', 'class' => 'form-control')) }}
-		    </div>
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('oftalmoscopia_oi', 'Oftalmoscopia O.I:') }}		    
-				{{ Form::text('oftalmoscopia_oi', null, array('placeholder' => 'Oftalmoscopia O.I', 'class' => 'form-control')) }}
-		    </div>
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('queratrometria_od', 'Queratrometria O.D:') }}		    
-				{{ Form::text('queratrometria_od', null, array('placeholder' => 'Queratrometria O.D', 'class' => 'form-control')) }}
-		    </div>
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('queratrometria_oi', 'Queratrometria O.I:') }}		    
-				{{ Form::text('queratrometria_oi', null, array('placeholder' => 'Queratrometria O.I', 'class' => 'form-control')) }}
-		    </div>
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('mortilidad_ocular_od', 'Mortilidad Ocular O.D:') }}		    
-				{{ Form::text('mortilidad_ocular_od', null, array('placeholder' => 'Mortilidad Ocular O.D', 'class' => 'form-control')) }}
-		    </div>
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('mortilidad_ocular_oi', 'Mortilidad Ocular O.I:') }}		    
-				{{ Form::text('mortilidad_ocular_oi', null, array('placeholder' => 'Mortilidad Ocular O.I', 'class' => 'form-control')) }}
-		    </div>
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('sentido_cromatico', 'Sentido Cromático:') }}		    
-				{{ Form::text('sentido_cromatico', null, array('placeholder' => 'Sentido Cromático', 'class' => 'form-control')) }}
-		    </div>
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('tonometria_od', 'Tonometría O.D:') }}		    
-				{{ Form::text('tonometria_od', null, array('placeholder' => 'Tonometría O.D', 'class' => 'form-control')) }}
-		    </div>
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('tonometria_oi', 'Tonometría O.I:') }}		    
-				{{ Form::text('tonometria_oi', null, array('placeholder' => 'Tonometría O.I', 'class' => 'form-control')) }}
-		    </div>
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('grad_od_esf', 'Graduación O.D Esf:') }}		    
-				{{ Form::text('grad_od_esf', null, array('placeholder' => 'Graduación O.D Esf', 'class' => 'form-control')) }}
-		    </div>
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('grad_od_cil', 'Graduación O.D Cil:') }}		    
-				{{ Form::text('grad_od_cil', null, array('placeholder' => 'Graduación O.D Cil', 'class' => 'form-control')) }}
-		    </div>
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('grad_od_eje', 'Graduación O.D Eje:') }}		    
-				{{ Form::text('grad_od_eje', null, array('placeholder' => 'Graduación O.D Eje', 'class' => 'form-control')) }}
-		    </div>
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('grad_od_av', 'Graduación O.D AV:') }}		    
-				{{ Form::text('grad_od_av', null, array('placeholder' => 'Graduación O.D AV', 'class' => 'form-control')) }}
-		    </div>
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('grad_oi_esf', 'Graduación O.I Esf:') }}		    
-				{{ Form::text('grad_oi_esf', null, array('placeholder' => 'Graduación O.I Esf', 'class' => 'form-control')) }}
-		    </div>
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('grad_oi_cil', 'Graduación O.I Cil:') }}		    
-				{{ Form::text('grad_oi_cil', null, array('placeholder' => 'Graduación O.I Cil', 'class' => 'form-control')) }}
-		    </div>
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('grad_oi_eje', 'Graduación O.I Eje:') }}		    
-				{{ Form::text('grad_oi_eje', null, array('placeholder' => 'Graduación O.I Eje', 'class' => 'form-control')) }}
-		    </div>
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('grad_oi_av', 'Graduación O.I AV:') }}		    
-				{{ Form::text('grad_oi_av', null, array('placeholder' => 'Graduación O.I AV', 'class' => 'form-control')) }}
-		    </div>
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('grad_di', 'Graduación D.I:') }}		    
-				{{ Form::text('grad_di', null, array('placeholder' => 'Graduación D.I', 'class' => 'form-control')) }}
-		    </div>
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('grad_add_od', 'Graduación Add O.D:') }}		    
-				{{ Form::text('grad_add_od', null, array('placeholder' => 'Graduación Add O.D', 'class' => 'form-control')) }}
-		    </div>
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('grad_add_oi', 'Graduación Add O.I:') }}		    
-				{{ Form::text('grad_add_oi', null, array('placeholder' => 'Graduación Add O.I', 'class' => 'form-control')) }}
-		    </div>
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('cerca_od_esf', 'Cerca O.D Esf:') }}		    
-				{{ Form::text('cerca_od_esf', null, array('placeholder' => 'Cerca O.D Esf', 'class' => 'form-control')) }}
-		    </div>
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('cerca_od_cil', 'Cerca O.D Cil:') }}		    
-				{{ Form::text('cerca_od_cil', null, array('placeholder' => 'Cerca O.D Cil', 'class' => 'form-control')) }}
-		    </div>
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('cerca_od_eje', 'Cerca O.D Eje:') }}		    
-				{{ Form::text('cerca_od_eje', null, array('placeholder' => 'Cerca O.D Eje', 'class' => 'form-control')) }}
-		    </div>
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('cerca_oi_esf', 'Cerca O.I Esf:') }}		    
-				{{ Form::text('cerca_oi_esf', null, array('placeholder' => 'Cerca O.I Esf', 'class' => 'form-control')) }}
-		    </div>	
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('cerca_oi_cil', 'Cerca O.I Cil:') }}		    
-				{{ Form::text('cerca_oi_cil', null, array('placeholder' => 'Cerca O.I Cil', 'class' => 'form-control')) }}
-		    </div>		
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('cerca_oi_eje', 'Cerca O.I Eje:') }}		    
-				{{ Form::text('cerca_oi_eje', null, array('placeholder' => 'Cerca O.I Eje', 'class' => 'form-control')) }}
-		    </div>
-			<div class="form-group col-sm-4 col-md-4 col-lg-4">
-		      {{ Form::label('instrucciones', 'Instrucciones para el Paciente:') }}
-		      {{ Form::textarea('instrucciones', null, array('placeholder' => 'Instrucciones para el Paciente', 'class' => 'form-control', 'size' => '3x1')) }}        
-		    </div>    
-		    <table>
-		    	<tr>
-		    		<td></td>
-		    		<td>Esf.</td>
-		    		<td>Cil y Eje</td>
-		    		<td>Add.</td>
-		    		<td>D.I.</td>
-		    		<td>Prisma</td>
-		    		<td>Alt.O</td>
-		    		<td>Color Lente/Tipo</td>
-		    	</tr>
-		    	<tr>
-		    		<td>O.D.</td>
-		    		<td>{{ Form::text('od_esf', null, array('class' => 'form-control')) }}</td>
-		    		<td>{{ Form::text('od_cil_eje', null, array('class' => 'form-control')) }}</td>
-		    		<td>{{ Form::text('od_add', null, array('class' => 'form-control')) }}</td>
-		    		<td>{{ Form::text('od_di', null, array('class' => 'form-control')) }}</td>
-		    		<td>{{ Form::text('od_prisma', null, array('class' => 'form-control')) }}</td>
-		    		<td>{{ Form::text('od_alt', null, array('class' => 'form-control')) }}</td>
-		    		<td>{{ Form::text('od_color', null, array('class' => 'form-control')) }}</td>
-		    	</tr>
-		    	<tr>
-		    		<td>O.I.</td>
-		    		<td>{{ Form::text('oi_esf', null, array('class' => 'form-control')) }}</td>
-		    		<td>{{ Form::text('oi_cil_eje', null, array('class' => 'form-control')) }}</td>
-		    		<td>{{ Form::text('oi_add', null, array('class' => 'form-control')) }}</td>
-		    		<td>{{ Form::text('oi_di', null, array('class' => 'form-control')) }}</td>
-		    		<td>{{ Form::text('oi_prisma', null, array('class' => 'form-control')) }}</td>
-		    		<td>{{ Form::text('oi_alt', null, array('class' => 'form-control')) }}</td>
-		    		<td>{{ Form::text('oi_tipo', null, array('class' => 'form-control')) }}</td>
-		    	</tr>
-		    </table>
-			<div class="form-group col-sm-4 col-md-4 col-lg-4">
-		      {{ Form::label('observaciones', 'Observaciones:') }}
-		      {{ Form::textarea('observaciones', null, array('placeholder' => 'Observaciones', 'class' => 'form-control', 'size' => '3x1')) }}        
-		    </div>	
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('endurecido', 'Endurecido:') }}		    
-				{{ Form::text('endurecido', null, array('placeholder' => 'Endurecido', 'class' => 'form-control')) }}
-		    </div> 
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('tratam_uv', 'Tratamiento U.V:') }}		    
-				{{ Form::text('tratam_uv', null, array('placeholder' => 'Tratamiento U.V', 'class' => 'form-control')) }}
-		    </div>    
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('tratam_anti_rayas', 'Tratamiento Anti Rayas:') }}		    
-				{{ Form::text('tratam_anti_rayas', null, array('placeholder' => 'Tratamiento Anti Rayas', 'class' => 'form-control')) }}
-		    </div>   
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('tratam_anti_reflejos', 'Tratamiento Anti Reflejos:') }}		    
-				{{ Form::text('tratam_anti_reflejos', null, array('placeholder' => 'Tratamiento Anti Raeflejos', 'class' => 'form-control')) }}
-		    </div>
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('hi_index', 'Hi-Index:') }}		    
-				{{ Form::text('hi_index', null, array('placeholder' => 'Hi-Index', 'class' => 'form-control')) }}
-		    </div>
-		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('hi_lite', 'Hi-Lite:') }}		    
-				{{ Form::text('hi_lite', null, array('placeholder' => 'Hi-Lite', 'class' => 'form-control')) }}
-		    </div>
-			<div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('seg_bif', 'Seg. Bif:') }}		    
-				{{ Form::text('seg_bif', null, array('placeholder' => 'Seg. Bif', 'class' => 'form-control')) }}
-		    </div>
-			<div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('aro', 'Aro:') }}		    
-				{{ Form::text('aro', null, array('placeholder' => 'Aro', 'class' => 'form-control')) }}
-		    </div>
-  		</div>  		
+  			<div class="row">
+				<div class="form-group col-sm-12 col-md-12 col-lg-12">
+			      {{ Form::label('interrogatorio', 'Interrogatorio:') }}
+			      {{ Form::textarea('interrogatorio', null, array('placeholder' => 'Interrogatorio', 'class' => 'form-control', 'size' => '3x2')) }}        
+			    </div>  
+				<div class="form-group col-sm-4 col-md-4 col-lg-4">
+			      {{ Form::label('exploracion_conj', 'Exploración Conj:') }}
+			      {{ Form::text('exploracion_conj', null, array('placeholder' => 'Exploración Conj', 'class' => 'form-control')) }}
+			    </div> 	
+				<div class="form-group col-sm-4 col-md-4 col-lg-4">
+			      {{ Form::label('cornea', 'Córnea:') }}
+			      {{ Form::text('cornea', null, array('placeholder' => 'Córnea', 'class' => 'form-control')) }}
+			    </div> 
+			    <div class="form-group col-sm-4 col-md-4 col-lg-4">
+					{{ Form::label('parpados', 'Párpados:') }}		    
+					{{ Form::text('parpados', null, array('placeholder' => 'Párpados', 'class' => 'form-control', 'required' => 'required')) }}
+			    </div>			                       
+	  		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
+					{{ Form::label('pestagna', 'Pestañas:') }}		    
+					{{ Form::text('pestagna', null, array('placeholder' => 'Pestañas', 'class' => 'form-control')) }}
+			    </div>			                       
+			    <div class="form-group col-sm-4 col-md-4 col-lg-4">
+					{{ Form::label('pupilas', 'Pupilas:') }}		    
+					{{ Form::text('pupilas', null, array('placeholder' => 'Pupilas', 'class' => 'form-control', 'required' => 'required')) }}
+			    </div>			                       		    
+			    <div class="form-group col-sm-4 col-md-4 col-lg-4">
+					{{ Form::label('ref_pup', 'Ref. Pup:') }}		    
+					{{ Form::text('ref_pup', null, array('placeholder' => 'Ref. Pup', 'class' => 'form-control')) }}
+			    </div>
+			    <div class="col-sm-6 col-md-6 col-lg-6">
+				    <div class="panel panel-default">
+				    	<div class="panel-heading">
+				    		<h4 class="panel-title">A V sc</h4>	
+				    	</div>
+				    	<div class="panel-body">
+				    		<label>Ojo Derecho (O.D):</label>
+				    		<div class="input-group">
+				    		  {{ Form::text('av_sc_od_u', null, array('placeholder' => 'O.D', 'class' => 'form-control', 'aria-describedby' => 'basic-addon1')) }}				    						    		
+							  <span class="input-group-addon" id="basic-addon1">/</span>
+							  {{ Form::text('av_sc_od_d', null, array('placeholder' => 'O.D', 'class' => 'form-control', 'aria-describedby' => 'basic-addon1')) }} 
+							</div>
+							<label>Ojo Izquierdo (O.I):</label>
+							<div class="input-group">
+								{{ Form::text('av_sc_oi_u', null, array('placeholder' => 'O.I', 'class' => 'form-control', 'aria-describedby' => 'basic-addon2')) }}
+								<span class="input-group-addon" id="basic-addon2">/</span>
+								{{ Form::text('av_sc_oi_d', null, array('placeholder' => 'O.I', 'class' => 'form-control', 'aria-describedby' => 'basic-addon2')) }}
+							</div>			    		
+				    	</div>
+				    </div>
+			    </div>
+			    <div class="col-sm-6 col-md-6 col-lg-6">
+				    <div class="panel panel-default">
+				    	<div class="panel-heading">
+				    		<h4 class="panel-title">Cap. Visual</h4>	
+				    	</div>
+				    	<div class="panel-body">
+				    		{{ Form::label('cap_visual_od', 'Ojo Derecho (O.D):') }}		    
+							{{ Form::text('cap_visual_od', null, array('placeholder' => 'O.D', 'class' => 'form-control')) }}
+				    		{{ Form::label('cap_visual_oi', 'Ojo Izquierdo (O.I):') }}		    
+							{{ Form::text('cap_visual_oi', null, array('placeholder' => 'O.I', 'class' => 'form-control')) }}
+				    	</div>
+				    </div>
+				</div>
+				<div class="col-sm-12 col-md-12 col-lg-12">
+					<div class="panel panel-default">
+				    	<div class="panel-heading">
+				    		<h4 class="panel-title">A V cc</h4>			    		
+				    	</div>
+				    	<div class="panel-body">
+				    		<div class="row">
+				    			<div class="col-sm-12 col-md-12 col-lg-12">
+					    			<label>Ojo Derecho</label>
+				    			</div>
+					    		<div class="form-group col-sm-3 col-md-3 col-lg-3">
+					    			{{ Form::label('av_cc_od', 'O.D:') }}		    
+									{{ Form::text('av_cc_od', null, array('placeholder' => 'O.D', 'class' => 'form-control input-sm')) }}
+					    		</div>	
+					    		<div class="form-group col-sm-3 col-md-3 col-lg-3">
+					    			{{ Form::label('av_cc_od_esf', 'Esf:') }}		    
+									{{ Form::text('av_cc_od_esf', null, array('placeholder' => 'Esf', 'class' => 'form-control input-sm')) }}
+					    		</div>	
+					    		<div class="form-group col-sm-3 col-md-3 col-lg-3">
+					    			{{ Form::label('av_cc_od_cil', 'Cil:') }}		    
+									{{ Form::text('av_cc_od_cil', null, array('placeholder' => 'Cil', 'class' => 'form-control input-sm')) }}
+					    		</div>	
+					    		<div class="form-group col-sm-3 col-md-3 col-lg-3">
+					    			{{ Form::label('av_cc_od_add', 'Add:') }}		    
+									{{ Form::text('av_cc_od_add', null, array('placeholder' => 'Add', 'class' => 'form-control input-sm')) }}
+					    		</div>					    		
+				    			<div class="col-sm-12 col-md-12 col-lg-12" style="margin-top:8px;">
+					    			<label>Ojo Izquierdo</label>
+				    			</div>
+					    		<div class="form-group col-sm-3 col-md-3 col-lg-3">
+					    			{{ Form::label('av_cc_oi', 'O.I:') }}		    
+									{{ Form::text('av_cc_oi', null, array('placeholder' => 'O.I', 'class' => 'form-control input-sm')) }}
+					    		</div>
+					    		<div class="form-group col-sm-3 col-md-3 col-lg-3">
+					    			{{ Form::label('av_cc_oi_esf', 'Esf:') }}		    
+									{{ Form::text('av_cc_oi_esf', null, array('placeholder' => 'Esf', 'class' => 'form-control input-sm')) }}
+					    		</div>
+					    		<div class="form-group col-sm-3 col-md-3 col-lg-3">
+					    			{{ Form::label('av_cc_oi_cil', 'Cil:') }}		    
+									{{ Form::text('av_cc_oi_cil', null, array('placeholder' => 'Cil', 'class' => 'form-control input-sm')) }}
+					    		</div>
+					    		<div class="form-group col-sm-3 col-md-3 col-lg-3">
+							    	{{ Form::label('av_cc_oi_add', 'Add:') }}		    
+									{{ Form::text('av_cc_oi_add', null, array('placeholder' => 'Add', 'class' => 'form-control input-sm')) }}
+					    		</div>
+				    		</div>
+				    	</div>
+				    </div>
+				</div>
+				<div class="col-sm-6 col-md-6 col-lg-6">
+				    <div class="panel panel-default">
+				    	<div class="panel-heading">
+				    		<h4 class="panel-title">Oftalmoscopía</h4>	
+				    	</div>
+				    	<div class="panel-body">
+				    		{{ Form::label('oftalmoscopia_od', 'Ojo Derecho:') }}		    
+							{{ Form::text('oftalmoscopia_od', null, array('placeholder' => 'O.D', 'class' => 'form-control')) }}
+							{{ Form::label('oftalmoscopia_oi', 'Ojo Izquierdo:') }}		    
+							{{ Form::text('oftalmoscopia_oi', null, array('placeholder' => 'O.I', 'class' => 'form-control')) }}
+				    	</div>
+				    </div>
+				</div>
+				<div class="col-sm-6 col-md-6 col-lg-6">
+				    <div class="panel panel-default">
+				    	<div class="panel-heading">
+				    		<h4 class="panel-title">Queratrometria</h4>	
+				    	</div>
+				    	<div class="panel-body">
+				    		{{ Form::label('queratrometria_od', 'Ojo Derecho:') }}		    
+							{{ Form::text('queratrometria_od', null, array('placeholder' => 'O.D', 'class' => 'form-control')) }}
+							{{ Form::label('queratrometria_oi', 'Ojo Izquierdo:') }}		    
+							{{ Form::text('queratrometria_oi', null, array('placeholder' => 'O.I', 'class' => 'form-control')) }}
+				    	</div>
+				    </div>
+				</div>
+			    <div class="col-sm-6 col-md-6 col-lg-6">
+				    <div class="panel panel-default">
+				    	<div class="panel-heading">
+				    		<h4 class="panel-title">Mortilidad Ocular</h4>	
+				    	</div>
+				    	<div class="panel-body">
+				    		{{ Form::label('mortilidad_ocular_od', 'Ojo Derecho:') }}		    
+							{{ Form::text('mortilidad_ocular_od', null, array('placeholder' => 'O.D', 'class' => 'form-control')) }}
+							{{ Form::label('mortilidad_ocular_oi', 'Ojo Izquierdo:') }}		    
+							{{ Form::text('mortilidad_ocular_oi', null, array('placeholder' => 'O.I', 'class' => 'form-control')) }}
+				    	</div>
+				    </div>
+				</div>
+				<div class="form-group col-sm-6 col-md-6 col-lg-6">
+					{{ Form::label('sentido_cromatico', 'Sentido Cromático:') }}		    
+					{{ Form::textarea('sentido_cromatico', null, array('placeholder' => 'Sentido Cromático', 'class' => 'form-control', 'size' => '3x4')) }}
+				</div>
+				
+			</div>
+			<div class="row">
+				<div class="col-sm-12 col-md-12 col-lg-12">
+				    <div class="panel panel-default">
+				    	<div class="panel-heading">
+				    		<h4 class="panel-title">Tonometría</h4>	
+				    	</div>
+				    	<div class="panel-body">
+				    		<div class="form-group col-sm-6 col-md-6 col-lg-6">
+					    		{{ Form::label('tonometria_od', 'Ojo Derecho (O.D):') }}		    
+								{{ Form::text('tonometria_od', null, array('placeholder' => 'O.D', 'class' => 'form-control')) }}
+				    		</div>
+				    		<div class="form-group col-sm-6 col-md-6 col-lg-6">
+								{{ Form::label('tonometria_oi', 'Ojo Izquierdo(O.I):') }}		    
+								{{ Form::text('tonometria_oi', null, array('placeholder' => 'O.I', 'class' => 'form-control')) }}
+				    		</div>
+				    	</div>
+				    </div>
+				</div>
+				<div class="col-sm-12 col-md-12 col-lg-12">
+				    <div class="panel panel-default">
+				    	<div class="panel-heading">
+				    		<h4 class="panel-title">Graduación</h4>	
+				    	</div>
+				    	<div class="panel-body">
+				    		<div class="row">
+				    			<div class="col-sm-12 col-md-12 col-lg-12">
+					    			<label>Ojo Derecho</label>
+				    			</div>
+				    			<div class="form-group col-sm-3 col-md-3 col-lg-3">
+				    				{{ Form::label('grad_od_esf', 'Esf:') }}		    
+									{{ Form::text('grad_od_esf', null, array('placeholder' => 'Esf', 'class' => 'form-control input-sm')) }}
+				    			</div>
+				    			<div class="form-group col-sm-3 col-md-3 col-lg-3">
+				    				{{ Form::label('grad_od_cil', 'Cil:') }}		    
+									{{ Form::text('grad_od_cil', null, array('placeholder' => 'Cil', 'class' => 'form-control input-sm')) }}
+				    			</div>
+				    			<div class="form-group col-sm-3 col-md-3 col-lg-3">
+				    				{{ Form::label('grad_od_eje', 'Eje:') }}		    
+									{{ Form::text('grad_od_eje', null, array('placeholder' => 'Eje', 'class' => 'form-control input-sm')) }}
+								</div>
+				    			<div class="form-group col-sm-3 col-md-3 col-lg-3">
+				    				{{ Form::label('grad_od_av', 'AV:') }}		    
+									{{ Form::text('grad_od_av', null, array('placeholder' => 'AV', 'class' => 'form-control input-sm')) }}
+								</div>
+								<div class="col-sm-12 col-md-12 col-lg-12">
+					    			<label>Ojo Izquierdo</label>
+				    			</div>
+				    			<div class="form-group col-sm-3 col-md-3 col-lg-3">
+				    				{{ Form::label('grad_oi_esf', 'Esf:') }}		    
+									{{ Form::text('grad_oi_esf', null, array('placeholder' => 'Esf', 'class' => 'form-control input-sm')) }}	
+				    			</div>
+				    			<div class="form-group col-sm-3 col-md-3 col-lg-3">
+				    				{{ Form::label('grad_oi_cil', 'Cil:') }}		    
+									{{ Form::text('grad_oi_cil', null, array('placeholder' => 'Cil', 'class' => 'form-control input-sm')) }}
+				    			</div>
+				    			<div class="form-group col-sm-3 col-md-3 col-lg-3">
+				    				{{ Form::label('grad_oi_eje', 'Eje:') }}		    
+									{{ Form::text('grad_oi_eje', null, array('placeholder' => 'Eje', 'class' => 'form-control input-sm')) }}
+				    			</div>
+				    			<div class="form-group col-sm-3 col-md-3 col-lg-3">
+				    				{{ Form::label('grad_oi_av', 'AV:') }}		    
+									{{ Form::text('grad_oi_av', null, array('placeholder' => 'AV', 'class' => 'form-control input-sm')) }}
+				    			</div>				    			
+				    			<div class="form-group col-sm-3 col-md-3 col-lg-3">
+				    				{{ Form::label('grad_di', 'D.I:') }}		    
+									{{ Form::text('grad_di', null, array('placeholder' => 'D.I', 'class' => 'form-control input-sm col-lg-3')) }}
+				    			</div>
+				    			<div class="col-sm-6 col-md-6 col-lg-6">
+				    				<div class="panel panel-default">
+								    	<div class="panel-heading">
+								    		<h4 class="panel-title">Add</h4>	
+								    	</div>
+								    	<div class="panel-body">
+								    		<div class="form-group col-sm-6 col-md-6 col-lg-6">
+									    		{{ Form::label('grad_add_od', 'Ojo Derecho:') }}		    
+												{{ Form::text('grad_add_od', null, array('placeholder' => 'O.D', 'class' => 'form-control input-sm')) }}
+								    		</div>
+								    		<div class="form-group col-sm-6 col-md-6 col-lg-6">
+												{{ Form::label('grad_add_oi', 'Ojo Izquierdo:') }}		    
+												{{ Form::text('grad_add_oi', null, array('placeholder' => 'O.I', 'class' => 'form-control input-sm')) }}
+								    		</div>
+								    	</div>
+								    </div>								    
+				    			</div>
+				    		</div>
+				    	</div>
+				    </div>
+				</div>
+			    <div class="col-sm-12 col-md-12 col-lg-12">
+				    <div class="panel panel-default">
+				    	<div class="panel-heading">
+				    		<h4 class="panel-title">Cerca</h4>	
+				    	</div>
+				    	<div class="panel-body">
+				    		<div class="row">
+				    			<div class="col-sm-12 col-md-12 col-lg-12">
+				    				<label>Ojo Derecho</label>
+				    			</div>
+				    			<div class="form-group col-sm-4 col-md-4 col-lg-4">
+				    				{{ Form::label('cerca_od_esf', 'Esf:') }}		    
+									{{ Form::text('cerca_od_esf', null, array('placeholder' => 'Esf', 'class' => 'form-control input-sm')) }}
+				    			</div>
+				    			<div class="form-group col-sm-4 col-md-4 col-lg-4">
+				    				{{ Form::label('cerca_od_cil', 'Cil:') }}		    
+									{{ Form::text('cerca_od_cil', null, array('placeholder' => 'Cil', 'class' => 'form-control input-sm')) }}
+				    			</div>
+				    			<div class="form-group col-sm-4 col-md-4 col-lg-4">
+				    				{{ Form::label('cerca_od_eje', 'Eje:') }}		    
+									{{ Form::text('cerca_od_eje', null, array('placeholder' => 'Eje', 'class' => 'form-control input-sm')) }}	
+				    			</div>
+				    			<div class="col-sm-12 col-md-12 col-lg-12">
+				    				<label>Ojo Izquierda</label>
+				    			</div>
+				    			<div class="form-group col-sm-4 col-md-4 col-lg-4">
+				    				{{ Form::label('cerca_oi_esf', 'Esf:') }}		    
+									{{ Form::text('cerca_oi_esf', null, array('placeholder' => 'Esf', 'class' => 'form-control input-sm')) }}
+				    			</div>
+				    			<div class="form-group col-sm-4 col-md-4 col-lg-4">
+				    				{{ Form::label('cerca_oi_cil', 'Cil:') }}		    
+									{{ Form::text('cerca_oi_cil', null, array('placeholder' => 'Cil', 'class' => 'form-control input-sm')) }}
+				    			</div>
+				    			<div class="form-group col-sm-4 col-md-4 col-lg-4">
+				    				{{ Form::label('cerca_oi_eje', 'Eje:') }}		    
+									{{ Form::text('cerca_oi_eje', null, array('placeholder' => 'Eje', 'class' => 'form-control input-sm')) }}	
+				    			</div>
+				    		</div>
+				    	</div>
+				    </div>
+				</div>
+				<div class="form-group col-sm-4 col-md-4 col-lg-4">
+			      {{ Form::label('instrucciones', 'Instrucciones para el Paciente:') }}
+			      {{ Form::textarea('instrucciones', null, array('placeholder' => 'Instrucciones para el Paciente', 'class' => 'form-control', 'size' => '3x2')) }}        
+			    </div> 
+			</div>
+			<div class="row">
+				<div class="col-sm-12 col-md-12 col-lg-12">
+					<div class="table-responsive overthrow" id="tabla-rgt" style="width:100%;margin-top:15px;">        
+						<table class="table table-bordered" >
+						    <thead>
+							    <tr>							
+						    		<th width="4%"  data-align="center"></th>
+						    		<th style="width:11px;" data-align="center">Esf.</th>
+						    		<th style="width:11px;" data-align="center">Cil y Eje</th>
+						    		<th style="width:11px;" data-align="center">Add.</th>
+						    		<th style="width:11px;" data-align="center">D.I.</th>
+						    		<th style="width:11px;" data-align="center">Prisma</th>
+						    		<th style="width:11px;" data-align="center">Alt.O</th>
+						    		<th style="width:11px;" data-align="center">Color Lente/Tipo</th>
+						    	</tr>
+					    	</thead> 
+					    	<tbody>
+						    	<tr>
+						    		<td>O.D.</td>
+						    		<td>{{ Form::text('od_esf', null, array('class' => 'form-control input-sm')) }}</td>
+						    		<td>{{ Form::text('od_cil_eje', null, array('class' => 'form-control input-sm')) }}</td>
+						    		<td>{{ Form::text('od_add', null, array('class' => 'form-control input-sm')) }}</td>
+						    		<td>{{ Form::text('od_di', null, array('class' => 'form-control input-sm')) }}</td>
+						    		<td>{{ Form::text('od_prisma', null, array('class' => 'form-control input-sm')) }}</td>
+						    		<td>{{ Form::text('od_alt', null, array('class' => 'form-control input-sm')) }}</td>
+						    		<td>{{ Form::text('od_color', null, array('class' => 'form-control input-sm')) }}</td>
+						    	</tr>
+						    	<tr>
+						    		<td>O.I.</td>
+						    		<td>{{ Form::text('oi_esf', null, array('class' => 'form-control input-sm')) }}</td>
+						    		<td>{{ Form::text('oi_cil_eje', null, array('class' => 'form-control input-sm')) }}</td>
+						    		<td>{{ Form::text('oi_add', null, array('class' => 'form-control input-sm')) }}</td>
+						    		<td>{{ Form::text('oi_di', null, array('class' => 'form-control input-sm')) }}</td>
+						    		<td>{{ Form::text('oi_prisma', null, array('class' => 'form-control input-sm')) }}</td>
+						    		<td>{{ Form::text('oi_alt', null, array('class' => 'form-control input-sm')) }}</td>
+						    		<td>{{ Form::text('oi_tipo', null, array('class' => 'form-control input-sm')) }}</td>
+						    	</tr>
+					    	</tbody>
+					    </table>
+					</div>   	
+				</div>
+				<div class="form-group col-sm-4 col-md-4 col-lg-4">
+			      {{ Form::label('observaciones', 'Observaciones:') }}
+			      {{ Form::textarea('observaciones', null, array('placeholder' => 'Observaciones', 'class' => 'form-control', 'size' => '3x1')) }}        
+			    </div>	
+			    <div class="form-group col-sm-4 col-md-4 col-lg-4">
+					{{ Form::label('endurecido', 'Endurecido:') }}		    
+					{{ Form::text('endurecido', null, array('placeholder' => 'Endurecido', 'class' => 'form-control')) }}
+			    </div> 
+			    <div class="form-group col-sm-4 col-md-4 col-lg-4">
+					{{ Form::label('tratam_uv', 'Tratamiento U.V:') }}		    
+					{{ Form::text('tratam_uv', null, array('placeholder' => 'Tratamiento U.V', 'class' => 'form-control')) }}
+			    </div>    
+			    <div class="form-group col-sm-4 col-md-4 col-lg-4">
+					{{ Form::label('tratam_anti_rayas', 'Tratamiento Anti Rayas:') }}		    
+					{{ Form::text('tratam_anti_rayas', null, array('placeholder' => 'Tratamiento Anti Rayas', 'class' => 'form-control')) }}
+			    </div>   
+			    <div class="form-group col-sm-4 col-md-4 col-lg-4">
+					{{ Form::label('tratam_anti_reflejos', 'Tratamiento Anti Reflejos:') }}		    
+					{{ Form::text('tratam_anti_reflejos', null, array('placeholder' => 'Tratamiento Anti Raeflejos', 'class' => 'form-control')) }}
+			    </div>
+			    <div class="form-group col-sm-4 col-md-4 col-lg-4">
+					{{ Form::label('hi_index', 'Hi-Index:') }}		    
+					{{ Form::text('hi_index', null, array('placeholder' => 'Hi-Index', 'class' => 'form-control')) }}
+			    </div>
+			    <div class="form-group col-sm-4 col-md-4 col-lg-4">
+					{{ Form::label('hi_lite', 'Hi-Lite:') }}		    
+					{{ Form::text('hi_lite', null, array('placeholder' => 'Hi-Lite', 'class' => 'form-control')) }}
+			    </div>
+				<div class="form-group col-sm-4 col-md-4 col-lg-4">
+					{{ Form::label('seg_bif', 'Seg. Bif:') }}		    
+					{{ Form::text('seg_bif', null, array('placeholder' => 'Seg. Bif', 'class' => 'form-control')) }}
+			    </div>
+				<div class="form-group col-sm-4 col-md-4 col-lg-4">
+					{{ Form::label('aro', 'Aro:') }}		    
+					{{ Form::text('aro', null, array('placeholder' => 'Aro', 'class' => 'form-control')) }}
+			    </div>
+			</div>						
+  		</div> 	
   	</div>
   	<center>
 		 <a href="{{ route('datos.pacientes.index') }}" class="btn btn-default">Limpiar Campos</a>
