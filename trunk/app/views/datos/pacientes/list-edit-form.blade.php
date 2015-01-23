@@ -48,7 +48,7 @@
 		    </div> 	
 			<div class="form-group col-sm-4 col-md-4 col-lg-4">
 		      {{ Form::label('fecha_nacimiento', 'Fecha Nacimiento:') }}
-		      {{ Form::date('fecha_nacimiento', null, array('class' => 'form-control', 'min' => '1950-01-01', 'max' => '2020-12-31')) }}
+		      {{ Form::date('fecha_nacimiento', $datos['paciente']->fecha_nacimiento, array('class' => 'form-control', 'min' => '1950-01-01', 'max' => '2020-12-31')) }}
 		    </div> 
 		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
 				{{ Form::label('primer_nombre', 'Primer Nombre:') }}		    
@@ -124,7 +124,7 @@
   		</div>
   	</div>
   	<center class="margen-bottom">
-		 <a href="{{ route('datos.pacientes.index') }}" class="btn btn-default">Limpiar Campos</a>
+		 <a href="{{ route('datos.pacientes.index') }}" class="btn btn-default">Limpiar</a>
 		{{ Form::button('Guardar', array('type' => 'submit', 'class' => 'btn btn-default')) }}
   	</center>
   	{{ Form::close() }}

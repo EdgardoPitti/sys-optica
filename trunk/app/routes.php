@@ -14,21 +14,11 @@
 Route::get('/', function()
 {
 	if(Auth::check()){
-		return View::make('inicio');
+		return Redirect::route('datos.pacientes.index');
 	}else {
 		return View::make('login');	
 	}		
 });
-/*
-Route::get('add', function(){
-	DB::table('usuarios')->insert(
-            array(
-                'user' => 'manuel',
-                'password' => Hash::make('190749'),
-                'password_crypt' => Crypt::encrypt('190749') 
-            )
-        );
-});*/
 Route::post('sigin', 'AuthController@postLogin');
 Route::get('logout', 'AuthController@getLogout');
 
