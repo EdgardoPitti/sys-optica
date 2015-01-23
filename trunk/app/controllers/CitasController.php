@@ -60,6 +60,7 @@ class CitasController extends \BaseController {
 		$cita->oftalmoscopia_od = $data['oftalmoscopia_od'];
 		$cita->oftalmoscopia_oi = $data['oftalmoscopia_oi'];
 		$cita->queratometria_od = $data['queratometria_od'];
+		$cita->queratometria_oi = $data['queratometria_oi'];
 		$cita->motilidad_ocular_od = $data['motilidad_ocular_od'];
 		$cita->motilidad_ocular_oi = $data['motilidad_ocular_oi'];
 		$cita->sentido_cromatico = $data['sentido_cromatico'];
@@ -68,13 +69,11 @@ class CitasController extends \BaseController {
 		$cita->grad_od_esf = $data['grad_od_esf'];
 		$cita->grad_od_cil = $data['grad_od_cil'];
 		$cita->grad_od_eje = $data['grad_od_eje'];
-		$cita->grad_od_av_u = $data['grad_od_av_u'];
-		$cita->grad_od_av_d = $data['grad_od_av_d'];
+		$cita->grad_od_av = $data['grad_od_av'];		
 		$cita->grad_oi_esf = $data['grad_oi_esf'];
 		$cita->grad_oi_cil = $data['grad_oi_cil'];
 		$cita->grad_oi_eje = $data['grad_oi_eje'];
-		$cita->grad_oi_av_u = $data['grad_oi_av_u'];
-		$cita->grad_oi_av_d = $data['grad_oi_av_d'];
+		$cita->grad_oi_av = $data['grad_oi_av'];
 		$cita->grad_di = $data['grad_di'];
 		$cita->grad_add_od = $data['grad_add_od'];
 		$cita->grad_add_oi = $data['grad_add_oi'];
@@ -142,7 +141,11 @@ class CitasController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		$datos['cita'] = Cita::find($id);
+		$datos['form'] = array('route' => array('datos.citas.update', $id), 'method' => 'PATCH');
+		$datos['paciente'] = Paciente::find($datos['cita']->id);
+		$datos['edad'] = $datos['paciente']->edad($datos['paciente']->fecha_nacimiento);
+		return View::make('datos/citas/list-edit-form')->with('datos', $datos);
 	}
 
 
@@ -180,6 +183,7 @@ class CitasController extends \BaseController {
 		$cita->oftalmoscopia_od = $data['oftalmoscopia_od'];
 		$cita->oftalmoscopia_oi = $data['oftalmoscopia_oi'];
 		$cita->queratometria_od = $data['queratometria_od'];
+		$cita->queratometria_oi = $data['queratometria_oi'];
 		$cita->motilidad_ocular_od = $data['motilidad_ocular_od'];
 		$cita->motilidad_ocular_oi = $data['motilidad_ocular_oi'];
 		$cita->sentido_cromatico = $data['sentido_cromatico'];
@@ -193,8 +197,7 @@ class CitasController extends \BaseController {
 		$cita->grad_oi_esf = $data['grad_oi_esf'];
 		$cita->grad_oi_cil = $data['grad_oi_cil'];
 		$cita->grad_oi_eje = $data['grad_oi_eje'];
-		$cita->grad_oi_av_u = $data['grad_oi_av_u'];
-		$cita->grad_oi_av_d = $data['grad_oi_av_d'];
+		$cita->grad_oi_av = $data['grad_oi_av'];
 		$cita->grad_di = $data['grad_di'];
 		$cita->grad_add_od = $data['grad_add_od'];
 		$cita->grad_add_oi = $data['grad_add_oi'];
