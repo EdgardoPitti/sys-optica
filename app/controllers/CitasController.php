@@ -35,11 +35,11 @@ class CitasController extends \BaseController {
 	public function store()
 	{
 		$data = Input::all();
-		$citas = new Cita;
-		$cita->id_paciente = 1;
+		$cita = new Cita;
+		$cita->id_paciente = $data['id_paciente'];
 		$cita->interrogatorio = $data['interrogatorio'];
 		$cita->exploracion_conj = $data['exploracion_conj'];
-		$cita->esclerotica = $data['esclerotca'];
+		$cita->esclerotica = $data['esclerotica'];
 		$cita->cornea = $data['cornea'];
 		$cita->parpados = $data['parpados'];
 		$cita->pestagna = $data['pestagna'];
@@ -124,7 +124,13 @@ class CitasController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		$paciente = Paciente::find($id);
+		$datos['paciente'] = $paciente;
+		$datos['edad'] = $paciente->edad($paciente->fecha_nacimiento);
+		$datos['cita'] = new Cita;
+		$datos['form'] = array('route' => 'datos.citas.store', 'method' => 'POST');
+		return View::make('datos/citas/list-edit-form')->with('datos', $datos);
+		
 	}
 
 
@@ -150,7 +156,7 @@ class CitasController extends \BaseController {
 	{
 		$data = Input::all();
 		$citas = Cita::find($id);
-		$cita->id_paciente = 1;
+		$cita->id_paciente = $data['id_paciente'];
 		$cita->interrogatorio = $data['interrogatorio'];
 		$cita->exploracion_conj = $data['exploracion_conj'];
 		$cita->esclerotica = $data['esclerotca'];
