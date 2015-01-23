@@ -13,9 +13,9 @@
 	    	<div class="well profile">
 	            <div class="col-sm-12">
 	                <div class="col-xs-12 col-sm-8">
-	                    <h2>Nicole Pearson</h2>
-	                    <p><strong>Código: </strong> ********* </p>
-	                    <p><strong>Edad: </strong> ******* </p>
+	                    <h2>{{ $datos['paciente']->primer_nombre.' '.$datos['paciente']->primer_apellido }}</h2>
+	                    <p><strong>Código: </strong> {{ $datos['paciente']->cedula }} </p>
+	                    <p><strong>Edad: </strong> {{ $datos['edad'] }} Años </p>
 	                    <p><strong>Fecha de la Consulta: </strong>
 	                        *******
 	                    </p>
@@ -29,16 +29,49 @@
 	        </div>    
 		</div>
 	</div>
+	{{--*/$x=1;/*--}}
+		@if(!empty(Cita::where('id_paciente', $datos['paciente']->id)->first()->id))
+			<table class="table table-hover table-bordered cita-anterior" cellpadding="0" cellspacing="0">
+				<thead>
+					<tr class="info">
+						<th>#</th>
+						<th>Fecha de Cita</th>
+						<th>Instrucciones</th>
+						<th>Observaciones</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>					
+					@foreach(Cita::where('id_paciente', $datos['paciente']->id) as $citas)
+						<tr>
+							<td align="center">{{ $x++ }}.</td>
+							<td>{{ $citas->fecha_consulta }}</td>
+							<td>{{ $citas->instrucciones }}</td>
+							<td>{{ $citas->observaciones }}</td>
+							<td><a href="{{ route('datos.citas.edit', $citas->id) }}" class="btn btn-primary btn-sm" data-toggle="tooltip" title="Editar Cita"><span class="glyphicon glyphicon-pencil"></span></a></td>
+						</tr>
+					@endforeach
+				</tbody>
+			</table>
+		@else
+			<center><h3>Este Paciente no tiene Citas.</h3></center>
+		@endif
+
   	<div class="panel panel-default">
   		<div class="panel-heading">
   			<h4 class="panel-title"><i class="fa fa-book"></i> Datos de la Cita</h4>
   		</div>
   		<div class="panel-body">
   			<div class="row">
+				{{ Form::text('id_paciente', $datos['paciente']->id, array('style' => 'display:none')) }}
 				<div class="form-group col-sm-12 col-md-12 col-lg-12">
 			      {{ Form::label('interrogatorio', 'Interrogatorio:') }}
 			      {{ Form::textarea('interrogatorio', null, array('placeholder' => 'Interrogatorio', 'class' => 'form-control', 'size' => '3x2')) }}        
-			    </div>  
+			    </div> 
+				<div class="form-group col-sm-4 col-md-4 col-lg-4">
+			      {{ Form::label('esclerotica', 'Esclerótica:') }}
+			      {{ Form::text('esclerotica', null, array('placeholder' => 'Esclerótica', 'class' => 'form-control')) }}
+			    </div> 
 				<div class="form-group col-sm-4 col-md-4 col-lg-4">
 			      {{ Form::label('exploracion_conj', 'Exploración Conj:') }}
 			      {{ Form::text('exploracion_conj', null, array('placeholder' => 'Exploración Conj', 'class' => 'form-control')) }}
@@ -405,8 +438,8 @@
 			</div>						
   		</div> 	
   	</div>
-  	<center>
-		 <a href="{{ route('datos.pacientes.index') }}" class="btn btn-default">Limpiar Campos</a>
+  	<center class="margen-bottom">
+		 <a href="{{ route('datos.citas.show', $datos['paciente']->id) }}" class="btn btn-default">Limpiar</a>
 		{{ Form::button('Guardar', array('type' => 'submit', 'class' => 'btn btn-default')) }}
   	</center>
   	{{ Form::close() }}
