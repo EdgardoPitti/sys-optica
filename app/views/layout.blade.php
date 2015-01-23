@@ -45,7 +45,7 @@
                 	  	<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-sliders icon"></i> Mantenimiento <span class="caret"></span></a>
                 	  	<ul class="dropdown-menu" role="menu">
                 	  		<li class="active"><a href="{{ route('datos.citas.index') }}">Historia Clínico</a></li>
-                            <li><a href="{{ route('datos.citas.index') }}">Paciente Externo</a></li>
+                            <li><a href="{{ route('datos.pacientes.index') }}">Paciente Externo</a></li>
                             <li><a href="#">Reorganización</a></li>
                 	  	</ul>
                 	  </li>		 
