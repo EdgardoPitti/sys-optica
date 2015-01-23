@@ -61,13 +61,11 @@ CREATE TABLE `citas` (
   `grad_od_esf` varchar(45) DEFAULT NULL,
   `grad_od_cil` varchar(45) DEFAULT NULL,
   `grad_od_eje` varchar(45) DEFAULT NULL,
-  `grad_od_av_u` varchar(45) DEFAULT NULL,
-  `grad_od_av_d` varchar(45) DEFAULT NULL,
+  `grad_od_av` varchar(45) DEFAULT NULL,
   `grad_oi_esf` varchar(45) DEFAULT NULL,
   `grad_oi_cil` varchar(45) DEFAULT NULL,
   `grad_oi_eje` varchar(45) DEFAULT NULL,
-  `grad_oi_av_u` varchar(45) DEFAULT NULL,
-  `grad_oi_av_d` varchar(45) DEFAULT NULL,
+  `grad_oi_av` varchar(45) DEFAULT NULL,
   `grad_di` varchar(45) DEFAULT NULL,
   `grad_add_od` varchar(45) DEFAULT NULL,
   `grad_add_oi` varchar(45) DEFAULT NULL,
@@ -149,7 +147,7 @@ CREATE TABLE `pacientes` (
   `created_at` varchar(45) DEFAULT NULL,
   `updated_at` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -158,7 +156,6 @@ CREATE TABLE `pacientes` (
 
 LOCK TABLES `pacientes` WRITE;
 /*!40000 ALTER TABLE `pacientes` DISABLE KEYS */;
-INSERT INTO `pacientes` VALUES (1,'Edgardo','Joel','Pitti','Sanchez','4-759-372',1,1,'62510254','7743095','ed_joel28@hotmail.com','1991-10-28','Estudiante','San Cristobal','EG',0,'Luis Mendoza','','PN','2015-01-22 16:41:51','2015-01-23 14:09:34');
 /*!40000 ALTER TABLE `pacientes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -211,7 +208,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'manuel','$2y$10$dUmx1ZzSyykOOtgyn/Q0ieGmM2bL8kAzhSo9/MEk7kp69lR61eS/6','tahJbUt3qLSRQFJucVjqCTTxr44Stgevpo3X4cPDW9r9Wd28mobUWcrIQ3o2','eyJpdiI6Ik1KZXJ1XC9DS3B1SXR5TzZKMGk5Q25nPT0iLCJ2YWx1ZSI6IjhDRWlYS241TEkzSWtmQ0dEbnZqV2c9PSIsIm1hYyI6ImIyYWIyMmFjZmNmNWQ3NjM2ZmM4NDU0NWQwZjkxMmQ1ZDlkZTBmZmM3MzM0ZjBlMzM2NjhjYmFlNzA5OTBlYjYifQ',NULL,'2015-01-23 19:48:52');
+INSERT INTO `usuarios` VALUES (1,'manuel','$2y$10$dUmx1ZzSyykOOtgyn/Q0ieGmM2bL8kAzhSo9/MEk7kp69lR61eS/6','8qjwahgJJLpmed9eyYmkC8mECRDLdKjEXC3T2pF1K33CUGRKl6pe11tABmdP','eyJpdiI6Ik1KZXJ1XC9DS3B1SXR5TzZKMGk5Q25nPT0iLCJ2YWx1ZSI6IjhDRWlYS241TEkzSWtmQ0dEbnZqV2c9PSIsIm1hYyI6ImIyYWIyMmFjZmNmNWQ3NjM2ZmM4NDU0NWQwZjkxMmQ1ZDlkZTBmZmM3MzM0ZjBlMzM2NjhjYmFlNzA5OTBlYjYifQ',NULL,'2015-01-23 21:19:35');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -224,4 +221,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-01-23 10:36:13
+-- Dump completed on 2015-01-23 11:20:46

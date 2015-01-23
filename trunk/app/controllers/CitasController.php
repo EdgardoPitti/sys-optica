@@ -73,6 +73,8 @@ class CitasController extends \BaseController {
 		$cita->grad_oi_esf = $data['grad_oi_esf'];
 		$cita->grad_oi_cil = $data['grad_oi_cil'];
 		$cita->grad_oi_eje = $data['grad_oi_eje'];
+		$cita->cap_visual_od = $data['cap_visual_od'];
+		$cita->cap_visual_oi = $data['cap_visual_oi'];
 		$cita->grad_oi_av = $data['grad_oi_av'];
 		$cita->grad_di = $data['grad_di'];
 		$cita->grad_add_od = $data['grad_add_od'];
@@ -110,8 +112,13 @@ class CitasController extends \BaseController {
 		$cita->costo_consulta = $data['costo_consulta'];
 		$cita->examen_realizado = $data['examen_realizado'];
 		$cita->fecha_consulta = $data['fecha_consulta'];
+		$cita->save();
 
-		return Redirect::route('datos.citas.index');
+		$datos['cita'] = new Cita;
+		$datos['form'] = array('route' => 'datos.citas.store', 'method' => 'POST');
+		$datos['paciente'] = Paciente::find($data['id_paciente']);
+		$datos['edad'] = $datos['paciente']->edad($datos['paciente']->fecha_nacimiento);
+		return View::make('datos/citas/list-edit-form')->with('datos', $datos);
 	}
 
 
@@ -127,6 +134,7 @@ class CitasController extends \BaseController {
 		$datos['paciente'] = $paciente;
 		$datos['edad'] = $paciente->edad($paciente->fecha_nacimiento);
 		$datos['cita'] = new Cita;
+		$datos['cita']->fecha_consulta = date("Y-m-d");                         
 		$datos['form'] = array('route' => 'datos.citas.store', 'method' => 'POST');
 		return View::make('datos/citas/list-edit-form')->with('datos', $datos);
 		
@@ -143,7 +151,7 @@ class CitasController extends \BaseController {
 	{
 		$datos['cita'] = Cita::find($id);
 		$datos['form'] = array('route' => array('datos.citas.update', $id), 'method' => 'PATCH');
-		$datos['paciente'] = Paciente::find($datos['cita']->id);
+		$datos['paciente'] = Paciente::find($datos['cita']->id_paciente);
 		$datos['edad'] = $datos['paciente']->edad($datos['paciente']->fecha_nacimiento);
 		return View::make('datos/citas/list-edit-form')->with('datos', $datos);
 	}
@@ -158,11 +166,11 @@ class CitasController extends \BaseController {
 	public function update($id)
 	{
 		$data = Input::all();
-		$citas = Cita::find($id);
+		$cita = Cita::find($id);
 		$cita->id_paciente = $data['id_paciente'];
 		$cita->interrogatorio = $data['interrogatorio'];
 		$cita->exploracion_conj = $data['exploracion_conj'];
-		$cita->esclerotica = $data['esclerotca'];
+		$cita->esclerotica = $data['esclerotica'];
 		$cita->cornea = $data['cornea'];
 		$cita->parpados = $data['parpados'];
 		$cita->pestagna = $data['pestagna'];
@@ -190,10 +198,11 @@ class CitasController extends \BaseController {
 		$cita->tonometria_od = $data['tonometria_od'];
 		$cita->tonometria_oi = $data['tonometria_oi'];
 		$cita->grad_od_esf = $data['grad_od_esf'];
+		$cita->cap_visual_od = $data['cap_visual_od'];
+		$cita->cap_visual_oi = $data['cap_visual_oi'];
 		$cita->grad_od_cil = $data['grad_od_cil'];
 		$cita->grad_od_eje = $data['grad_od_eje'];
-		$cita->grad_od_av_u = $data['grad_od_av_u'];
-		$cita->grad_od_av_d = $data['grad_od_av_d'];
+		$cita->grad_od_av = $data['grad_od_av'];
 		$cita->grad_oi_esf = $data['grad_oi_esf'];
 		$cita->grad_oi_cil = $data['grad_oi_cil'];
 		$cita->grad_oi_eje = $data['grad_oi_eje'];
@@ -234,8 +243,14 @@ class CitasController extends \BaseController {
 		$cita->costo_consulta = $data['costo_consulta'];
 		$cita->examen_realizado = $data['examen_realizado'];
 		$cita->fecha_consulta = $data['fecha_consulta'];
+		$cita->save();
 
-		return Redirect::route('datos.citas.index');
+		$datos['cita'] = new Cita;
+		$datos['form'] = array('route' => 'datos.citas.store', 'method' => 'POST');
+		$datos['paciente'] = Paciente::find($data['id_paciente']);
+		$datos['cita']->fecha_consulta = date("Y-m-d");                         
+		$datos['edad'] = $datos['paciente']->edad($datos['paciente']->fecha_nacimiento);
+		return View::make('datos/citas/list-edit-form')->with('datos', $datos);
 	}
 
 
