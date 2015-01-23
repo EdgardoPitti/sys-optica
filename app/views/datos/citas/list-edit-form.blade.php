@@ -437,6 +437,14 @@
 					{{ Form::label('aro', 'Aro:') }}		    
 					{{ Form::text('aro', null, array('placeholder' => 'Aro', 'class' => 'form-control')) }}
 			    </div>
+			    <div class="form-group col-sm-4 col-md-4 col-lg-4">
+					{{ Form::label('costo_consulta', 'Costo Consulta:') }}		    
+					{{ Form::text('costo_consulta', null, array('placeholder' => 'Costo Consulta', 'class' => 'form-control')) }}
+			    </div>
+			    <div class="form-group col-sm-4 col-md-4 col-lg-4">
+					{{ Form::label('examen_realizado', 'Examen Realizado:') }}		    
+					{{ Form::textarea('examen_realizado', null, array('placeholder' => 'Examen Realizado', 'class' => 'form-control', 'size' => '3x3')) }}
+			    </div>
 			</div>						
   		</div> 	
   	</div>
