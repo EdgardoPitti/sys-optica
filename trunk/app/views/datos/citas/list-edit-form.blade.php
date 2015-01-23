@@ -67,15 +67,15 @@
 				<div class="form-group col-sm-12 col-md-12 col-lg-12">
 			      {{ Form::label('interrogatorio', 'Interrogatorio:') }}
 			      {{ Form::textarea('interrogatorio', null, array('placeholder' => 'Interrogatorio', 'class' => 'form-control', 'size' => '3x2')) }}        
-			    </div> 
-				<div class="form-group col-sm-4 col-md-4 col-lg-4">
-			      {{ Form::label('esclerotica', 'Esclerótica:') }}
-			      {{ Form::text('esclerotica', null, array('placeholder' => 'Esclerótica', 'class' => 'form-control')) }}
-			    </div> 
+			    </div> 				
 				<div class="form-group col-sm-4 col-md-4 col-lg-4">
 			      {{ Form::label('exploracion_conj', 'Exploración Conj:') }}
 			      {{ Form::text('exploracion_conj', null, array('placeholder' => 'Exploración Conj', 'class' => 'form-control')) }}
-			    </div> 	
+			    </div>
+			    <div class="form-group col-sm-4 col-md-4 col-lg-4">
+			      {{ Form::label('esclerotica', 'Esclerótica:') }}
+			      {{ Form::text('esclerotica', null, array('placeholder' => 'Esclerótica', 'class' => 'form-control')) }}
+			    </div>  	
 				<div class="form-group col-sm-4 col-md-4 col-lg-4">
 			      {{ Form::label('cornea', 'Córnea:') }}
 			      {{ Form::text('cornea', null, array('placeholder' => 'Córnea', 'class' => 'form-control')) }}
@@ -96,40 +96,42 @@
 					{{ Form::label('ref_pup', 'Ref. Pup:') }}		    
 					{{ Form::text('ref_pup', null, array('placeholder' => 'Ref. Pup', 'class' => 'form-control')) }}
 			    </div>
-			    <div class="col-sm-6 col-md-6 col-lg-6">
-				    <div class="panel panel-default">
-				    	<div class="panel-heading">
-				    		<h4 class="panel-title">A V sc</h4>	
-				    	</div>
-				    	<div class="panel-body">
-				    		<label>Ojo Derecho (O.D):</label>
-				    		<div class="input-group">
-				    		  {{ Form::text('av_sc_od_u', null, array('placeholder' => 'O.D', 'class' => 'form-control', 'aria-describedby' => 'basic-addon1')) }}				    						    		
-							  <span class="input-group-addon" id="basic-addon1">/</span>
-							  {{ Form::text('av_sc_od_d', null, array('placeholder' => 'O.D', 'class' => 'form-control', 'aria-describedby' => 'basic-addon1')) }} 
-							</div>
-							<label>Ojo Izquierdo (O.I):</label>
-							<div class="input-group">
-								{{ Form::text('av_sc_oi_u', null, array('placeholder' => 'O.I', 'class' => 'form-control', 'aria-describedby' => 'basic-addon2')) }}
-								<span class="input-group-addon" id="basic-addon2">/</span>
-								{{ Form::text('av_sc_oi_d', null, array('placeholder' => 'O.I', 'class' => 'form-control', 'aria-describedby' => 'basic-addon2')) }}
-							</div>			    		
-				    	</div>
+			    <div class="col-sm-12 col-md-12 col-lg-12" style="padding-right:0px;padding-left:0px;">
+				    <div class="col-sm-6 col-md-6 col-lg-6">
+					    <div class="panel panel-default">
+					    	<div class="panel-heading">
+					    		<h4 class="panel-title">A V sc</h4>	
+					    	</div>
+					    	<div class="panel-body">
+					    		<label>Ojo Derecho (O.D):</label>
+					    		<div class="input-group">
+					    		  {{ Form::text('av_sc_od_u', null, array('placeholder' => 'O.D', 'class' => 'form-control', 'aria-describedby' => 'basic-addon1')) }}				    						    		
+								  <span class="input-group-addon" id="basic-addon1">/</span>
+								  {{ Form::text('av_sc_od_d', null, array('placeholder' => 'O.D', 'class' => 'form-control', 'aria-describedby' => 'basic-addon1')) }} 
+								</div>
+								<label>Ojo Izquierdo (O.I):</label>
+								<div class="input-group">
+									{{ Form::text('av_sc_oi_u', null, array('placeholder' => 'O.I', 'class' => 'form-control', 'aria-describedby' => 'basic-addon2')) }}
+									<span class="input-group-addon" id="basic-addon2">/</span>
+									{{ Form::text('av_sc_oi_d', null, array('placeholder' => 'O.I', 'class' => 'form-control', 'aria-describedby' => 'basic-addon2')) }}
+								</div>			    		
+					    	</div>
+					    </div>
 				    </div>
+				    <div class="col-sm-6 col-md-6 col-lg-6">
+					    <div class="panel panel-default">
+					    	<div class="panel-heading">
+					    		<h4 class="panel-title">Cap. Visual</h4>	
+					    	</div>
+					    	<div class="panel-body">
+					    		{{ Form::label('cap_visual_od', 'Ojo Derecho (O.D):') }}		    
+								{{ Form::text('cap_visual_od', null, array('placeholder' => 'O.D', 'class' => 'form-control')) }}
+					    		{{ Form::label('cap_visual_oi', 'Ojo Izquierdo (O.I):') }}		    
+								{{ Form::text('cap_visual_oi', null, array('placeholder' => 'O.I', 'class' => 'form-control')) }}
+					    	</div>
+					    </div>
+					</div>
 			    </div>
-			    <div class="col-sm-6 col-md-6 col-lg-6">
-				    <div class="panel panel-default">
-				    	<div class="panel-heading">
-				    		<h4 class="panel-title">Cap. Visual</h4>	
-				    	</div>
-				    	<div class="panel-body">
-				    		{{ Form::label('cap_visual_od', 'Ojo Derecho (O.D):') }}		    
-							{{ Form::text('cap_visual_od', null, array('placeholder' => 'O.D', 'class' => 'form-control')) }}
-				    		{{ Form::label('cap_visual_oi', 'Ojo Izquierdo (O.I):') }}		    
-							{{ Form::text('cap_visual_oi', null, array('placeholder' => 'O.I', 'class' => 'form-control')) }}
-				    	</div>
-				    </div>
-				</div>
 				<div class="col-sm-12 col-md-12 col-lg-12">
 					<div class="panel panel-default">
 				    	<div class="panel-heading">
