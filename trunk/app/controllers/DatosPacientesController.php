@@ -18,7 +18,7 @@ class DatosPacientesController extends BaseController {
 			$c = DB::select("SELECT count(id) as cantidad FROM pacientes WHERE concat(`primer_nombre`,' ',`segundo_nombre`,' ',`primer_apellido`,' ',`segundo_apellido`) LIKE '%".$search."%'");
 			$cantidad = $c[0]->cantidad;
 		}	
-		
+		$host = $_SERVER['HTTP_HOST'];
 		$comilla = "'";
 		$n = 1;
 		
@@ -40,7 +40,7 @@ class DatosPacientesController extends BaseController {
 					"cel": "'.$datos_pacientes[0]->celular.'",
 					"tel": "'.$datos_pacientes[0]->telefono.'",
 					"email": "'.$datos_pacientes[0]->email.'",';
-				$data .= '"url": "<a href='.$comilla.URL::to('datos/pacientes/'.$datos_pacientes[0]->id.'/edit').$comilla.' class='.$comilla.'btn btn-primary btn-sm'.$comilla.' data-toggle='.$comilla.'tooltip'.$comilla.'  title='.$comilla.'Editar Paciente'.$comilla.'><span class='.$comilla.'glyphicon glyphicon-pencil'.$comilla.'></span></a>"';											
+				$data .= '"url": "<a href='.$comilla.'http://'.$host.'/sys-optica/public/datos/citas/'.$datos_pacientes[0]->id.''.$comilla.' class='.$comilla.'btn btn-primary btn-sm'.$comilla.' data-toggle='.$comilla.'tooltip'.$comilla.'  title='.$comilla.'Crear Cita'.$comilla.'><span class='.$comilla.'glyphicon glyphicon-list-alt'.$comilla.'></span></a> <a href='.$comilla.URL::to('datos/pacientes/'.$datos_pacientes[0]->id.'/edit').$comilla.' class='.$comilla.'btn btn-primary btn-sm'.$comilla.' data-toggle='.$comilla.'tooltip'.$comilla.'  title='.$comilla.'Editar Paciente'.$comilla.'><span class='.$comilla.'glyphicon glyphicon-pencil'.$comilla.'></span></a>"';											
 					
 				$data .='
 					}';
