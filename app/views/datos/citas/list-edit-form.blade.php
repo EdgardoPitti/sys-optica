@@ -200,23 +200,23 @@
 				    		<h4 class="panel-title">Queratrometria</h4>	
 				    	</div>
 				    	<div class="panel-body">
-				    		{{ Form::label('queratrometria_od', 'Ojo Derecho:') }}		    
-							{{ Form::text('queratrometria_od', null, array('placeholder' => 'O.D', 'class' => 'form-control')) }}
-							{{ Form::label('queratrometria_oi', 'Ojo Izquierdo:') }}		    
-							{{ Form::text('queratrometria_oi', null, array('placeholder' => 'O.I', 'class' => 'form-control')) }}
+				    		{{ Form::label('queratometria_od', 'Ojo Derecho:') }}		    
+							{{ Form::text('queratometria_od', null, array('placeholder' => 'O.D', 'class' => 'form-control')) }}
+							{{ Form::label('queratometria_oi', 'Ojo Izquierdo:') }}		    
+							{{ Form::text('queratometria_oi', null, array('placeholder' => 'O.I', 'class' => 'form-control')) }}
 				    	</div>
 				    </div>
 				</div>
 			    <div class="col-sm-6 col-md-6 col-lg-6">
 				    <div class="panel panel-default">
 				    	<div class="panel-heading">
-				    		<h4 class="panel-title">Mortilidad Ocular</h4>	
+				    		<h4 class="panel-title">Motilidad Ocular</h4>	
 				    	</div>
 				    	<div class="panel-body">
-				    		{{ Form::label('mortilidad_ocular_od', 'Ojo Derecho:') }}		    
-							{{ Form::text('mortilidad_ocular_od', null, array('placeholder' => 'O.D', 'class' => 'form-control')) }}
-							{{ Form::label('mortilidad_ocular_oi', 'Ojo Izquierdo:') }}		    
-							{{ Form::text('mortilidad_ocular_oi', null, array('placeholder' => 'O.I', 'class' => 'form-control')) }}
+				    		{{ Form::label('motilidad_ocular_od', 'Ojo Derecho:') }}		    
+							{{ Form::text('motilidad_ocular_od', null, array('placeholder' => 'O.D', 'class' => 'form-control')) }}
+							{{ Form::label('motilidad_ocular_oi', 'Ojo Izquierdo:') }}		    
+							{{ Form::text('motilidad_ocular_oi', null, array('placeholder' => 'O.I', 'class' => 'form-control')) }}
 				    	</div>
 				    </div>
 				</div>
