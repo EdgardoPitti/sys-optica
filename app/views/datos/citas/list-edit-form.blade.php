@@ -17,7 +17,7 @@
 	                    <p><strong>Código: </strong> {{ $datos['paciente']->cedula }} </p>
 	                    <p><strong>Edad: </strong> {{ $datos['edad'] }} Años </p>
 	                    <p><strong>Fecha de la Consulta: </strong>
-	                        *******
+	                        {{ Form::date('fecha_consulta', null, array('class' => 'form-control')) }}
 	                    </p>
 	                </div>             
 	                <div class="col-xs-12 col-sm-4 text-center">
