@@ -16,8 +16,8 @@
               </span>
             </div>
           </div>
-          <div class="panel-body" style="display:block;">            
-        	  <div class="overthrow" style="height:250px;">        
+          <div class="panel-body" style="display:none;">            
+        	  <div class="overthrow" style="height:200px;">        
 					<table id="pacientes">
 					    <thead>
 						    <tr class="info">
@@ -123,7 +123,7 @@
 		    </div>
   		</div>
   	</div>
-  	<center>
+  	<center class="margen-bottom">
 		 <a href="{{ route('datos.pacientes.index') }}" class="btn btn-default">Limpiar Campos</a>
 		{{ Form::button('Guardar', array('type' => 'submit', 'class' => 'btn btn-default')) }}
   	</center>
