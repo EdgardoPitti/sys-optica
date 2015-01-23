@@ -7,7 +7,6 @@
 
 
 	{{ Form::model($datos['cita'], $datos['form'], array('role' => 'form')) }}
-	
 	<div class="row">
 		<div class="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
 	    	<div class="well profile">
@@ -17,7 +16,7 @@
 	                    <p><strong>Código: </strong> {{ $datos['paciente']->cedula }} </p>
 	                    <p><strong>Edad: </strong> {{ $datos['edad'] }} Años </p>
 	                    <p><strong>Fecha de la Consulta: </strong>
-	                        {{ Form::date('fecha_consulta', null, array('class' => 'form-control')) }}
+	                        {{ Form::date('fecha_consulta', $datos['cita']->fecha_consulta, array('class' => 'form-control')) }}
 	                    </p>
 	                </div>             
 	                <div class="col-xs-12 col-sm-4 text-center">
@@ -42,7 +41,7 @@
 					</tr>
 				</thead>
 				<tbody>					
-					@foreach(Cita::where('id_paciente', $datos['paciente']->id) as $citas)
+					@foreach(Cita::where('id_paciente', $datos['paciente']->id)->orderBy('fecha_consulta', 'desc')->get() as $citas)
 						<tr>
 							<td align="center">{{ $x++ }}.</td>
 							<td>{{ $citas->fecha_consulta }}</td>
