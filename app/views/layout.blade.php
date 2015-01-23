@@ -48,7 +48,6 @@
                 	  <li class="dropdown open">
                 	  	<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-sliders icon"></i> Mantenimiento <span class="caret"></span></a>
                 	  	<ul class="dropdown-menu" role="menu">
-                	  		<li class="active"><a href="{{ route('datos.citas.index') }}">Historia Clínico</a></li>
                             <li><a href="{{ route('datos.pacientes.index') }}">Paciente Externo</a></li>
                             <li><a href="#">Reorganización</a></li>
                 	  	</ul>
@@ -100,8 +99,7 @@
                                 <i class="glyphicon glyphicon-chevron-down  pull-right"></i> 
                               </a>                                
                               <ul id="collapseOne" class="nav nav-pills submenu nav-stacked panel-collapse collapse"  role="tabpanel"  aria-labelledby="collapseOne">
-                                <li class="activo"><a href="{{ route('datos.citas.index') }}">Historia Clínico</a></li>
-                                <li><a href="{{ route('datos.pacientes.index') }}">Paciente Externo</a></li>
+                                <li class="activo"><a href="{{ route('datos.pacientes.index') }}">Paciente Externo</a></li>
                                 <li><a href="#">Reorganización</a></li>
                               </ul>
                           </div>

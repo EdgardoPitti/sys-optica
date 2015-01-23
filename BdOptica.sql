@@ -158,7 +158,7 @@ CREATE TABLE `pacientes` (
 
 LOCK TABLES `pacientes` WRITE;
 /*!40000 ALTER TABLE `pacientes` DISABLE KEYS */;
-INSERT INTO `pacientes` VALUES (1,'Edgardo','Joel','Pitti','Sanchez','4-759-372',1,1,'62510254','7743095','ed_joel28@hotmail.com','','Estudiante','San Cristobal','EG',0,'Luis Mendoza','','PN','2015-01-22 16:41:51','2015-01-22 16:54:10');
+INSERT INTO `pacientes` VALUES (1,'Edgardo','Joel','Pitti','Sanchez','4-759-372',1,1,'62510254','7743095','ed_joel28@hotmail.com','1991-10-28','Estudiante','San Cristobal','EG',0,'Luis Mendoza','','PN','2015-01-22 16:41:51','2015-01-23 14:09:34');
 /*!40000 ALTER TABLE `pacientes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -185,6 +185,35 @@ LOCK TABLES `tipos_sangre` WRITE;
 INSERT INTO `tipos_sangre` VALUES (1,'A+'),(2,'A-'),(3,'B+'),(4,'B-'),(5,'O+'),(6,'O-'),(7,'AB+'),(8,'AB-');
 /*!40000 ALTER TABLE `tipos_sangre` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `usuarios`
+--
+
+DROP TABLE IF EXISTS `usuarios`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user` varchar(45) DEFAULT NULL,
+  `password` varchar(200) DEFAULT NULL,
+  `remember_token` varchar(200) DEFAULT NULL,
+  `password_crypt` varchar(200) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `usuarios`
+--
+
+LOCK TABLES `usuarios` WRITE;
+/*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
+INSERT INTO `usuarios` VALUES (1,'manuel','$2y$10$dUmx1ZzSyykOOtgyn/Q0ieGmM2bL8kAzhSo9/MEk7kp69lR61eS/6','tahJbUt3qLSRQFJucVjqCTTxr44Stgevpo3X4cPDW9r9Wd28mobUWcrIQ3o2','eyJpdiI6Ik1KZXJ1XC9DS3B1SXR5TzZKMGk5Q25nPT0iLCJ2YWx1ZSI6IjhDRWlYS241TEkzSWtmQ0dEbnZqV2c9PSIsIm1hYyI6ImIyYWIyMmFjZmNmNWQ3NjM2ZmM4NDU0NWQwZjkxMmQ1ZDlkZTBmZmM3MzM0ZjBlMzM2NjhjYmFlNzA5OTBlYjYifQ',NULL,'2015-01-23 19:48:52');
+/*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -195,4 +224,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-01-22 13:38:06
+-- Dump completed on 2015-01-23 10:36:13
