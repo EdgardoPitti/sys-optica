@@ -19,20 +19,20 @@
 <body>
 	<div id="wrap">		
 		<div id="main" class="clearf">
-            <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="nav">
                 <div class="navbar-banner">
                     <a href="#" class="navbar-brand">Opticentro Vega</a>                        
                 </div>
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle navbar-toggle-left toggle-menu menu-left push-body" data-toggle="collapse" data-target="#nav-left">
-                        <i class="fa fa-bars"></i>
+                        <i class="fa fa-bars fa-1x"></i>
                     </button>
                     <div class="dropdown">
 					  <button id="dLabel" type="button" class="navbar-toggle navbar-toggle-right dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
 					  	<i class="glyphicon glyphicon-cog"></i>
 					  </button>
 					  <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dLabel" style="margin:48px 5px 0px 0px;">
-					    <li><a href="#"><i class="fa fa-fw fa-power-off"></i> Cerrar Sesión</a></li>                            
+					    <li><a href="#"><i class="fa fa-fw fa-power-off fa-2x"></i> Cerrar Sesión</a></li>                            
 					  </ul>
 					</div>
                    		
@@ -44,8 +44,8 @@
                 	  <li class="dropdown open">
                 	  	<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-sliders icon"></i> Mantenimiento <span class="caret"></span></a>
                 	  	<ul class="dropdown-menu" role="menu">
-                	  		<li class="active"><a href="#">Historia Clínico</a></li>
-                            <li><a href="#">Paciente Externo</a></li>
+                	  		<li class="active"><a href="{{ route('datos.citas.index') }}">Historia Clínico</a></li>
+                            <li><a href="{{ route('datos.citas.index') }}">Paciente Externo</a></li>
                             <li><a href="#">Reorganización</a></li>
                 	  	</ul>
                 	  </li>		 
@@ -87,7 +87,7 @@
                 <div class="row">
                     <div class="hidden-xs col-sm-3 col-md-3 col-lg-3">
                     
-                        <div class="list-group" id="accordion"  aria-multiselectable="false">
+                        <div class="list-group nav-aside" id="accordion"  aria-multiselectable="false">
                           <div class="panel panel-default mg-panel" >
                               <a data-toggle="collapse" class="list-group-item" href="#collapseOne" data-parent="#accordion" aria-expanded="false" aria-controls="collapseOne">
                                 <i class="fa fa-sliders icon"></i> Mantenimiento
@@ -152,15 +152,17 @@
 		</div>
 	{{ HTML::script('assets/js/jquery.js') }}
  	{{ HTML::script('assets/js/overthrow/overthrow-detect.js') }}
-   {{ HTML::script('assets/js/overthrow/overthrow-init.js') }}
-   {{ HTML::script('assets/js/overthrow/overthrow-polyfill.js') }}
-   {{ HTML::script('assets/js/overthrow/overthrow-toss.js') }}  
+  {{ HTML::script('assets/js/overthrow/overthrow-init.js') }}
+  {{ HTML::script('assets/js/overthrow/overthrow-polyfill.js') }}
+  {{ HTML::script('assets/js/overthrow/overthrow-toss.js') }}  
 	{{ HTML::script('assets/js/bootstrap.min.js') }}
-	{{ HTML::script('assets/js/jPushMenu.js') }}
-    {{ HTML::script('assets/js/v2p.js') }}
-    {{ HTML::script('assets/js/bootstrap-table.js') }}
-    {{ HTML::script('assets/js/bootstrap-table-es.js') }}
-    {{ HTML::script('assets/js/dataGrid.js') }}
+  {{ HTML::script('assets/js/jPushMenu.js') }}
+  {{ HTML::script('assets/js/v2p.js') }}
+  {{ HTML::script('assets/js/jquery-scrolltofixed-min.js') }}
+  {{ HTML::script('assets/js/script.js') }}
+  {{ HTML::script('assets/js/bootstrap-table.js') }}
+  {{ HTML::script('assets/js/bootstrap-table-es.js') }}
+  {{ HTML::script('assets/js/dataGrid.js') }}
     <script type="text/javascript">
       //<![CDATA[
       $(document).ready(function(){
