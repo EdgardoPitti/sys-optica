@@ -6,10 +6,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<title>@yield('title', 'Opticentro Vega - Su optica amiga')</title>	
 	{{ HTML::style('assets/css/bootstrap.css', array('media'=>'screen', 'rel' => 'stylesheet')) }}	
+	{{ HTML::style('assets/css/datepicker3.css') }}	
 	{{ HTML::style('assets/css/font-awesome.min.css', array('media' => 'screen', 'rel' => 'stylesheet')) }}
 	{{ HTML::style('assets/css/style.css', array('media' => 'screen', 'rel' => 'stylesheet')) }}
 	{{ HTML::style('assets/css/base.css', array('media' => 'screen', 'rel' => 'stylesheet')) }}
-    {{ HTML::style('assets/css/bootstrap-table.css') }}	
+   {{ HTML::style('assets/css/bootstrap-table.css') }}	
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       {{ HTML::script('assets/js/html5shiv.js') }}
@@ -165,11 +166,23 @@
 		</div>
 	@endif
 	{{ HTML::script('assets/js/jquery.js') }}
+	{{ HTML::script('assets/js/bootstrap.min.js') }}
+	{{ HTML::script('assets/js/bootstrap-datepicker.js') }}
+	{{ HTML::script('assets/js/locales/bootstrap-datepicker.es.js') }}
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('.datepicker').datepicker({
+			    language: "es",
+			    format: 'yyyy-mm-dd',
+			    orientation: "top auto",
+			    todayHighlight: true
+			});
+		});
+	</script>   
  	{{ HTML::script('assets/js/overthrow/overthrow-detect.js') }}
   {{ HTML::script('assets/js/overthrow/overthrow-init.js') }}
   {{ HTML::script('assets/js/overthrow/overthrow-polyfill.js') }}
   {{ HTML::script('assets/js/overthrow/overthrow-toss.js') }}  
-	{{ HTML::script('assets/js/bootstrap.min.js') }}
   {{ HTML::script('assets/js/jPushMenu.js') }}
   {{ HTML::script('assets/js/v2p.js') }}
   {{ HTML::script('assets/js/jquery-scrolltofixed-min.js') }}
@@ -192,6 +205,7 @@
 		var f = new Date();		
 		$("#tiempo").html(diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
 	</script>
+	
 
 </body>
 </html>

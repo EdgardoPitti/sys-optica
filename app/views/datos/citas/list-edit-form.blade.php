@@ -11,12 +11,12 @@
 		<div class="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
 	    	<div class="well profile">
 	            <div class="col-sm-12">
-	                <div class="col-xs-12 col-sm-8">
+	                <div class="col-xs-12 col-sm-8" >
 	                    <h2>{{ $datos['paciente']->primer_nombre.' '.$datos['paciente']->primer_apellido }}</h2>
 	                    <p><strong>Código: </strong> {{ $datos['paciente']->cedula }} </p>
 	                    <p><strong>Edad: </strong> {{ $datos['edad'] }} Años </p>
 	                    <p><strong>Fecha de la Consulta: </strong>
-	                        {{ Form::date('fecha_consulta', $datos['cita']->fecha_consulta, array('class' => 'form-control')) }}
+	                        {{ Form::text('fecha_consulta', $datos['cita']->fecha_consulta, array('class' => 'form-control datepicker', 'placeholder' => 'AAAA-MM-DD')) }}
 	                    </p>
 	                </div>             
 	                <div class="col-xs-12 col-sm-4 text-center">

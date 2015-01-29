@@ -48,7 +48,7 @@
 		    </div> 	
 			<div class="form-group col-sm-4 col-md-4 col-lg-4">
 		      {{ Form::label('fecha_nacimiento', 'Fecha Nacimiento:') }}
-		      {{ Form::date('fecha_nacimiento', $datos['paciente']->fecha_nacimiento, array('class' => 'form-control', 'min' => '1950-01-01', 'max' => '2020-12-31')) }}
+		      {{ Form::text('fecha_nacimiento', $datos['paciente']->fecha_nacimiento, array('class' => 'form-control datepicker', 'placeholder' => 'AAAA-MM-DD', 'min' => '1950-01-01', 'max' => '2020-12-31')) }}
 		    </div> 
 		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
 				{{ Form::label('primer_nombre', 'Primer Nombre:') }}		    
