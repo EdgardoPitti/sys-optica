@@ -29,14 +29,14 @@
                     <button type="button" class="navbar-toggle navbar-toggle-left toggle-menu menu-left push-body" data-toggle="collapse" data-target="#nav-left">
                         <i class="fa fa-bars fa-1x"></i>
                     </button>
-                  @endif
                     <div class="dropdown">
 					  <button id="dLabel" type="button" class="navbar-toggle navbar-toggle-right dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
 					  	<i class="glyphicon glyphicon-cog"></i>
 					  </button>
 					  <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dLabel" style="margin:48px 5px 0px 0px;">
-					    <li><a href="{{ URL::to('logout') }}"><i class="fa fa-fw fa-power-off fa-2x"></i> Cerrar Sesión</a></li>                            
+					    <li><a href="{{ URL::to('logout') }}"><i class="fa fa-fw fa-power-off fa-1x"></i> Cerrar Sesión</a></li>                            
 					  </ul>
+                  @endif
 					</div>
                    		
                 </div>
@@ -174,8 +174,10 @@
 			$('.datepicker').datepicker({
 			    language: "es",
 			    format: 'yyyy-mm-dd',
-			    orientation: "top auto",
-			    todayHighlight: true
+			    todayBtn: "linked",	    
+			    todayHighlight: true,
+			    orientation: "bottom auto",
+			    autoclose: false
 			});
 		});
 	</script>   
