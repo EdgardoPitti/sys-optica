@@ -132,7 +132,12 @@ class CitasController extends \BaseController {
 	{
 		$paciente = Paciente::find($id);
 		$datos['paciente'] = $paciente;
-		$datos['edad'] = $paciente->edad($paciente->fecha_nacimiento);
+		if(!empty($paciente->fecha_nacimiento)){
+			$datos['edad'] = $paciente->edad($paciente->fecha_nacimiento);
+		}else{
+			$datos['edad'] = 0;
+		}
+		
 		$datos['cita'] = new Cita;
 		$datos['cita']->fecha_consulta = date("Y-m-d");                         
 		$datos['form'] = array('route' => 'datos.citas.store', 'method' => 'POST');
