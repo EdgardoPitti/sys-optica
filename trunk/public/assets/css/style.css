@@ -214,7 +214,19 @@ h2.titulo{
 }
 .margen-bottom{
 	margin-bottom: 15px;
-}/*
+}
+.tabla-cita{
+	margin-bottom: 15px;
+}
+.table > thead > tr > td.white,
+.table > tbody > tr > td.white,
+.table > tfoot > tr > td.white,
+.table > thead > tr.white > td,
+.table > tbody > tr.white > td,
+.table > tfoot > tr.white > td{
+  background-color: #fff;
+}
+/*
 .container-login button:hover,
 .container-login button:focus {
     backgr ound: #de2f18;
