@@ -64,7 +64,8 @@
 				</div>
 			</center>		
 		@endif
-
+	<a href="{{ route('datos.citas.show', $datos['paciente']->id) }}" class="btn btn-default">Limpiar Campos</a>
+	<br>
   	<div class="panel panel-default">
   		<div class="panel-heading">
   			<h4 class="panel-title"><i class="fa fa-book"></i> Datos de la Cita</h4>
