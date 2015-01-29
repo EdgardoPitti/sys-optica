@@ -1,6 +1,5 @@
 $(function () {
  		var host = window.location.host; 
-	
 		$("#pacientes").bootstrapTable({
 			method: 'get',
 			url: 'http://'+host+'/sys-optica/public/getpacientes',

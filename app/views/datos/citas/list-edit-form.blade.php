@@ -87,7 +87,7 @@
 			    </div> 
 			    <div class="form-group col-sm-4 col-md-4 col-lg-4">
 					{{ Form::label('parpados', 'Párpados:') }}		    
-					{{ Form::text('parpados', null, array('placeholder' => 'Párpados', 'class' => 'form-control', 'required' => 'required')) }}
+					{{ Form::text('parpados', null, array('placeholder' => 'Párpados', 'class' => 'form-control')) }}
 			    </div>			                       
 	  		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
 					{{ Form::label('pestagna', 'Pestañas:') }}		    
@@ -95,7 +95,7 @@
 			    </div>			                       
 			    <div class="form-group col-sm-4 col-md-4 col-lg-4">
 					{{ Form::label('pupilas', 'Pupilas:') }}		    
-					{{ Form::text('pupilas', null, array('placeholder' => 'Pupilas', 'class' => 'form-control', 'required' => 'required')) }}
+					{{ Form::text('pupilas', null, array('placeholder' => 'Pupilas', 'class' => 'form-control')) }}
 			    </div>			                       		    
 			    <div class="form-group col-sm-4 col-md-4 col-lg-4">
 					{{ Form::label('ref_pup', 'Ref. Pup:') }}		    
@@ -412,27 +412,27 @@
 			    </div>	
 			    <div class="form-group col-sm-4 col-md-4 col-lg-4">
 					{{ Form::label('endurecido', 'Endurecido:') }}		    
-					{{ Form::text('endurecido', null, array('placeholder' => 'Endurecido', 'class' => 'form-control')) }}
+					{{ Form::checkbox('endurecido', 1, null,  array('class' => 'form-control cmn-toggle cmn-toggle-round-flat')) }}
 			    </div> 
 			    <div class="form-group col-sm-4 col-md-4 col-lg-4">
 					{{ Form::label('tratam_uv', 'Tratamiento U.V:') }}		    
-					{{ Form::text('tratam_uv', null, array('placeholder' => 'Tratamiento U.V', 'class' => 'form-control')) }}
+					{{ Form::checkbox('tratam_uv', 1, null,  array('class' => 'form-control cmn-toggle cmn-toggle-round-flat')) }}
 			    </div>    
 			    <div class="form-group col-sm-4 col-md-4 col-lg-4">
 					{{ Form::label('tratam_anti_rayas', 'Tratamiento Anti Rayas:') }}		    
-					{{ Form::text('tratam_anti_rayas', null, array('placeholder' => 'Tratamiento Anti Rayas', 'class' => 'form-control')) }}
+					{{ Form::checkbox('tratam_anti_rayas', 1, null,  array('class' => 'form-control cmn-toggle cmn-toggle-round-flat')) }}
 			    </div>   
 			    <div class="form-group col-sm-4 col-md-4 col-lg-4">
 					{{ Form::label('tratam_anti_reflejos', 'Tratamiento Anti Reflejos:') }}		    
-					{{ Form::text('tratam_anti_reflejos', null, array('placeholder' => 'Tratamiento Anti Raeflejos', 'class' => 'form-control')) }}
+					{{ Form::checkbox('tratam_anti_reflejos', 1, null,  array('class' => 'form-control cmn-toggle cmn-toggle-round-flat')) }}
 			    </div>
 			    <div class="form-group col-sm-4 col-md-4 col-lg-4">
 					{{ Form::label('hi_index', 'Hi-Index:') }}		    
-					{{ Form::text('hi_index', null, array('placeholder' => 'Hi-Index', 'class' => 'form-control')) }}
+					{{ Form::checkbox('hi_index', 1, null,  array('class' => 'form-control cmn-toggle cmn-toggle-round-flat')) }}
 			    </div>
 			    <div class="form-group col-sm-4 col-md-4 col-lg-4">
 					{{ Form::label('hi_lite', 'Hi-Lite:') }}		    
-					{{ Form::text('hi_lite', null, array('placeholder' => 'Hi-Lite', 'class' => 'form-control')) }}
+					{{ Form::checkbox('hi_lite', 1, null,  array('class' => 'form-control cmn-toggle cmn-toggle-round-flat')) }}
 			    </div>
 				<div class="form-group col-sm-4 col-md-4 col-lg-4">
 					{{ Form::label('seg_bif', 'Seg. Bif:') }}		    
