@@ -101,12 +101,43 @@ class CitasController extends \BaseController {
 		$cita->oi_alt = $data['oi_alt'];
 		$cita->oi_tipo = $data['oi_tipo'];
 		$cita->observaciones = $data['observaciones'];
-		$cita->endurecido = $data['endurecido'];
-		$cita->tratam_uv = $data['tratam_uv'];
-		$cita->tratam_anti_rayas = $data['tratam_anti_rayas'];
-		$cita->tratam_anti_reflejos = $data['tratam_anti_reflejos'];
-		$cita->hi_index = $data['hi_index'];
-		$cita->hi_lite = $data['hi_lite'];
+		
+		if(empty($data['endurecido'])){
+			$cita->endurecido = 0;
+		}else{
+			$cita->endurecido = $data['endurecido'];
+		}
+		
+		if(empty($data['tratam_uv'])){
+			$cita->tratam_uv = 0;
+		}else{
+			$cita->tratam_uv = $data['tratam_uv'];
+		}
+		
+		if(empty($data['tratam_anti_rayas'])){
+			$cita->tratam_anti_rayas = 0;
+		}else{
+			$cita->tratam_anti_rayas = $data['tratam_anti_rayas'];
+		}
+		
+		if(empty($data['tratam_anti_reflejos'])){
+			$cita->tratam_anti_reflejos = 0;
+		}else{
+			$cita->tratam_anti_reflejos = $data['tratam_anti_reflejos'];
+		}
+		
+		if(empty($data['hi_index'])){
+			$cita->hi_index = 0;
+		}else{
+			$cita->hi_index = $data['hi_index'];
+		}
+		
+		if(empty($data['hi_lite'])){
+			$cita->hi_lite = 0;
+		}else{
+			$cita->hi_lite = $data['hi_lite'];
+		}
+		
 		$cita->seg_bif = $data['seg_bif'];
 		$cita->aro = $data['aro'];
 		$cita->costo_consulta = $data['costo_consulta'];
@@ -115,9 +146,16 @@ class CitasController extends \BaseController {
 		$cita->save();
 
 		$datos['cita'] = new Cita;
+		$datos['cita']->fecha_consulta = date("Y-m-d");  
 		$datos['form'] = array('route' => 'datos.citas.store', 'method' => 'POST');
 		$datos['paciente'] = Paciente::find($data['id_paciente']);
-		$datos['edad'] = $datos['paciente']->edad($datos['paciente']->fecha_nacimiento);
+		
+		if(empty($datos['paciente']->fecha_nacimiento)){
+			$datos['edad'] = 0;
+		}else{
+			$datos['edad'] = $datos['paciente']->edad($datos['paciente']->fecha_nacimiento);
+		}  
+		
 		return View::make('datos/citas/list-edit-form')->with('datos', $datos);
 	}
 
@@ -132,6 +170,7 @@ class CitasController extends \BaseController {
 	{
 		$paciente = Paciente::find($id);
 		$datos['paciente'] = $paciente;
+		
 		if(!empty($paciente->fecha_nacimiento)){
 			$datos['edad'] = $paciente->edad($paciente->fecha_nacimiento);
 		}else{
@@ -157,7 +196,12 @@ class CitasController extends \BaseController {
 		$datos['cita'] = Cita::find($id);
 		$datos['form'] = array('route' => array('datos.citas.update', $id), 'method' => 'PATCH');
 		$datos['paciente'] = Paciente::find($datos['cita']->id_paciente);
-		$datos['edad'] = $datos['paciente']->edad($datos['paciente']->fecha_nacimiento);
+		
+		if(empty($datos['paciente']->fecha_nacimiento)){
+			$datos['edad'] = 0;
+		}else{
+			$datos['edad'] = $datos['paciente']->edad($datos['paciente']->fecha_nacimiento);
+		}  
 		return View::make('datos/citas/list-edit-form')->with('datos', $datos);
 	}
 
@@ -237,12 +281,42 @@ class CitasController extends \BaseController {
 		$cita->oi_alt = $data['oi_alt'];
 		$cita->oi_tipo = $data['oi_tipo'];
 		$cita->observaciones = $data['observaciones'];
-		$cita->endurecido = $data['endurecido'];
-		$cita->tratam_uv = $data['tratam_uv'];
-		$cita->tratam_anti_rayas = $data['tratam_anti_rayas'];
-		$cita->tratam_anti_reflejos = $data['tratam_anti_reflejos'];
-		$cita->hi_index = $data['hi_index'];
-		$cita->hi_lite = $data['hi_lite'];
+		
+		if(empty($data['endurecido'])){
+			$cita->endurecido = 0;
+		}else{
+			$cita->endurecido = $data['endurecido'];
+		}
+		
+		if(empty($data['tratam_uv'])){
+			$cita->tratam_uv = 0;
+		}else{
+			$cita->tratam_uv = $data['tratam_uv'];
+		}
+		
+		if(empty($data['tratam_anti_rayas'])){
+			$cita->tratam_anti_rayas = 0;
+		}else{
+			$cita->tratam_anti_rayas = $data['tratam_anti_rayas'];
+		}
+		
+		if(empty($data['tratam_anti_reflejos'])){
+			$cita->tratam_anti_reflejos = 0;
+		}else{
+			$cita->tratam_anti_reflejos = $data['tratam_anti_reflejos'];
+		}
+		
+		if(empty($data['hi_index'])){
+			$cita->hi_index = 0;
+		}else{
+			$cita->hi_index = $data['hi_index'];
+		}
+		
+		if(empty($data['hi_lite'])){
+			$cita->hi_lite = 0;
+		}else{
+			$cita->hi_lite = $data['hi_lite'];
+		}
 		$cita->seg_bif = $data['seg_bif'];
 		$cita->aro = $data['aro'];
 		$cita->costo_consulta = $data['costo_consulta'];
@@ -253,8 +327,14 @@ class CitasController extends \BaseController {
 		$datos['cita'] = new Cita;
 		$datos['form'] = array('route' => 'datos.citas.store', 'method' => 'POST');
 		$datos['paciente'] = Paciente::find($data['id_paciente']);
-		$datos['cita']->fecha_consulta = date("Y-m-d");                         
-		$datos['edad'] = $datos['paciente']->edad($datos['paciente']->fecha_nacimiento);
+		$datos['cita']->fecha_consulta = date("Y-m-d");  
+		
+		if(empty($datos['paciente']->fecha_nacimiento)){
+			$datos['edad'] = 0;
+		}else{
+			$datos['edad'] = $datos['paciente']->edad($datos['paciente']->fecha_nacimiento);
+		}      
+		                
 		return View::make('datos/citas/list-edit-form')->with('datos', $datos);
 	}
 
