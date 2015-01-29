@@ -400,7 +400,7 @@
 						    		<td>{{ Form::text('oi_di', null, array('class' => 'form-control input-sm')) }}</td>
 						    		<td>{{ Form::text('oi_prisma', null, array('class' => 'form-control input-sm')) }}</td>
 						    		<td>{{ Form::text('oi_alt', null, array('class' => 'form-control input-sm')) }}</td>
-						    		<td>{{ Form::text('oi_tipo', null, array('class' => 'form-control input-sm')) }}</td>
+						    		<td>Bif.{{ Form::text('oi_tipo', null, array('class' => 'form-control input-sm')) }}</td>
 						    	</tr>
 					    	</tbody>
 					    </table>
