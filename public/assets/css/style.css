@@ -162,7 +162,7 @@ h2.titulo{
 /*CSS LOGIN*/
 .container-login {
     min-height: 0;
-    width: 480px;
+    max-width: 480px;
     color: #333333;
     margin-top: 40px;
     padding: 0;
