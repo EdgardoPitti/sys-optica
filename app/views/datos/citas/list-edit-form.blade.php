@@ -30,30 +30,36 @@
 	</div>
 	{{--*/$x=1;/*--}}
 		@if(!empty(Cita::where('id_paciente', $datos['paciente']->id)->first()->id))
-			<table class="table table-hover table-bordered cita-anterior" cellpadding="0" cellspacing="0">
-				<thead>
+		<div class="table-responsive tabla-cita">
+			<table class="table table-bordered" id="tabla-cita" cellpadding="0" cellspacing="0">
+				
 					<tr class="info">
-						<th>#</th>
-						<th>Fecha de Cita</th>
-						<th>Instrucciones</th>
-						<th>Observaciones</th>
-						<th></th>
+						<th data-align="center">#</th>
+						<th data-align="center">Fecha de Cita</th>
+						<th data-align="center">Instrucciones</th>
+						<th data-align="center">Observaciones</th>
+						<th data-align="center"></th>
 					</tr>
-				</thead>
-				<tbody>					
 					@foreach(Cita::where('id_paciente', $datos['paciente']->id)->orderBy('fecha_consulta', 'desc')->get() as $citas)
-						<tr>
-							<td align="center">{{ $x++ }}.</td>
+						<tr class="white">
+							<td>{{ $x++ }}.</td>
 							<td>{{ $citas->fecha_consulta }}</td>
 							<td>{{ $citas->instrucciones }}</td>
 							<td>{{ $citas->observaciones }}</td>
 							<td><a href="{{ route('datos.citas.edit', $citas->id) }}" class="btn btn-primary btn-sm" data-toggle="tooltip" title="Editar Cita"><span class="glyphicon glyphicon-pencil"></span></a></td>
 						</tr>
 					@endforeach
-				</tbody>
+				
 			</table>
+		</div>
 		@else
-			<center><h3>Este Paciente no tiene Citas.</h3></center>
+			<center>
+				<div class="alert alert-danger" role="alert">
+					<strong>
+						Este Paciente no tiene Citas.
+					</strong>			
+				</div>
+			</center>		
 		@endif
 
   	<div class="panel panel-default">
@@ -361,8 +367,8 @@
 			</div>
 			<div class="row">
 				<div class="col-sm-12 col-md-12 col-lg-12">
-					<div class="table-responsive overthrow" id="tabla-rgt" style="width:100%;margin-top:15px;">        
-						<table class="table table-bordered" >
+					<div class="table-responsive overthrow"  style="width:100%;margin-top:15px;">        
+						<table id="tabla-rgt">
 						    <thead>
 							    <tr>							
 						    		<th width="4%"  data-align="center"></th>

@@ -55,9 +55,9 @@
                 	  <li class="dropdown">
                 	  	<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-question-circle icon"></i> Reconsultas <span class="caret"></span></a>
                 	  	<ul class="dropdown-menu" role="menu">
-                	  		<li><a href="#">menu 2</a></li>
-                            <li><a href="#">menu 2</a></li>
-                            <li><a href="#">menu 2</a></li>
+                	  		<li><a href="#">Enlace 1</a></li>
+                            <li><a href="#">Enlace 2</a></li>
+                            <li><a href="#">Enlace 3</a></li>
                 	  	</ul>
                 	  </li>
                 	  <li class="dropdown">
@@ -109,9 +109,9 @@
                                  <i class="glyphicon glyphicon-chevron-down  pull-right"></i>
                               </a>                                
                               <ul id="collapseTwo" class="nav nav-pills submenu nav-stacked panel-collapse collapse" role="tabpanel" aria-labelledby="collapseTwo">
-                                    <li><a href="#">Menu Item 1</a></li>
-                                    <li><a href="#">Menu Item 2</a></li>
-                                    <li><a href="#">Menu Item 3</a></li>
+                                    <li><a href="#">Enlace 1</a></li>
+                                    <li><a href="#">Enlace 2</a></li>
+                                    <li><a href="#">Enlace 3</a></li>
                               </ul>
                           </div>
                           <div class="panel panel-default mg-panel">

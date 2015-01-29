@@ -10,4 +10,5 @@ $(function () {
 			pagination: true
 		});
 		$("#tabla-rgt").bootstrapTable();
+		$("#tabla-cita").bootstrapTable();
 });
