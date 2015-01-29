@@ -26,3 +26,4 @@ Route::resource('datos/pacientes','PacientesController');
 Route::resource('datos/citas','CitasController');
 Route::get('getpacientes', 'DatosPacientesController@postPacientes');
 Route::get('reportes/listapacientes', 'ReportesController@getMostrarPacientes');
+Route::resource('print', 'PrintController');

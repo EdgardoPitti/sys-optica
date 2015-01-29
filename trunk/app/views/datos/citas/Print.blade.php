@@ -33,7 +33,8 @@
 </head>
 <body>
 	{{ $paciente->cedula }}
-	{{ $cita->fecha_consulta}}
+	{{ $cita->fecha_consulta }}
+	{{ $paciente->edad }}
 
 </body>
 </html>
