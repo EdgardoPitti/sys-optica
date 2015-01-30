@@ -10,7 +10,10 @@
 			<section>
 				<div class="tab-content tabs-login col-lg-12 col-md-12 col-sm-12 cols-xs-12">
 					<div id="login-access" class="tab-pane fade active in">
-						<h2><i class="fa fa-sign-in"></i> Accesso</h2>		
+						<h2><i class="fa fa-sign-in"></i> Accesso</h2>
+						@if(isset($error_login))
+		                    <div class="alert alert-danger" role="alert" style="text-align:center;margin-top:13px;"><strong>{{ $error_login }}</strong></div>    
+		                @endif		
 						{{ Form::open(array('url'=>'sigin', 'method'=>'POST', 'class' => 'form-horizontal' ), array('role' => 'form')) }}			
 							<div class="form-group ">
 								{{ Form::label('user', 'Usuario', array('class' => 'sr-only'))}}

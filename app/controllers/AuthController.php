@@ -22,7 +22,7 @@ class AuthController extends BaseController{
 	      if(Auth::attempt($user_data)){
 	        return Redirect::route('datos.pacientes.index');
 	      }else{
-	      	return Redirect::to('login')->with('error_login', 'Usuario o Contraseña Incorrectos');	      	
+	      	return View::make('login')->with('error_login', 'Usuario o Contraseña Incorrectos');	      	
 	      }		  	
 	  }	     
     } 
