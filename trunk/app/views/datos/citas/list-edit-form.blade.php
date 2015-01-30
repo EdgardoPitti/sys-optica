@@ -47,7 +47,7 @@
 							<td>{{ $citas->instrucciones }}</td>
 							<td>{{ $citas->observaciones }}</td>
 							<td>
-								<a href="{{ route('print.edit', $citas->id) }}" class="btn btn-primary btn-sm" data-toggle="tooltip" title="Imprimir Receta"><span class="glyphicon glyphicon-print"></span></a>
+								<a href="{{ route('print.edit', $citas->id) }}" class="btn btn-primary btn-sm" data-toggle="tooltip" title="Imprimir Receta" target="_blank"><span class="glyphicon glyphicon-print"></span></a>
 								<a href="{{ route('datos.citas.edit', $citas->id) }}" class="btn btn-primary btn-sm" data-toggle="tooltip" title="Editar Cita"><span class="glyphicon glyphicon-pencil"></span></a>
 							</td>
 						</tr>
@@ -64,8 +64,11 @@
 				</div>
 			</center>		
 		@endif
-	<a href="{{ route('datos.citas.show', $datos['paciente']->id) }}" class="btn btn-default">Limpiar Campos</a>
-	<br>
+		<div class="row" style="margin-bottom:15px;">
+			<div class="col-xs-12">
+				<a href="{{ route('datos.citas.show', $datos['paciente']->id) }}" class="btn btn-default pull-right"><span class="glyphicon glyphicon-trash"></span> Limpiar Campos</a>
+			</div>
+		</div>
   	<div class="panel panel-default">
   		<div class="panel-heading">
   			<h4 class="panel-title"><i class="fa fa-book"></i> Datos de la Cita</h4>
@@ -371,18 +374,18 @@
 			</div>
 			<div class="row">
 				<div class="col-sm-12 col-md-12 col-lg-12">
-					<div class="table-responsive overthrow"  style="width:100%;margin-top:15px;">        
+					<div class="table-responsive overthrow"  style="width:100%;margin:15px 0px;">        
 						<table id="tabla-rgt">
 						    <thead>
 							    <tr>							
 						    		<th width="4%"  data-align="center"></th>
-						    		<th style="width:11px;" data-align="center">Esf.</th>
-						    		<th style="width:11px;" data-align="center">Cil y Eje</th>
-						    		<th style="width:11px;" data-align="center">Add.</th>
-						    		<th style="width:11px;" data-align="center">D.I.</th>
-						    		<th style="width:11px;" data-align="center">Prisma</th>
-						    		<th style="width:11px;" data-align="center">Alt.O</th>
-						    		<th style="width:11px;" data-align="center">Color Lente/Tipo</th>
+						    		<th width="12.5%" data-align="center">Esf.</th>
+						    		<th width="12.5%" data-align="center">Cil y Eje</th>
+						    		<th width="12.5%" data-align="center">Add.</th>
+						    		<th width="12.5%" data-align="center">D.I.</th>
+						    		<th width="12.5%" data-align="center">Prisma</th>
+						    		<th width="12.5%" data-align="center">Alt.O</th>
+						    		<th width="12.5%"  data-align="center">Color Lente/Tipo</th>
 						    	</tr>
 					    	</thead> 
 					    	<tbody>
@@ -404,7 +407,16 @@
 						    		<td>{{ Form::text('oi_di', null, array('class' => 'form-control input-sm')) }}</td>
 						    		<td>{{ Form::text('oi_prisma', null, array('class' => 'form-control input-sm')) }}</td>
 						    		<td>{{ Form::text('oi_alt', null, array('class' => 'form-control input-sm')) }}</td>
-						    		<td>Bif.{{ Form::text('oi_tipo', null, array('class' => 'form-control input-sm')) }}</td>
+						    		<td>
+						    			<div class="form-group">
+						    				<div class="col-sm-12">
+										    	<label for="oi_tipo" style="padding-top:6px;">Bif.</label>
+						    				
+						    					{{ Form::text('oi_tipo', null, array('class' => 'form-control input-sm')) }}
+						    				</div>
+										    
+										 </div>
+						    		</td>
 						    	</tr>
 					    	</tbody>
 					    </table>
@@ -458,7 +470,7 @@
   		</div> 	
   	</div>
   	<center class="margen-bottom">
-		 <a href="{{ route('datos.citas.show', $datos['paciente']->id) }}" class="btn btn-default">Limpiar</a>
+		 <a href="{{ route('datos.citas.show', $datos['paciente']->id) }}" class="btn btn-default"><span class="glyphicon glyphicon-trash"></span> Limpiar</a>
 		{{ Form::button('Guardar', array('type' => 'submit', 'class' => 'btn btn-default')) }}
   	</center>
   	{{ Form::close() }}

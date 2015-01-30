@@ -61,12 +61,60 @@ class PrintController extends \BaseController {
 		
 		$parameter['cita'] = Cita::find($id);
 		$parameter['paciente'] = Paciente::find($parameter['cita']->id_paciente);
+		$parameter['paciente']->nombre = $parameter['paciente']->primer_nombre.' '.$parameter['paciente']->segundo_nombre.' '.$parameter['paciente']->primer_apellido.' '.$parameter['paciente']->segundo_apellido;
 		if(empty($parameter['paciente']->fecha_nacimiento)){
 			$parameter['paciente']->edad = 0;
 		}else{
 			$parameter['paciente']->edad = $parameter['paciente']->edad($parameter['paciente']->fecha_nacimiento);
 		}
-		
+		if($parameter['paciente']->sexo == 1){
+			$parameter['paciente']->sexo = 'Masculino';
+		}else{
+			$parameter['paciente']->sexo = 'Femenino';
+		}
+		if($parameter['cita']->endurecido == 1){
+			$parameter['cita']->endurecido = 'Si';
+		}else{
+			$parameter['cita']->endurecido = 'No';
+		}
+		if($parameter['cita']->tratam_uv == 1){
+			$parameter['cita']->tratam_uv = 'Si';
+		}else{
+			$parameter['cita']->tratam_uv = 'No';
+		}
+		if($parameter['cita']->tratam_anti_rayas == 1){
+			$parameter['cita']->tratam_anti_rayas = 'Si';
+		}else{
+			$parameter['cita']->tratam_anti_rayas = 'No';
+		}
+		if($parameter['cita']->tratam_anti_reflejos == 1){
+			$parameter['cita']->tratam_anti_reflejos = 'Si';
+		}else{
+			$parameter['cita']->tratam_anti_reflejos = 'No';
+		}
+		if($parameter['cita']->hi_index == 1){
+			$parameter['cita']->hi_index = 'Si';
+		}else{
+			$parameter['cita']->hi_index = 'No';
+		}
+		if($parameter['cita']->hi_lite == 1){
+			$parameter['cita']->hi_lite = 'Si';
+		}else{
+			$parameter['cita']->hi_lite = 'No';
+		}
+		if(empty($parameter['cita']->seg_bif)){
+			$parameter['cita']->seg_bif = 'Sin registro.';
+		}else{
+			$parameter['cita']->seg_bif = $parameter['cita']->seg_bif; 
+		}
+		if(empty($parameter['cita']->aro)){
+			$parameter['cita']->aro = 'Sin registro.';
+		}else{
+			$parameter['cita']->aro = $parameter['cita']->aro; 
+		}
+
+
+
 		$pdf = App::make('dompdf');
 		
 		$pdf = PDF::loadView('datos/citas/Print', $parameter);

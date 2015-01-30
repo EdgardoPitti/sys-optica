@@ -24,24 +24,21 @@
                 <div class="navbar-banner">
                     <a href="#" class="navbar-brand">Opticentro Vega</a>                        
                 </div>
-                <div class="navbar-header">
 						@if(Auth::check())                    
+                <div class="navbar-header">
                     <button type="button" class="navbar-toggle navbar-toggle-left toggle-menu menu-left push-body" data-toggle="collapse" data-target="#nav-left">
                         <i class="fa fa-bars fa-1x"></i>
                     </button>
                     <div class="dropdown">
-					  <button id="dLabel" type="button" class="navbar-toggle navbar-toggle-right dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
-					  	<i class="glyphicon glyphicon-cog"></i>
-					  </button>
-					  <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dLabel" style="margin:48px 5px 0px 0px;">
-					    <li><a href="{{ URL::to('logout') }}"><i class="fa fa-fw fa-power-off fa-1x"></i> Cerrar Sesión</a></li>                            
-					  </ul>
-                  @endif
-					</div>
-                   		
+          					  <button id="dLabel" type="button" class="navbar-toggle navbar-toggle-right dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+          					  	<i class="glyphicon glyphicon-cog"></i>
+          					  </button>
+          					  <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dLabel" style="margin:48px 5px 0px 0px;">
+          					    <li><a href="{{ URL::to('logout') }}"><i class="fa fa-fw fa-power-off fa-1x"></i> Cerrar Sesión</a></li>                            
+          					  </ul>
+                    </div>
                 </div>
-                
-                @if(Auth::check())
+            
                 <div class="navbar-collapse collapse cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="nav-left">
                 	{{--Ocultar navegacion izquierda--}}
                 	<ul class="nav navbar-nav nav-left-hide">
@@ -176,7 +173,6 @@
 			    format: 'yyyy-mm-dd',
 			    todayBtn: "linked",	    
 			    todayHighlight: true,
-			    orientation: "bottom auto",
 			    autoclose: false
 			});
 		});
