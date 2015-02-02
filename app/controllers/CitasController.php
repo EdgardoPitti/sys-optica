@@ -168,11 +168,10 @@ class CitasController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$paciente = Paciente::find($id);
-		$datos['paciente'] = $paciente;
-		
-		if(!empty($paciente->fecha_nacimiento)){
-			$datos['edad'] = $paciente->edad($paciente->fecha_nacimiento);
+		$datos['paciente'] = Paciente::find($id);
+
+		if(strlen($datos['paciente']->fecha_nacimiento) == 10){
+			$datos['edad'] = $datos['paciente']->edad($datos['paciente']->fecha_nacimiento);
 		}else{
 			$datos['edad'] = 0;
 		}
@@ -196,12 +195,14 @@ class CitasController extends \BaseController {
 		$datos['cita'] = Cita::find($id);
 		$datos['form'] = array('route' => array('datos.citas.update', $id), 'method' => 'PATCH');
 		$datos['paciente'] = Paciente::find($datos['cita']->id_paciente);
-		
-		if(empty($datos['paciente']->fecha_nacimiento)){
-			$datos['edad'] = 0;
-		}else{
+
+
+		if(strlen($datos['paciente']->fecha_nacimiento) == 10){
 			$datos['edad'] = $datos['paciente']->edad($datos['paciente']->fecha_nacimiento);
-		}  
+		}else{
+			$datos['edad'] = 0;
+		}
+  
 		return View::make('datos/citas/list-edit-form')->with('datos', $datos);
 	}
 
