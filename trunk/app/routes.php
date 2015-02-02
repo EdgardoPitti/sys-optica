@@ -28,4 +28,5 @@ Route::group(array('before' => 'auth'), function(){
 	Route::get('getpacientes', 'DatosPacientesController@postPacientes');
 	Route::get('reportes/listapacientes', 'ReportesController@getMostrarPacientes');
 	Route::resource('print', 'PrintController');	
+	Route::get('transforma', 'TransformaDataController@DatosGenerales');
 });
