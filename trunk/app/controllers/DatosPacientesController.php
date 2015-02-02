@@ -9,8 +9,6 @@ class DatosPacientesController extends BaseController {
 		$offset = Input::get('offset');
 		
 		if(empty($search)){
-			$limit = 10;
-			$offset = 0;		
 			$datos = DB::select("SELECT * FROM pacientes WHERE id > 0 LIMIT ".$offset.",".$limit.";");
 			$cantidad = Paciente::all()->count();				
 		}else {
