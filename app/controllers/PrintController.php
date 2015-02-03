@@ -62,7 +62,7 @@ class PrintController extends \BaseController {
 		$parameter['cita'] = Cita::find($id);
 		$parameter['paciente'] = Paciente::find($parameter['cita']->id_paciente);
 		$parameter['paciente']->nombre = $parameter['paciente']->primer_nombre.' '.$parameter['paciente']->segundo_nombre.' '.$parameter['paciente']->primer_apellido.' '.$parameter['paciente']->segundo_apellido;
-		if(empty($parameter['paciente']->fecha_nacimiento)){
+		if(strlen($parameter['paciente']->fecha_nacimiento) <> 10){
 			$parameter['paciente']->edad = 0;
 		}else{
 			$parameter['paciente']->edad = $parameter['paciente']->edad($parameter['paciente']->fecha_nacimiento);

@@ -114,20 +114,12 @@
 					    	<div class="panel-heading">
 					    		<h4 class="panel-title">A V sc</h4>	
 					    	</div>
-					    	<div class="panel-body">
-					    		<label>Ojo Derecho (O.D):</label>
-					    		<div class="input-group">
-					    		  {{ Form::text('av_sc_od_u', null, array('placeholder' => 'O.D', 'class' => 'form-control', 'aria-describedby' => 'basic-addon1')) }}				    						    		
-								  <span class="input-group-addon" id="basic-addon1">/</span>
-								  {{ Form::text('av_sc_od_d', null, array('placeholder' => 'O.D', 'class' => 'form-control', 'aria-describedby' => 'basic-addon1')) }} 
-								</div>
-								<label>Ojo Izquierdo (O.I):</label>
-								<div class="input-group">
-									{{ Form::text('av_sc_oi_u', null, array('placeholder' => 'O.I', 'class' => 'form-control', 'aria-describedby' => 'basic-addon2')) }}
-									<span class="input-group-addon" id="basic-addon2">/</span>
-									{{ Form::text('av_sc_oi_d', null, array('placeholder' => 'O.I', 'class' => 'form-control', 'aria-describedby' => 'basic-addon2')) }}
-								</div>			    		
-					    	</div>
+							<div class="panel-body">
+					    		{{ Form::label('av_sc_od', 'Ojo Derecho (O.D):') }}		    
+								{{ Form::text('av_sc_od', null, array('placeholder' => 'O.D', 'class' => 'form-control')) }}
+					    		{{ Form::label('av_sc_oi', 'Ojo Izquierdo (O.I):') }}		    
+								{{ Form::text('av_sc_oi', null, array('placeholder' => 'O.I', 'class' => 'form-control')) }}
+					    	</div>		    		
 					    </div>
 				    </div>
 				    <div class="col-sm-6 col-md-6 col-lg-6">
