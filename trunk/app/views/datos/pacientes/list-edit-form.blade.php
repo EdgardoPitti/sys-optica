@@ -37,7 +37,9 @@
     </div>
 	</div>	
 	<div class="col-xs-12">
-		<a href="{{ URL::to('transforma') }}" class="btn btn-default pull-right"> Pasar Datos</a>
+		<a href="{{ URL::to('transformacitas') }}" class="btn btn-default pull-right">2.Mover Citas</a>
+		<a href="{{ URL::to('transformapacientes') }}" class="btn btn-default pull-right">1.Mover Paciente</a>
+		
 	</div>
 	{{ Form::model($datos['paciente'], $datos['form'], array('role' => 'form')) }}
   	<div class="panel panel-default">

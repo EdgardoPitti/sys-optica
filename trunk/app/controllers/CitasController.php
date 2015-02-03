@@ -45,10 +45,8 @@ class CitasController extends \BaseController {
 		$cita->pestagna = $data['pestagna'];
 		$cita->pupilas = $data['pupilas'];
 		$cita->ref_pup = $data['ref_pup'];
-		$cita->av_sc_od_u = $data['av_sc_od_u'];
-		$cita->av_sc_od_d = $data['av_sc_od_d'];
-		$cita->av_sc_oi_u = $data['av_sc_oi_u'];
-		$cita->av_sc_oi_d = $data['av_sc_oi_d'];
+		$cita->av_sc_od = $data['av_sc_od'];
+		$cita->av_sc_oi = $data['av_sc_oi'];
 		$cita->av_cc_od = $data['av_cc_od'];
 		$cita->av_cc_oi = $data['av_cc_oi'];
 		$cita->av_cc_od_esf = $data['av_cc_od_esf'];
@@ -202,7 +200,6 @@ class CitasController extends \BaseController {
 		}else{
 			$datos['edad'] = 0;
 		}
-  
 		return View::make('datos/citas/list-edit-form')->with('datos', $datos);
 	}
 
@@ -226,10 +223,8 @@ class CitasController extends \BaseController {
 		$cita->pestagna = $data['pestagna'];
 		$cita->pupilas = $data['pupilas'];
 		$cita->ref_pup = $data['ref_pup'];
-		$cita->av_sc_od_u = $data['av_sc_od_u'];
-		$cita->av_sc_od_d = $data['av_sc_od_d'];
-		$cita->av_sc_oi_u = $data['av_sc_oi_u'];
-		$cita->av_sc_oi_d = $data['av_sc_oi_d'];
+		$cita->av_sc_od = $data['av_sc_od'];
+		$cita->av_sc_oi = $data['av_sc_oi'];
 		$cita->av_cc_od = $data['av_cc_od'];
 		$cita->av_cc_oi = $data['av_cc_oi'];
 		$cita->av_cc_od_esf = $data['av_cc_od_esf'];
