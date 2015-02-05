@@ -364,6 +364,8 @@
 			      {{ Form::textarea('instrucciones', null, array('placeholder' => 'Instrucciones para el Paciente', 'class' => 'form-control', 'size' => '3x3')) }}        
 			    </div> 
 			</div>
+			
+			@if($datos['paciente']->examen == 'LC')
 			<div class="row">
 				<div class="col-sm-12 col-md-12 col-lg-12">
 					<div class="panel panel-default">
@@ -375,66 +377,66 @@
 								<tr>
 									<th rowspan="2" style="vertical-align:middle;text-align: center;"> K = </th>
 									<th style="border-bottom:1px solid #393939; text-align:center;"><br>OD</th>
-									<td style="border-bottom:1px solid #393939;">{{Form::text('kod', null, array('placeholder' => 'Lentes de Contacto OD', 'class' => 'form-control'))}}</td>
+									<td style="border-bottom:1px solid #393939;">{{Form::text('kod', $datos['lc']->kod, array('placeholder' => 'Lentes de Contacto OD', 'class' => 'form-control'))}}</td>
 								</tr>
 								<tr>
 									<th style="text-align:center;">OI</th>
-									<td>{{Form::text('koi', null, array('placeholder' => 'Lentes de Contacto OD', 'class' => 'form-control'))}}</td>
+									<td>{{Form::text('koi', $datos['lc']->koi, array('placeholder' => 'Lentes de Contacto OD', 'class' => 'form-control'))}}</td>
 								</tr>	
 							</table>
 							<div class="form-group col-sm-4 col-md-4 col-lg-4">
 			    				{{ Form::label('diam_dhiv', 'Diam Dhiv:') }}		    
-								{{ Form::text('diam_dhiv', null, array('placeholder' => 'Diam Dhiv', 'class' => 'form-control')) }}
+								{{ Form::text('diam_dhiv', $datos['lc']->diam_dhiv, array('placeholder' => 'Diam Dhiv', 'class' => 'form-control')) }}
 			    			</div>
 			    			<div class="form-group col-sm-4 col-md-4 col-lg-4">
 			    				{{ Form::label('ap', 'AP:') }}		    
-								{{ Form::text('ap', null, array('placeholder' => 'AP', 'class' => 'form-control')) }}
+								{{ Form::text('ap', $datos['lc']->ap, array('placeholder' => 'AP', 'class' => 'form-control')) }}
 			    			</div>
 			    			<div class="form-group col-sm-4 col-md-4 col-lg-4">
 			    				{{ Form::label('l_parpado', 'Parpados:') }}		    
-								{{ Form::text('l_parpado', null, array('placeholder' => 'Parpados', 'class' => 'form-control')) }}
+								{{ Form::text('l_parpado', $datos['lc']->parpados, array('placeholder' => 'Parpados', 'class' => 'form-control')) }}
 			    			</div>
 			    			<div class="form-group col-sm-4 col-md-4 col-lg-4">
 			    				{{ Form::label('esclera', 'Esclera:') }}		    
-								{{ Form::text('esclera', null, array('placeholder' => 'Esclera', 'class' => 'form-control')) }}
+								{{ Form::text('esclera', $datos['lc']->esclera, array('placeholder' => 'Esclera', 'class' => 'form-control')) }}
 			    			</div>
 			    			<div class="form-group col-sm-4 col-md-4 col-lg-4">
 			    				{{ Form::label('conjuntiva', 'Conjuntiva:') }}		    
-								{{ Form::text('conjuntiva', null, array('placeholder' => 'Conjuntiva', 'class' => 'form-control')) }}
+								{{ Form::text('conjuntiva', $datos['lc']->conjuntiva, array('placeholder' => 'Conjuntiva', 'class' => 'form-control')) }}
 			    			</div>
 			    			<div class="form-group col-sm-4 col-md-4 col-lg-4">
 			    				{{ Form::label('iris', 'Iris:') }}		    
-								{{ Form::text('iris', null, array('placeholder' => 'Iris', 'class' => 'form-control')) }}
+								{{ Form::text('iris', $datos['lc']->iris, array('placeholder' => 'Iris', 'class' => 'form-control')) }}
 			    			</div>
 			    			<div class="form-group col-sm-4 col-md-4 col-lg-4">
 			    				{{ Form::label('cornea', 'Cornea:') }}		    
-								{{ Form::text('cornea', null, array('placeholder' => 'Cornea', 'class' => 'form-control')) }}
+								{{ Form::text('cornea', $datos['lc']->cornea, array('placeholder' => 'Cornea', 'class' => 'form-control')) }}
 			    			</div>
 			    			<div class="form-group col-sm-12 col-md-12 col-lg-12">
 			    				<label>Tipo (LC):</label>
 			    				<ul class="list-unstyled">
-			    					<li><b>a.</b> PMMA {{Form::text('pmma', null, array('placeholder' => 'PMMA', 'class' => 'form-control'))}}</li>
-			    					<li><b>b.</b> HEMA {{Form::text('hema', null, array('placeholder' => 'HEMA', 'class' => 'form-control'))}}</li>
-			    					<li><b>c.</b> PERMEABLE {{Form::text('permeable', null, array('placeholder' => 'PERMEABLE', 'class' => 'form-control'))}}</li>
+			    					<li><b>a.</b> PMMA {{Form::text('pmma', $datos['lc']->pmma, array('placeholder' => 'PMMA', 'class' => 'form-control'))}}</li>
+			    					<li><b>b.</b> HEMA {{Form::text('hema', $datos['lc']->hema, array('placeholder' => 'HEMA', 'class' => 'form-control'))}}</li>
+			    					<li><b>c.</b> PERMEABLE {{Form::text('permeable', $datos['lc']->permeable, array('placeholder' => 'PERMEABLE', 'class' => 'form-control'))}}</li>
 			    				</ul>
 			    			</div><br>
 			    			<div class="form-group col-sm-4 col-md-4 col-lg-4">
 			    				{{ Form::label('proveedor', 'Proveedor:') }}		    
-								{{ Form::text('proveedor', null, array('placeholder' => 'Proveedor', 'class' => 'form-control')) }}
+								{{ Form::text('proveedor', $datos['lc']->proveedor, array('placeholder' => 'Proveedor', 'class' => 'form-control')) }}
 			    			</div>
 			    			<div class="form-group col-sm-8 col-md-8 col-lg-8">
 			    				{{ Form::label('soluciones', 'Soluciones:') }}		    
-								{{ Form::textarea('soluciones', null, array('placeholder' => 'Soluciones', 'class' => 'form-control', 'size' => '3x1')) }}
+								{{ Form::textarea('soluciones', $datos['lc']->soluciones, array('placeholder' => 'Soluciones', 'class' => 'form-control', 'size' => '3x1')) }}
 			    			</div>
 			    			<div class="form-group col-sm-12 col-md-12 col-lg-12">
-			    				{{ Form::label('observaciones', 'Observaciones:') }}		    
-								{{ Form::textarea('observaciones', null, array('placeholder' => 'Observaciones', 'class' => 'form-control', 'size' => '3x6')) }}
+			    				{{ Form::label('datos_lc', 'Datos de Lentes de Contacto:') }}		    
+								{{ Form::textarea('datos_lc', $datos['lc']->datos_lc, array('placeholder' => 'Observaciones', 'class' => 'form-control', 'size' => '3x6')) }}
 			    			</div>
 						</div>
 					</div>
 				</div>
 			</div>
-
+			@endif
 
 			<div class="row">
 				<div class="col-sm-12 col-md-12 col-lg-12">
