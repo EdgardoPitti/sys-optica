@@ -6,7 +6,7 @@
 	<h2 class="titulo">Citas</h2>
 
 
-	{{ Form::model($datos['cita'], $datos['form'], array('role' => 'form', 'class'=> 'form-horizontal')) }}
+	{{ Form::model($datos['cita'], array('role' => 'form'), $datos['form']) }}
 	<div class="row">
 		<div class="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
 	    	<div class="well profile">
@@ -520,53 +520,64 @@
 						    		<td>{{ Form::text('oi_prisma', null, array('class' => 'form-control input-sm')) }}</td>
 						    		<td>{{ Form::text('oi_alt', null, array('class' => 'form-control input-sm')) }}</td>
 						    		<td>
-						    			<div class="form-group">
-						    				<div class="col-sm-12">
-										    	<label for="oi_tipo" style="padding-top:6px;">Bif.</label>
-						    				
-						    					{{ Form::text('oi_tipo', null, array('class' => 'form-control input-sm')) }}
-						    				</div>
-										    
-										 </div>
+							    		<p> <b style="padding-top:3px;">Bif.</b> {{ Form::text('oi_tipo', null, array('class' => 'form-control input-sm', 'style' => 'width: 130px;display: inline;')) }}
+										  </p>
 						    		</td>
 						    	</tr>
 					    	</tbody>
 					    </table>
 					</div>   	
 				</div>
-				<div class="form-group col-sm-4 col-md-4 col-lg-4">
-			      {{ Form::label('observaciones', 'Observaciones:') }}
-			      {{ Form::textarea('observaciones', null, array('placeholder' => 'Observaciones', 'class' => 'form-control', 'size' => '3x1')) }}        
-			    </div>	
-			    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-					{{ Form::label('endurecido', 'Endurecido:') }}		    
-					{{ Form::checkbox('endurecido', 1, null,  array('class' => 'form-control cmn-toggle cmn-toggle-round-flat')) }}
-			    </div> 
-			    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-					{{ Form::label('tratam_uv', 'Tratamiento U.V:') }}		    
-					{{ Form::checkbox('tratam_uv', 1, null,  array('class' => 'form-control cmn-toggle cmn-toggle-round-flat')) }}
-			    </div>    
-			    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-					{{ Form::label('tratam_anti_rayas', 'Tratamiento Anti Rayas:') }}		    
-					{{ Form::checkbox('tratam_anti_rayas', 1, null,  array('class' => 'form-control cmn-toggle cmn-toggle-round-flat')) }}
-			    </div>   
-			    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-					{{ Form::label('tratam_anti_reflejos', 'Tratamiento Anti Reflejos:') }}		    
-					{{ Form::checkbox('tratam_anti_reflejos', 1, null,  array('class' => 'form-control cmn-toggle cmn-toggle-round-flat')) }}
+				<div class="form-group col-sm-12 col-md-12 col-lg-12">
+				     {{ Form::label('observaciones', 'Observaciones:') }}
+				     {{ Form::textarea('observaciones', null, array('placeholder' => 'Observaciones', 'class' => 'form-control', 'size' => '3x1')) }}
+			   </div>
+			   <div class="container-fluid">
+				   <div class="form-group col-xs-6 col-sm-6 col-md-6  col-lg-2">
+						    	{{ Form::label('endurecido', 'Endurecido:') }}		    
+				   </div>
+				   <div class="form-group col-xs-6 col-sm-6 col-md-6  col-lg-2">
+								{{ Form::checkbox('endurecido', 1, null,  array('class' => 'form-control')) }}
+				   </div>	
+				   <div class="form-group col-xs-6 col-sm-6 col-md-6  col-lg-2">
+						    	{{ Form::label('tratam_uv', 'Tratamiento U.V:') }}		    
+				   </div>
+				   <div class="form-group col-xs-6 col-sm-6 col-md-6  col-lg-2">
+								{{ Form::checkbox('tratam_uv', 1, null,  array('class' => 'form-control')) }}
+				   </div>	
+				   <div class="form-group col-xs-6 col-sm-6 col-md-6  col-lg-2">
+						   	{{ Form::label('tratam_anti_rayas', 'Tratamiento Anti Rayas:') }}		    
+				   </div>
+				   <div class="form-group col-xs-6 col-sm-6 col-md-6  col-lg-2">
+								{{ Form::checkbox('tratam_anti_rayas', 1, null,  array('class' => 'form-control')) }}
+				   </div>				   
+			   </div>
+			   <div class="container-fluid">
+	  			   <div class="form-group col-xs-6 col-sm-6 col-md-6  col-lg-2">
+						   	{{ Form::label('tratam_anti_reflejos', 'Tratamiento Anti Reflejos:') }}		  	    
+				   </div>
+				   <div class="form-group col-xs-6 col-sm-6 col-md-6  col-lg-2">
+								{{ Form::checkbox('tratam_anti_reflejos', 1, null,  array('class' => 'form-control')) }}
+				   </div>	
+				   <div class="form-group col-xs-6 col-sm-6 col-md-6  col-lg-2">
+						   	{{ Form::label('hi_index', 'Hi-Index:') }}		  	    
+				   </div>
+				   <div class="form-group col-xs-6 col-sm-6 col-md-6  col-lg-2">
+								{{ Form::checkbox('hi_index', 1, null,  array('class' => 'form-control')) }}
+				   </div>
+				   <div class="form-group col-xs-6 col-sm-6 col-md-6  col-lg-2">
+						   	{{ Form::label('hi_lite', 'Hi-Lite:') }}		    	  	    
+				   </div>
+				   <div class="form-group col-xs-6 col-sm-6 col-md-6  col-lg-2">
+								{{ Form::checkbox('hi_lite', 1, null,  array('class' => 'form-control')) }}
+				   </div>
+			   </div>
+			   
+				<div class="form-group col-sm-6 col-md-6 col-lg-6">					 
+						{{ Form::label('seg_bif', 'Seg. Bif:') }}		    
+						{{ Form::text('seg_bif', null, array('placeholder' => 'Seg. Bif', 'class' => 'form-control')) }} 						
 			    </div>
-			    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-					{{ Form::label('hi_index', 'Hi-Index:') }}		    
-					{{ Form::checkbox('hi_index', 1, null,  array('class' => 'form-control cmn-toggle cmn-toggle-round-flat')) }}
-			    </div>
-			    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-					{{ Form::label('hi_lite', 'Hi-Lite:') }}		    
-					{{ Form::checkbox('hi_lite', 1, null,  array('class' => 'form-control cmn-toggle cmn-toggle-round-flat')) }}
-			    </div>
-				<div class="form-group col-sm-4 col-md-4 col-lg-4">
-					{{ Form::label('seg_bif', 'Seg. Bif:') }}		    
-					{{ Form::text('seg_bif', null, array('placeholder' => 'Seg. Bif', 'class' => 'form-control')) }}
-			    </div>
-				<div class="form-group col-sm-4 col-md-4 col-lg-4">
+				<div class="form-group col-sm-6 col-md-6 col-lg-6">					
 					{{ Form::label('aro', 'Aro:') }}		    
 					{{ Form::text('aro', null, array('placeholder' => 'Aro', 'class' => 'form-control')) }}
 			    </div>
@@ -574,7 +585,7 @@
 					{{ Form::label('costo_consulta', 'Costo Consulta:') }}		    
 					{{ Form::text('costo_consulta', null, array('placeholder' => 'Costo Consulta', 'class' => 'form-control')) }}
 			    </div>
-			    <div class="form-group col-sm-4 col-md-4 col-lg-4">
+			    <div class="form-group col-sm-8 col-md-8 col-lg-8">
 					{{ Form::label('examen_realizado', 'Examen Realizado:') }}		    
 					{{ Form::textarea('examen_realizado', null, array('placeholder' => 'Examen Realizado', 'class' => 'form-control', 'size' => '3x3')) }}
 			    </div>

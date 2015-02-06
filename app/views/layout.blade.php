@@ -11,6 +11,7 @@
 	{{ HTML::style('assets/css/style.css', array('media' => 'screen', 'rel' => 'stylesheet')) }}
 	{{ HTML::style('assets/css/base.css', array('media' => 'screen', 'rel' => 'stylesheet')) }}
    {{ HTML::style('assets/css/bootstrap-table.css') }}	
+   {{ HTML::style('assets/css/bootstrap-switch.css') }}
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       {{ HTML::script('assets/js/html5shiv.js') }}
@@ -164,6 +165,7 @@
 	@endif
 	{{ HTML::script('assets/js/jquery.js') }}
 	{{ HTML::script('assets/js/bootstrap.min.js') }}
+	{{ HTML::script('assets/js/bootstrap-switch.js') }}
 	{{ HTML::script('assets/js/bootstrap-datepicker.js') }}
 	{{ HTML::script('assets/js/locales/bootstrap-datepicker.es.js') }}
 	<script type="text/javascript">
@@ -185,6 +187,7 @@
   {{ HTML::script('assets/js/v2p.js') }}
   {{ HTML::script('assets/js/jquery-scrolltofixed-min.js') }}
   {{ HTML::script('assets/js/script.js') }}
+  
   {{ HTML::script('assets/js/bootstrap-table.js') }}
   {{ HTML::script('assets/js/bootstrap-table-es.js') }}
   {{ HTML::script('assets/js/dataGrid.js') }}
