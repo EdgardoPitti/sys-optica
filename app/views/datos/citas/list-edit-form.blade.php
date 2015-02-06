@@ -365,7 +365,7 @@
 			    </div> 
 			</div>
 			
-			{{@if($datos['paciente']->examen == 'LC')}}
+			@if($datos['paciente']->examen == 'LC')
 			<div class="row">
 				<div class="col-sm-12 col-md-12 col-lg-12">
 					<div class="panel panel-default">
@@ -454,35 +454,35 @@
 						<div class="panel-body">
 							<div class="form-group col-sm-4 col-md-4 col-lg-4">
 		    					{{Form::label('l_od', 'O.D.')}}
-		    					{{ Form::text('l_od', null, array('placeholder' => 'O.D.', 'class' => 'form-control'))}}			   
+		    					{{ Form::text('l_od', $datos['lc']->r_od, array('placeholder' => 'O.D.', 'class' => 'form-control'))}}			   
 						    </div>
 						    <div class="form-group col-sm-4 col-md-4 col-lg-4">
 		    					{{Form::label('l_oi', 'O.I.')}}
-		    					{{ Form::text('l_oi', null, array('placeholder' => 'O.I.', 'class' => 'form-control'))}}
+		    					{{ Form::text('l_oi', $datos['lc']->r_oi, array('placeholder' => 'O.I.', 'class' => 'form-control'))}}
 		    											   
 						    </div>
 						    <div class="form-group col-sm-4 col-md-4 col-lg-4">
 		    					{{Form::label('l_tipo', 'Tipo')}}
-		    					{{ Form::text('l_tipo', null, array('placeholder' => 'Tipo', 'class' => 'form-control'))}}						   
+		    					{{ Form::text('l_tipo', $datos['lc']->tipo, array('placeholder' => 'Tipo', 'class' => 'form-control'))}}						   
 						    </div>
 						    <div class="form-group col-sm-8 col-md-8 col-lg-8">
 		    					{{Form::label('l_soluciones', 'Soluciones')}}		    				
-		    					{{ Form::textarea('l_soluciones', null, array('placeholder' => 'Soluciones', 'class' => 'form-control','size' => '3x4'))}}					   
+		    					{{ Form::textarea('l_soluciones', $datos['lc']->soluciones, array('placeholder' => 'Soluciones', 'class' => 'form-control','size' => '3x4'))}}					   
 						    </div>
 						    <div class="form-group col-sm-12 col-md-12 col-lg-12">
 		    					{{Form::label('l_costo', 'Costo ($)')}}
-		    					{{ Form::text('l_costo', null, array('placeholder' => 'Costo ($)', 'class' => 'form-control'))}}		   
+		    					{{ Form::text('l_costo', $datos['lc']->costo, array('placeholder' => 'Costo ($)', 'class' => 'form-control'))}}		   
 						    </div>
 						    <div class="form-group col-sm-12 col-md-12 col-lg-12">
 		    					{{Form::label('l_observaciones', 'Observaciones')}}
-		    					{{ Form::textarea('l_observaciones', null, array('placeholder' => 'Observaciones', 'class' => 'form-control', 'size' => '3x4'))}}		    											 
+		    					{{ Form::textarea('l_observaciones', $datos['lc']->r_observaciones, array('placeholder' => 'Observaciones', 'class' => 'form-control', 'size' => '3x4'))}}		    											 
 						    </div>
 						</div>
 					</div>
 				</div>
 			</div>
 
-			{{@endif}}
+			@endif
 
 			<div class="row">
 				<div class="col-sm-12 col-md-12 col-lg-12">

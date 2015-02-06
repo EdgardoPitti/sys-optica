@@ -11,6 +11,7 @@ class CitasController extends \BaseController {
 	{
 		$datos['cita'] = new Cita;
 		$datos['form'] = array('route' => 'datos.citas.store', 'method' => 'POST');
+		$datos['lc'] = new LenteContacto;
 		return View::make('datos/citas/list-edit-form')->with('datos', $datos);
 		
 	}
@@ -142,11 +143,44 @@ class CitasController extends \BaseController {
 		$cita->examen_realizado = $data['examen_realizado'];
 		$cita->fecha_consulta = $data['fecha_consulta'];
 		$cita->save();
+		
+		$datos['paciente'] = Paciente::find($data['id_paciente']);
+		
+		if($datos['paciente']->examen == 'LC'){
+		
+			$id_Cita = DB::table('citas')->max('id');
+			
+			$LC = new LenteContacto;
+			$LC->id_cita =  $id_Cita;
+			$LC->kod = $data['kod'];
+			$LC->koi = $data['koi'];
+			$LC->diam_dhiv = $data['diam_dhiv'];
+			$LC->ap = $data['ap'];
+			$LC->parpados = $data['l_parpado'];
+			$LC->esclera = $data['esclera'];
+			$LC->conjuntiva = $data['conjuntiva'];
+			$LC->iris = $data['iris'];
+			$LC->cornea = $data['cornea'];
+			$LC->pmma = $data['pmma'];
+			$LC->hema = $data['hema'];
+			$LC->permeable = $data['permeable'];
+			$LC->proveedor = $data['proveedor'];
+			$LC->soluciones = $data['soluciones'];
+			$LC->datos_lc = $data['datos_lc'];
+			$LC->r_od = $data['l_od'];
+			$LC->r_oi = $data['l_oi'];
+			$LC->r_tipo = $data['l_tipo'];
+			$LC->r_soluciones = $data['l_soluciones'];
+			$LC->r_costo = $data['l_costo'];
+			$LC->r_observaciones = $data['l_observaciones'];
+			$LC->save();
+			
+		}
 
 		$datos['cita'] = new Cita;
 		$datos['cita']->fecha_consulta = date("Y-m-d");  
 		$datos['form'] = array('route' => 'datos.citas.store', 'method' => 'POST');
-		$datos['paciente'] = Paciente::find($data['id_paciente']);
+		$datos['lc'] = new LenteContacto;
 		
 		if(empty($datos['paciente']->fecha_nacimiento)){
 			$datos['edad'] = 0;
@@ -167,7 +201,8 @@ class CitasController extends \BaseController {
 	public function show($id)
 	{
 		$datos['paciente'] = Paciente::find($id);
-
+		$datos['lc'] = new LenteContacto;
+		
 		if(strlen($datos['paciente']->fecha_nacimiento) == 10){
 			$datos['edad'] = $datos['paciente']->edad($datos['paciente']->fecha_nacimiento);
 		}else{
@@ -194,7 +229,12 @@ class CitasController extends \BaseController {
 		$datos['form'] = array('route' => array('datos.citas.update', $id), 'method' => 'PATCH');
 		$datos['paciente'] = Paciente::find($datos['cita']->id_paciente);
 
-
+		if($datos['paciente']->examen == 'LC'){
+			$datos['lc'] = LenteContacto::where('id_cita', $id)->first();
+		}else{
+			$datos['lc'] = new LenteContacto;
+		}
+		
 		if(strlen($datos['paciente']->fecha_nacimiento) == 10){
 			$datos['edad'] = $datos['paciente']->edad($datos['paciente']->fecha_nacimiento);
 		}else{
@@ -319,11 +359,43 @@ class CitasController extends \BaseController {
 		$cita->examen_realizado = $data['examen_realizado'];
 		$cita->fecha_consulta = $data['fecha_consulta'];
 		$cita->save();
+	
+		$datos['paciente'] = Paciente::find($data['id_paciente']);
+		
+		if($datos['paciente']->examen == 'LC'){
+		
+			$LC = LenteContacto::where('id_cita', $id)->first();
+			$LC->id_cita =  $id;
+			$LC->kod = $data['kod'];
+			$LC->koi = $data['koi'];
+			$LC->diam_dhiv = $data['diam_dhiv'];
+			$LC->ap = $data['ap'];
+			$LC->parpados = $data['l_parpado'];
+			$LC->esclera = $data['esclera'];
+			$LC->conjuntiva = $data['conjuntiva'];
+			$LC->iris = $data['iris'];
+			$LC->cornea = $data['cornea'];
+			$LC->pmma = $data['pmma'];
+			$LC->hema = $data['hema'];
+			$LC->permeable = $data['permeable'];
+			$LC->proveedor = $data['proveedor'];
+			$LC->soluciones = $data['soluciones'];
+			$LC->datos_lc = $data['datos_lc'];
+			$LC->r_od = $data['l_od'];
+			$LC->r_oi = $data['l_oi'];
+			$LC->r_tipo = $data['l_tipo'];
+			$LC->r_soluciones = $data['l_soluciones'];
+			$LC->r_costo = $data['l_costo'];
+			$LC->r_observaciones = $data['l_observaciones'];
+			$LC->save();
+			
+		}
+
 
 		$datos['cita'] = new Cita;
 		$datos['form'] = array('route' => 'datos.citas.store', 'method' => 'POST');
-		$datos['paciente'] = Paciente::find($data['id_paciente']);
 		$datos['cita']->fecha_consulta = date("Y-m-d");  
+		$datos['lc'] = new LenteContacto;
 		
 		if(empty($datos['paciente']->fecha_nacimiento)){
 			$datos['edad'] = 0;

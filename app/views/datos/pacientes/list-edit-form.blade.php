@@ -22,10 +22,11 @@
 					    <thead>
 						    <tr class="info">
 						        <th data-field="num" data-align="center">#</th>
+						        <th data-field="ced" data-align="center">Cédula</th>
 						        <th data-field="name" data-align="center">Nombre Completo</th>
 						        <th data-field="cel" data-align="center">Celular</th>
-						        <th data-field="tel" data-align="center">Teléfono</th>
-						        <th data-field="email" data-align="center">E-mail</th>
+						        <th data-field="cla" data-align="center">Clasificación</th>
+						        <th data-field="exa" data-align="center">Examen</th>
 						        <th data-field="url" data-align="center"></th>
 						    </tr>
 					    </thead>
@@ -39,7 +40,6 @@
 	<div class="col-xs-12">
 		<a href="{{ URL::to('transformacitas') }}" class="btn btn-default pull-right">2.Mover Citas</a>
 		<a href="{{ URL::to('transformapacientes') }}" class="btn btn-default pull-right">1.Mover Paciente</a>
-		
 	</div>
 	{{ Form::model($datos['paciente'], $datos['form'], array('role' => 'form')) }}
   	<div class="panel panel-default">
@@ -57,7 +57,7 @@
 		    </div> 
 		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
 				{{ Form::label('primer_nombre', 'Primer Nombre:') }}		    
-				{{ Form::text('primer_nombre', null, array('placeholder' => 'Primer Nombre', 'class' => 'form-control', 'required' => 'required')) }}
+				{{ Form::text('primer_nombre', null, array('placeholder' => 'Primer Nombre', 'class' => 'form-control')) }}
 		    </div>			                       
   		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
 				{{ Form::label('segundo_nombre', 'Segundo Nombre:') }}		    
@@ -65,7 +65,7 @@
 		    </div>			                       
 		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
 				{{ Form::label('primer_apellido', 'Primer Apellido:') }}		    
-				{{ Form::text('primer_apellido', null, array('placeholder' => 'Primer Apellido', 'class' => 'form-control', 'required' => 'required')) }}
+				{{ Form::text('primer_apellido', null, array('placeholder' => 'Primer Apellido', 'class' => 'form-control')) }}
 		    </div>			                       		    
 		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
 				{{ Form::label('segundo_apellido', 'Segundo Apellido:') }}		    
