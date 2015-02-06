@@ -6,7 +6,7 @@
 	<h2 class="titulo">Citas</h2>
 
 
-	{{ Form::model($datos['cita'], $datos['form'], array('role' => 'form')) }}
+	{{ Form::model($datos['cita'], $datos['form'], array('role' => 'form', 'class'=> 'form-horizontal')) }}
 	<div class="row">
 		<div class="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
 	    	<div class="well profile">
@@ -297,7 +297,7 @@
 				    				{{ Form::label('grad_di', 'D.I:') }}		    
 									{{ Form::text('grad_di', null, array('placeholder' => 'D.I', 'class' => 'form-control input-sm col-lg-3')) }}
 				    			</div>
-				    			<div class="col-sm-6 col-md-6 col-lg-6">
+				    			<div class="col-sm-12 col-md-12 col-lg-12">
 				    				<div class="panel panel-default">
 								    	<div class="panel-heading">
 								    		<h4 class="panel-title">Add</h4>	
@@ -359,13 +359,13 @@
 				    	</div>
 				    </div>
 				</div>
-				<div class="form-group col-sm-4 col-md-4 col-lg-4">
+				<div class="form-group col-sm-12 col-md-12 col-lg-12">
 			      {{ Form::label('instrucciones', 'Instrucciones para el Paciente:') }}
-			      {{ Form::textarea('instrucciones', null, array('placeholder' => 'Instrucciones para el Paciente', 'class' => 'form-control', 'size' => '3x3')) }}        
+			      {{ Form::textarea('instrucciones', null, array('placeholder' => 'Instrucciones para el Paciente', 'class' => 'form-control', 'size' => '3x4')) }}        
 			    </div> 
 			</div>
 			
-			@if($datos['paciente']->examen == 'LC')
+			{{@if($datos['paciente']->examen == 'LC')}}
 			<div class="row">
 				<div class="col-sm-12 col-md-12 col-lg-12">
 					<div class="panel panel-default">
@@ -386,39 +386,52 @@
 							</table>
 							<div class="form-group col-sm-4 col-md-4 col-lg-4">
 			    				{{ Form::label('diam_dhiv', 'Diam Dhiv:') }}		    
-								{{ Form::text('diam_dhiv', $datos['lc']->diam_dhiv, array('placeholder' => 'Diam Dhiv', 'class' => 'form-control')) }}
+								{{ Form::text('diam_dhiv', $datos['lc']->diam_dhiv, array('placeholder' => 'Diam Dhiv', 'class' => 'form-control'))}}
 			    			</div>
 			    			<div class="form-group col-sm-4 col-md-4 col-lg-4">
 			    				{{ Form::label('ap', 'AP:') }}		    
-								{{ Form::text('ap', $datos['lc']->ap, array('placeholder' => 'AP', 'class' => 'form-control')) }}
+								{{ Form::text('ap', $datos['lc']->ap, array('placeholder' => 'AP', 'class' => 'form-control'))}}
 			    			</div>
 			    			<div class="form-group col-sm-4 col-md-4 col-lg-4">
 			    				{{ Form::label('l_parpado', 'Parpados:') }}		    
-								{{ Form::text('l_parpado', $datos['lc']->parpados, array('placeholder' => 'Parpados', 'class' => 'form-control')) }}
+								{{ Form::text('l_parpado', $datos['lc']->parpados, array('placeholder' => 'Parpados', 'class' => 'form-control'))}}
 			    			</div>
 			    			<div class="form-group col-sm-4 col-md-4 col-lg-4">
 			    				{{ Form::label('esclera', 'Esclera:') }}		    
-								{{ Form::text('esclera', $datos['lc']->esclera, array('placeholder' => 'Esclera', 'class' => 'form-control')) }}
+								{{ Form::text('esclera', $datos['lc']->esclera, array('placeholder' => 'Esclera', 'class' => 'form-control'))}}
 			    			</div>
 			    			<div class="form-group col-sm-4 col-md-4 col-lg-4">
 			    				{{ Form::label('conjuntiva', 'Conjuntiva:') }}		    
-								{{ Form::text('conjuntiva', $datos['lc']->conjuntiva, array('placeholder' => 'Conjuntiva', 'class' => 'form-control')) }}
+								{{ Form::text('conjuntiva', $datos['lc']->conjuntiva, array('placeholder' => 'Conjuntiva', 'class' => 'form-control'))}}
 			    			</div>
 			    			<div class="form-group col-sm-4 col-md-4 col-lg-4">
 			    				{{ Form::label('iris', 'Iris:') }}		    
-								{{ Form::text('iris', $datos['lc']->iris, array('placeholder' => 'Iris', 'class' => 'form-control')) }}
+								{{ Form::text('iris', $datos['lc']->iris, array('placeholder' => 'Iris', 'class' => 'form-control'))}}
 			    			</div>
 			    			<div class="form-group col-sm-4 col-md-4 col-lg-4">
 			    				{{ Form::label('cornea', 'Cornea:') }}		    
-								{{ Form::text('cornea', $datos['lc']->cornea, array('placeholder' => 'Cornea', 'class' => 'form-control')) }}
+								{{ Form::text('cornea', $datos['lc']->cornea, array('placeholder' => 'Cornea', 'class' => 'form-control'))}}
 			    			</div>
 			    			<div class="form-group col-sm-12 col-md-12 col-lg-12">
 			    				<label>Tipo (LC):</label>
-			    				<ul class="list-unstyled">
-			    					<li><b>a.</b> PMMA {{Form::text('pmma', $datos['lc']->pmma, array('placeholder' => 'PMMA', 'class' => 'form-control'))}}</li>
-			    					<li><b>b.</b> HEMA {{Form::text('hema', $datos['lc']->hema, array('placeholder' => 'HEMA', 'class' => 'form-control'))}}</li>
-			    					<li><b>c.</b> PERMEABLE {{Form::text('permeable', $datos['lc']->permeable, array('placeholder' => 'PERMEABLE', 'class' => 'form-control'))}}</li>
-			    				</ul>
+			    				<div class="form-group">
+			    					{{Form::label('pmma', 'a. PMMA', array('class' => 'col-sm-3 control-label'))}}
+			    					<div class="col-sm-9">
+			    						{{Form::text('pmma', $datos['lc']->pmma, array('placeholder' => 'PMMA', 'class' => 'form-control'))}}
+			    					</div>							   
+							    </div>
+							    <div class="form-group">
+			    					{{Form::label('hema', 'b. HEMA', array('class' => 'col-sm-3 control-label'))}}
+			    					<div class="col-sm-9">
+			    						{{Form::text('hema',  $datos['lc']->hema, array('placeholder' => 'HEMA', 'class' => 'form-control'))}}
+			    					</div>							   
+							    </div>
+							    <div class="form-group">
+			    					{{Form::label('permeable', 'c. PERMEABLE', array('class' => 'col-sm-3 control-label'))}}
+			    					<div class="col-sm-9">
+			    						{{Form::text('permeable',  $datos['lc']->permeable, array('placeholder' => 'PERMEABLE', 'class' => 'form-control'))}}
+			    					</div>							   
+							    </div>
 			    			</div><br>
 			    			<div class="form-group col-sm-4 col-md-4 col-lg-4">
 			    				{{ Form::label('proveedor', 'Proveedor:') }}		    
@@ -434,9 +447,42 @@
 			    			</div>
 						</div>
 					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">Receta para Lentes de Contacto</h4>
+						</div>
+						<div class="panel-body">
+							<div class="form-group col-sm-4 col-md-4 col-lg-4">
+		    					{{Form::label('l_od', 'O.D.')}}
+		    					{{ Form::text('l_od', null, array('placeholder' => 'O.D.', 'class' => 'form-control'))}}			   
+						    </div>
+						    <div class="form-group col-sm-4 col-md-4 col-lg-4">
+		    					{{Form::label('l_oi', 'O.I.')}}
+		    					{{ Form::text('l_oi', null, array('placeholder' => 'O.I.', 'class' => 'form-control'))}}
+		    											   
+						    </div>
+						    <div class="form-group col-sm-4 col-md-4 col-lg-4">
+		    					{{Form::label('l_tipo', 'Tipo')}}
+		    					{{ Form::text('l_tipo', null, array('placeholder' => 'Tipo', 'class' => 'form-control'))}}						   
+						    </div>
+						    <div class="form-group col-sm-8 col-md-8 col-lg-8">
+		    					{{Form::label('l_soluciones', 'Soluciones')}}		    				
+		    					{{ Form::textarea('l_soluciones', null, array('placeholder' => 'Soluciones', 'class' => 'form-control','size' => '3x4'))}}					   
+						    </div>
+						    <div class="form-group col-sm-12 col-md-12 col-lg-12">
+		    					{{Form::label('l_costo', 'Costo ($)')}}
+		    					{{ Form::text('l_costo', null, array('placeholder' => 'Costo ($)', 'class' => 'form-control'))}}		   
+						    </div>
+						    <div class="form-group col-sm-12 col-md-12 col-lg-12">
+		    					{{Form::label('l_observaciones', 'Observaciones')}}
+		    					{{ Form::textarea('l_observaciones', null, array('placeholder' => 'Observaciones', 'class' => 'form-control', 'size' => '3x4'))}}		    											 
+						    </div>
+						</div>
+					</div>
 				</div>
 			</div>
-			@endif
+
+			{{@endif}}
 
 			<div class="row">
 				<div class="col-sm-12 col-md-12 col-lg-12">

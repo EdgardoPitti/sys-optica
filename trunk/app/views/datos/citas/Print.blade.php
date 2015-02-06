@@ -10,7 +10,7 @@
     	body{
 			margin:-20px;			
 			padding: 20px;
-			border:1px solid #000;
+			border-style:double;
 			border-radius:6px;    	
     	}    	
     	h1, h2,h3,h4,h5,h6,p{
@@ -33,12 +33,22 @@
         .titulo{
             width: 100%;
             margin-bottom: 20px;
+            position: relative;
         }
         .titulo h1{
             text-align: center;
+            paddi ng-top: 20px;
+        }
+        .titulo img{
+            height: 90px;
+            width: 18%;
+            position: absolute;
+            left: 30px;
+            top: -15px;
         }
         .datos{
             width: 100%;
+            margin-top: 12px;
         }
         .datos p{
             display: inline;
@@ -65,18 +75,37 @@
 </head>
 <body>
     <div class="titulo">
-        <h1>Opticentro Vega</h1>
+        <img src="{{URL::to('img/opticentro-vega-logo.jpg')}}">
+        <h1>Centro Oftalmólogo</h1>
     </div>
-
+    <div style="position:relative;left:0px;font-size:11px;text-align:center;width:25%;padding-top:10px;">
+        <p><b>Dr. Miguel A. Molina Vega</b></p>
+        <p>Cirujano Oftalmólogo</p>
+        <p>Registro 8415 Cód. m-897</p>
+    </div>
+    <div style="position:absolute;top:70px;right:0px;font-size:11px;text-align:left;width:25%;padding-top:10px;">
+        <p><b>Tels.:</b> </p>
+        <div style="margin-left:22px;">
+            <p>7754560</p>
+            <p>7740128 Ext. 2200 (Hospital)</p>
+        </div>
+        <p><b>Cel.:</b></p>
+        <div style="margin-left:22px;">
+            <p>66702122</p>
+        </div>
+    </div>
+    <br>
     <div class="datos">
         <table width="100%">
             <tr>
-                <td colspan="4">
+                <td colspan="3" style="text-align:right">
                     <p><label>Fecha de Consulta:</label> {{ $cita->fecha_consulta }}</p>
                 </td>
             </tr>
             <tr>
-                <td><p><label>Nombre:</label> {{ $paciente->nombre }}</p></td>
+                <td><p><label>Nombre:</label> {{ $paciente->nombre }}</p></td>                
+            </tr>
+            <tr>
                 <td><p><label>Cédula:</label> {{ $paciente->cedula }}</p></td>
                 <td><p><label>Edad:</label> {{ $paciente->edad }} años</p></td>
                 <td><p><label>Sexo:</label> {{ $paciente->sexo }}</p></td>
