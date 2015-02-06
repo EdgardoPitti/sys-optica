@@ -62,10 +62,10 @@ class TransformaDataController extends \BaseController {
 				if($dataFicha->diab == 'SI'){
 					$diabetes = 1;
 				}
+				$NuevaTabla->observaciones = $dataFicha->obs1.$dataFicha->obs2;
 			}
 			$NuevaTabla->diabetes = $diabetes;
 			$NuevaTabla->referido_por = $datos->ref;
-			$NuevaTabla->observaciones = '';
 			$NuevaTabla->clasificacion = $datos->clasif;
 			$NuevaTabla->save();
 			
@@ -76,11 +76,14 @@ class TransformaDataController extends \BaseController {
 	
 	public function DatosCitas(){
 		
-		$antiguaTabla = DB::table('HISTORIA')->where('ced', '<>', '')->skip(0)->take(100)->get();
+		$antiguaTabla = DB::table('HISTORIA')->where('ced', '<>', '')->skip(0)->take(1000)->get();
+		$x = 0;
+		$y = 0;
 		foreach($antiguaTabla as $datos){
 			$nuevaTabla = new Cita;
 			$paciente = Paciente::where('cedula', $datos->ced)->first();
 			if(!empty($paciente)){
+				$x++;
 				$nuevaTabla->id_paciente = $paciente->id;
 				$nuevaTabla->interrogatorio = $datos->l1.$datos->l2.$datos->l3;
 				$nuevaTabla->exploracion_conj = $datos->econj;
@@ -100,8 +103,8 @@ class TransformaDataController extends \BaseController {
 				$nuevaTabla->av_cc_oi_esf = $datos->oiest;
 				$nuevaTabla->av_cc_oi_cil = $datos->oicil;
 				$nuevaTabla->av_cc_oi_add = $datos->oiadd;
-				$nuevaTabla->oftalmoscopia_od = $datos->oftoi1;
-				$nuevaTabla->oftalmoscopia_oi = $datos->oftoi2;
+				$nuevaTabla->oftalmoscopia_od = $datos->oftoi1.$datos->oftoi3;
+				$nuevaTabla->oftalmoscopia_oi = $datos->oftoi2.$datos->oftoi4;
 				$nuevaTabla->queratometria_od = $datos->querod;
 				$nuevaTabla->queratometria_oi = $datos->queroi;
 				$nuevaTabla->motilidad_ocular_od = $datos->mod;
@@ -147,7 +150,7 @@ class TransformaDataController extends \BaseController {
 					$nuevaTabla->oi_prisma = $ficha->oipris;
 					$nuevaTabla->oi_alt = $ficha->oialto;
 					$nuevaTabla->oi_tipo = $ficha->oibit;
-					$nuevaTabla->observaciones = $ficha->obs1.$ficha->obs2;
+					$nuevaTabla->observaciones = $ficha->comen1.$ficha->comen2;
 					
 					$var = 0;
 					if($ficha->endur == 'SI'){
@@ -189,12 +192,41 @@ class TransformaDataController extends \BaseController {
 				}
 				$nuevaTabla->fecha_consulta = $datos->fecha;
 				$nuevaTabla->save();
+				
+				$id_Cita = DB::table('citas')->max('id');
+				
+				$LCA = LentCont::where('cedula', $paciente->cedula)->where('fecha', $datos->fecha)->first();
+				if(!empty($LCA)){
+					$y++;
+					$LC = new LenteContacto;
+					$LC->id_cita = $id_Cita;
+					$LC->kod = $LCA->k1;
+					$LC->koi = $LCA->k2;
+					$LC->diam_dhiv = $LCA->dhiv;
+					$LC->ap = $LCA->ap;
+					$LC->parpados = $LCA->parp;
+					$LC->esclera = $LCA->es;
+					$LC->conjuntiva = $LCA->con;
+					$LC->iris = $LCA->ir;
+					$LC->cornea = $LCA->corn;
+					$LC->pmma = $LCA->pmma;
+					$LC->hema = $LCA->perm;
+					$LC->permeable = $LCA->hema;
+					$LC->proveedor = $LCA->prov;
+					$LC->soluciones = $LCA->l5.$LCA->l6.$LCA->L7;
+					$LC->datos_lc = $LCA->datoslc.$LCA->datoslc1.$LCA->datoslc2.$LCA->datoslc3.$LCA->datoslc4.$LCA->datoslc5.$LCA->datoslc6.$LCA->datoslc7.$LCA->datoslc8.$LCA->datoslc9.$LCA->datoslc10.$LCA->datoslc11.$LCA->datoslc12.$LCA->datoslc13.$LCA->datoslc14.$LCA->datoslc15.$LCA->datoslc16.$LCA->datoslc17.$LCA->datoslc18.$LCA->datoslc19.$LCA->datoslc20;
+					$LC->r_od = $LCA->od;
+					$LC->r_oi = $LCA->oi;
+					$LC->r_tipo = $LCA->tipo;
+					$LC->r_soluciones = $LCA->soluc1.$LCA->soluc2.$LCA->soluc3.$LCA->soluc4;
+					$LC->r_costo = $LCA->costo;
+					$LC->r_observaciones = $LCA->observ1.$LCA->observ2.$LCA->observ3.$LCA->observ4;
+					$LC->save();
+				}
 			}
 			
 		}
-		
-	
-	
+		echo 'Citas: '.$x.' y LC: '.$y.'';
 	
 	}
 	
