@@ -18,3 +18,10 @@ $(function(){
 		});
 		$('[data-toggle="tooltip"]').tooltip();
 });
+
+$(document).ready(function () {
+	$('input[type="checkbox"]').bootstrapSwitch({
+		onText: 'Si',
+		offText: 'No'	
+	});
+});
