@@ -76,7 +76,7 @@
 <body>
     <div class="titulo">
         <img src="{{URL::to('img/opticentro-vega-logo.jpg')}}">
-        <h1>Centro Oftalmólogo</h1>
+        <h1>Dr. Miguel A. Molina Vega</h1>
     </div>
     <div style="position:relative;left:0px;font-size:11px;text-align:center;width:25%;padding-top:10px;">
         <p><b>Dr. Miguel A. Molina Vega</b></p>
