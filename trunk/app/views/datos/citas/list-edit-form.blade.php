@@ -6,7 +6,7 @@
 	<h2 class="titulo">Citas</h2>
 
 
-	{{ Form::model($datos['cita'], array('role' => 'form'), $datos['form']) }}
+	{{ Form::model($datos['cita'], $datos['form'], array('role' => 'form')) }}
 	<div class="row">
 		<div class="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
 	    	<div class="well profile">

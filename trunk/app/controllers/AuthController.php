@@ -29,9 +29,8 @@ class AuthController extends BaseController{
     
     //Funcion para cerrar sesión
     public function getLogout(){
-      if(Auth::check()){
-         Auth::logout();	         
-      }
+      
+      Auth::logout();	               
       return Redirect::to('/');
     }
  }

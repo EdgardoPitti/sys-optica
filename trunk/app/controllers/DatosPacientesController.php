@@ -49,8 +49,8 @@ class DatosPacientesController extends BaseController {
 			$data .= ']
 				}';
 			return $data;
-		}else {
-			return Response::make('Acceso No Autorizado', 401);		
+		}else {			
+			App::abort(403);
 		}
 	}
 }
