@@ -10,7 +10,8 @@
 	{{ HTML::style('assets/css/font-awesome.min.css', array('media' => 'screen', 'rel' => 'stylesheet')) }}
 	{{ HTML::style('assets/css/style.css', array('media' => 'screen', 'rel' => 'stylesheet')) }}
 	{{ HTML::style('assets/css/base.css', array('media' => 'screen', 'rel' => 'stylesheet')) }}
-   {{ HTML::style('assets/css/bootstrap-table.css') }}	
+	<!-- Latest compiled and minified CSS -->   
+   {{ HTML::style('assets/css/bootstrap-table.min.css') }}	
    {{ HTML::style('assets/css/bootstrap-toggle.min.css') }}
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -188,9 +189,8 @@
   {{ HTML::script('assets/js/jquery-scrolltofixed-min.js') }}
   {{ HTML::script('assets/js/bootstrap-toggle.min.js') }}
   {{ HTML::script('assets/js/script.js') }}
-  
-  {{ HTML::script('assets/js/bootstrap-table.js') }}
-  {{ HTML::script('assets/js/bootstrap-table-es.js') }}
+  {{ HTML::script('assets/js/bootstrap-table.min.js') }}  
+  {{ HTML::script('assets/js/bootstrap-table-es-AR.min.js') }}
   {{ HTML::script('assets/js/dataGrid.js') }}
     <script type="text/javascript">
       //<![CDATA[
