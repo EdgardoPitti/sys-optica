@@ -229,10 +229,13 @@ class CitasController extends \BaseController {
 		$datos['form'] = array('route' => array('datos.citas.update', $id), 'method' => 'PATCH');
 		$datos['paciente'] = Paciente::find($datos['cita']->id_paciente);
 
+		$datos['lc'] = new LenteContacto;
+		
 		if($datos['paciente']->examen == 'LC'){
 			$datos['lc'] = LenteContacto::where('id_cita', $id)->first();
-		}else{
-			$datos['lc'] = new LenteContacto;
+			if(empty($datos['lc']->id)){
+				$datos['lc'] = new LenteContacto;
+			}
 		}
 		
 		if(strlen($datos['paciente']->fecha_nacimiento) == 10){
@@ -365,6 +368,9 @@ class CitasController extends \BaseController {
 		if($datos['paciente']->examen == 'LC'){
 		
 			$LC = LenteContacto::where('id_cita', $id)->first();
+			if(empty($LC->id_cita)){
+				$LC = new LenteContacto;
+			}			
 			$LC->id_cita =  $id;
 			$LC->kod = $data['kod'];
 			$LC->koi = $data['koi'];

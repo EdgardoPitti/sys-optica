@@ -471,7 +471,7 @@
 						    </div>
 						    <div class="form-group col-sm-12 col-md-12 col-lg-12">
 		    					{{Form::label('l_costo', 'Costo ($)')}}
-		    					{{ Form::text('l_costo', $datos['lc']->costo, array('placeholder' => 'Costo ($)', 'class' => 'form-control'))}}		   
+		    					{{ Form::text('l_costo', $datos['lc']->r_costo, array('placeholder' => 'Costo ($)', 'class' => 'form-control'))}}		   
 						    </div>
 						    <div class="form-group col-sm-12 col-md-12 col-lg-12">
 		    					{{Form::label('l_observaciones', 'Observaciones')}}
