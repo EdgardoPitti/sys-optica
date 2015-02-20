@@ -24,7 +24,7 @@
 		<div id="main" class="clearf">
             <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="nav">
                 <div class="navbar-banner">
-                    <a href="#" class="navbar-brand">Opticentro Vega</a>                        
+                    <a href="{{URL::to('/')}}" class="navbar-brand">Opticentro Vega</a>                        
                 </div>
 						@if(Auth::check())                    
                 <div class="navbar-header">
@@ -49,10 +49,10 @@
                 	  	<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-sliders icon"></i> Mantenimiento <span class="caret"></span></a>
                 	  	<ul class="dropdown-menu" role="menu">
                             <li><a href="{{ route('datos.pacientes.index') }}">Paciente Externo</a></li>
-                            <li><a href="#">Reorganización</a></li>
+                            {{--<li><a href="#">Reorganización</a></li>--}}
                 	  	</ul>
                 	  </li>		 
-                	  <li class="dropdown">
+                	  {{--<li class="dropdown">
                 	  	<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-question-circle icon"></i> Reconsultas <span class="caret"></span></a>
                 	  	<ul class="dropdown-menu" role="menu">
                 	  		<li><a href="#">Enlace 1</a></li>
@@ -73,7 +73,7 @@
                             <li><a href="#">Listado de Trabajos Pendientes</a></li>
                             <li><a href="#">Listado de Ficha Clínica</a></li>
                             <li><a href="#">Listado de Historia Clínica</a></li>
-                	  	</ul>
+                	  	</ul>--}}
                 	  </li>	            
 		            </ul>
                     <ul class="nav navbar-nav navbar-right sign-hide">
@@ -100,10 +100,10 @@
                               </a>                                
                               <ul id="collapseOne" class="nav nav-pills submenu nav-stacked panel-collapse collapse"  role="tabpanel"  aria-labelledby="collapseOne">
                                 <li class="activo"><a href="{{ route('datos.pacientes.index') }}">Paciente Externo</a></li>
-                                <li><a href="#">Reorganización</a></li>
+						    {{--<li><a href="#">Reorganización</a></li>--}}
                               </ul>
                           </div>
-                          <div class="panel panel-default mg-panel" >
+                          {{--<div class="panel panel-default mg-panel" >
                               <a data-toggle="collapse" class="list-group-item" href="#collapseTwo" data-parent="#accordion" aria-expanded="false" aria-controls="collapseTwo">
                                  <i class="fa fa-question-circle icon"></i> Reconsultas 
                                  <i class="glyphicon glyphicon-chevron-down  pull-right"></i>
@@ -131,7 +131,7 @@
                                     <li><a href="#">Listado de Ficha Clínica</a></li>
                                     <li><a href="#">Listado de Historia Clínica</a></li>
                                </ul>
-                          </div>
+                          </div>--}}
                         </div>                    	
                     </div>
                   @endif
