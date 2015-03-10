@@ -7,7 +7,7 @@
 
 
 	{{ Form::model($datos['cita'], $datos['form'], array('role' => 'form')) }}
-	<a href="{{{URL::route('datos.pacientes.index')}}}" class="pull-left btn btn-primary" title="Retornar al Menú Pacientes"><i class="fa fa-arrow-left fa-1x"></i></a> 
+	<a href="{{{URL::route('datos.pacientes.index')}}}" class="pull-left btn btn-primary" title="Retornar al Menú Pacientes"><i class="fa fa-arrow-left fa-1x" > Volver</i></a> 
 	<div class="row">
 		<div class="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
 	    	<div class="well profile">
@@ -48,8 +48,8 @@
 							<td>{{ $citas->instrucciones }}</td>
 							<td>{{ $citas->observaciones }}</td>
 							<td>
-								<a href="{{ route('print.edit', $citas->id) }}" class="btn btn-primary btn-sm" data-toggle="tooltip" title="Imprimir Receta" target="_blank"><span class="glyphicon glyphicon-print"></span></a>
-								<a href="{{ route('datos.citas.edit', $citas->id) }}" class="btn btn-primary btn-sm" data-toggle="tooltip" title="Editar Cita"><span class="glyphicon glyphicon-pencil"></span></a>
+								<a href="{{ route('print.edit', $citas->id) }}" class="btn btn-primary btn-sm" data-toggle="tooltip" title="Imprimir Receta" target="_blank"><span class="glyphicon glyphicon-print"></span> Imprimir</a>
+								<a href="{{ route('datos.citas.edit', $citas->id) }}" class="btn btn-primary btn-sm" data-toggle="tooltip" title="Editar Cita"><span class="glyphicon glyphicon-pencil"></span> Editar</a>
 							</td>
 						</tr>
 					@endforeach

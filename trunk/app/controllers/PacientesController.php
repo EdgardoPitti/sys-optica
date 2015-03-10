@@ -36,28 +36,26 @@ class PacientesController extends \BaseController {
 		$data = Input::all();
 		if(empty(Paciente::where('cedula', $data['cedula'])->first()->id)){
 			$paciente = new Paciente;
-		}else{
-			$paciente = Paciente::find(Paciente::where('cedula', $data['cedula'])->first()->id);
+			$paciente->primer_nombre = $data['primer_nombre'];
+			$paciente->segundo_nombre = $data['segundo_nombre'];
+			$paciente->primer_apellido = $data['primer_apellido'];
+			$paciente->segundo_apellido = $data['segundo_apellido'];
+			$paciente->cedula = $data['cedula'];
+			$paciente->sexo = $data['sexo'];
+			$paciente->id_tipo_sangre = $data['id_tipo_sangre'];
+			$paciente->fecha_nacimiento = $data['fecha_nacimiento'];
+			$paciente->ocupacion = $data['ocupacion'];
+			$paciente->diabetes = $data['diabetes'];
+			$paciente->clasificacion = $data['clasificacion'];
+			$paciente->examen = $data['examen'];
+			$paciente->referido_por = $data['referido_por'];
+			$paciente->observaciones = $data['observaciones'];
+			$paciente->direccion = $data['direccion'];
+			$paciente->telefono = $data['telefono'];
+			$paciente->celular = $data['celular'];
+			$paciente->email = $data['email'];
+			$paciente->save();
 		}
-		$paciente->primer_nombre = $data['primer_nombre'];
-		$paciente->segundo_nombre = $data['segundo_nombre'];
-		$paciente->primer_apellido = $data['primer_apellido'];
-		$paciente->segundo_apellido = $data['segundo_apellido'];
-		$paciente->cedula = $data['cedula'];
-		$paciente->sexo = $data['sexo'];
-		$paciente->id_tipo_sangre = $data['id_tipo_sangre'];
-		$paciente->fecha_nacimiento = $data['fecha_nacimiento'];
-		$paciente->ocupacion = $data['ocupacion'];
-		$paciente->diabetes = $data['diabetes'];
-		$paciente->clasificacion = $data['clasificacion'];
-		$paciente->examen = $data['examen'];
-		$paciente->referido_por = $data['referido_por'];
-		$paciente->observaciones = $data['observaciones'];
-		$paciente->direccion = $data['direccion'];
-		$paciente->telefono = $data['telefono'];
-		$paciente->celular = $data['celular'];
-		$paciente->email = $data['email'];
-		$paciente->save();
 		return Redirect::route('datos.pacientes.index');
 		
 	}
