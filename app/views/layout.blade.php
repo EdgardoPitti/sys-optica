@@ -26,7 +26,7 @@
                 <div class="navbar-banner">
                     <a href="{{URL::to('/')}}" class="navbar-brand">Opticentro Vega</a>                        
                 </div>
-						@if(Auth::check())                    
+				@if(Auth::check())                    
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle navbar-toggle-left toggle-menu menu-left push-body" data-toggle="collapse" data-target="#nav-left">
                         <i class="fa fa-bars fa-1x"></i>
@@ -40,19 +40,20 @@
           					  </ul>
                     </div>
                 </div>
-            
+				@endif
+				
                 <div class="navbar-collapse collapse cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="nav-left">
-                	{{--Ocultar navegacion izquierda--}}
-                	<ul class="nav navbar-nav nav-left-hide">
+                
+                {{--	<ul class="nav navbar-nav nav-left-hide">
                 	  <li class="menu">Menu</li>
                 	  <li class="dropdown open">
                 	  	<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-sliders icon"></i> Mantenimiento <span class="caret"></span></a>
                 	  	<ul class="dropdown-menu" role="menu">
                             <li><a href="{{ route('datos.pacientes.index') }}">Paciente Externo</a></li>
-                            {{--<li><a href="#">Reorganización</a></li>--}}
+                            <li><a href="#">Reorganización</a></li>
                 	  	</ul>
                 	  </li>		 
-                	  {{--<li class="dropdown">
+                	  <li class="dropdown">
                 	  	<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-question-circle icon"></i> Reconsultas <span class="caret"></span></a>
                 	  	<ul class="dropdown-menu" role="menu">
                 	  		<li><a href="#">Enlace 1</a></li>
@@ -73,9 +74,10 @@
                             <li><a href="#">Listado de Trabajos Pendientes</a></li>
                             <li><a href="#">Listado de Ficha Clínica</a></li>
                             <li><a href="#">Listado de Historia Clínica</a></li>
-                	  	</ul>--}}
+                	  	</ul>
                 	  </li>	            
 		            </ul>
+		            --}}
                     <ul class="nav navbar-nav navbar-right sign-hide">
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Bienvenido, {{ Auth::user()->user }} <b class="caret"></b></a>
@@ -84,12 +86,11 @@
                             </ul>
                         </li>
                     </ul>
-                </div>
-	            @endif
+               </div>
             </nav>
-            <div class="container-fluid">
+           <div class="container-fluid">
                 <div class="row">
-                	@if(Auth::check())
+                	{{--@if(Auth::check())
                     <div class="hidden-xs col-sm-3 col-md-3 col-lg-3">
                     
                         <div class="list-group nav-aside" id="accordion"  aria-multiselectable="false">
@@ -100,10 +101,10 @@
                               </a>                                
                               <ul id="collapseOne" class="nav nav-pills submenu nav-stacked panel-collapse collapse"  role="tabpanel"  aria-labelledby="collapseOne">
                                 <li class="activo"><a href="{{ route('datos.pacientes.index') }}">Paciente Externo</a></li>
-						    {{--<li><a href="#">Reorganización</a></li>--}}
+								<li><a href="#">Reorganización</a></li>
                               </ul>
                           </div>
-                          {{--<div class="panel panel-default mg-panel" >
+                          <div class="panel panel-default mg-panel" >
                               <a data-toggle="collapse" class="list-group-item" href="#collapseTwo" data-parent="#accordion" aria-expanded="false" aria-controls="collapseTwo">
                                  <i class="fa fa-question-circle icon"></i> Reconsultas 
                                  <i class="glyphicon glyphicon-chevron-down  pull-right"></i>
@@ -131,17 +132,12 @@
                                     <li><a href="#">Listado de Ficha Clínica</a></li>
                                     <li><a href="#">Listado de Historia Clínica</a></li>
                                </ul>
-                          </div>--}}
+                          </div>
                         </div>                    	
                     </div>
                   @endif
-						@if(Auth::check())
-							{{--*/ $column = 9; /*--}}
-						@else
-							{{--*/ $column = 12; /*--}}
-						@endif						
-						                  
-                    <div class="col-xs-12 col-sm-{{ $column}} col-md-{{$column}} col-lg-{{$column}}">
+                  --}}
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 							@if(Auth::check())                    	
                     	<div class="row fecha">
                     		<div class="col-xs-12">

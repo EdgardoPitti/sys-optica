@@ -42,7 +42,7 @@ class DatosPacientesController extends BaseController {
 						"cel": "'.$datos_pacientes[0]->celular.'",
 						"cla": "'.$datos_pacientes[0]->clasificacion.'",
 						"exa": "'.$datos_pacientes[0]->examen.'",';
-					$data .= '"url": "<a href='.$comilla.'http://'.$host.'/sys-optica/public/datos/citas/'.$datos_pacientes[0]->id.''.$comilla.' class='.$comilla.'btn btn-primary btn-sm'.$comilla.' data-toggle='.$comilla.'tooltip'.$comilla.'  title='.$comilla.'Crear Cita'.$comilla.'><span class='.$comilla.'glyphicon glyphicon-list-alt'.$comilla.'></span></a> <a href='.$comilla.URL::to('datos/pacientes/'.$datos_pacientes[0]->id.'/edit').$comilla.' class='.$comilla.'btn btn-primary btn-sm'.$comilla.' data-toggle='.$comilla.'tooltip'.$comilla.'  title='.$comilla.'Editar Paciente'.$comilla.'><span class='.$comilla.'glyphicon glyphicon-pencil'.$comilla.'></span></a>"';											
+					$data .= '"url": "<a href='.$comilla.'http://'.$host.'/sys-optica/public/datos/citas/'.$datos_pacientes[0]->id.''.$comilla.' class='.$comilla.'btn btn-primary btn-sm'.$comilla.' data-toggle='.$comilla.'tooltip'.$comilla.'  title='.$comilla.'Crear Cita'.$comilla.'><span class='.$comilla.'glyphicon glyphicon-list-alt'.$comilla.'></span> Cita</a> <a href='.$comilla.URL::to('datos/pacientes/'.$datos_pacientes[0]->id.'/edit').$comilla.' class='.$comilla.'btn btn-primary btn-sm'.$comilla.' data-toggle='.$comilla.'tooltip'.$comilla.'  title='.$comilla.'Editar Paciente'.$comilla.'><span class='.$comilla.'glyphicon glyphicon-pencil'.$comilla.'></span> Editar</a>"';											
 						
 					$data .='
 						}';
