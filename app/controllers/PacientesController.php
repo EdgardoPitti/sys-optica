@@ -34,7 +34,11 @@ class PacientesController extends \BaseController {
 	public function store()
 	{
 		$data = Input::all();
-		$paciente = new Paciente;
+		if(empty(Paciente::where('cedula', $data['cedula'])->first()->id)){
+			$paciente = new Paciente;
+		}else{
+			$paciente = Paciente::find(Paciente::where('cedula', $data['cedula'])->first()->id);
+		}
 		$paciente->primer_nombre = $data['primer_nombre'];
 		$paciente->segundo_nombre = $data['segundo_nombre'];
 		$paciente->primer_apellido = $data['primer_apellido'];
@@ -54,7 +58,6 @@ class PacientesController extends \BaseController {
 		$paciente->celular = $data['celular'];
 		$paciente->email = $data['email'];
 		$paciente->save();
-		
 		return Redirect::route('datos.pacientes.index');
 		
 	}
