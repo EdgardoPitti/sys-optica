@@ -78,6 +78,7 @@
                 	  </li>	            
 		            </ul>
 		            --}}
+		           @if(Auth::check())  
                     <ul class="nav navbar-nav navbar-right sign-hide">
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Bienvenido, {{ Auth::user()->user }} <b class="caret"></b></a>
@@ -86,6 +87,7 @@
                             </ul>
                         </li>
                     </ul>
+                   @endif
                </div>
             </nav>
            <div class="container-fluid">
