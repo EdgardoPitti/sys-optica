@@ -16,8 +16,14 @@
               </span>
             </div>
           </div>
-          <div class="panel-body" style="display:none;">            
-        	  <div class="overthrow" style="height:200px;">        
+          <div class="panel-body" style="display:block;">            
+        	  <div class="overthrow" style="height:200px;"> 
+        	  		<form class="form-inline" id="buscarPaciente">
+        	  			<div class="pull-right search" style="padding-bottom:10px">
+							<input class="form-control" type="text" name="searchPatient" id="searchPatient" placeholder="Buscar"> <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+							<a href="#" class="btn btn-default" id="refresh"><i class="fa fa-refresh"></i></a>        	  			
+        	  			</div>
+        	  		</form>       
 					<table id="pacientes">
 					    <thead>
 						    <tr class="info">
