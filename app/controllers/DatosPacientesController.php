@@ -15,8 +15,8 @@ class DatosPacientesController extends BaseController {
 				$cantidad = $c[0]->cantidad;
 							
 			}else {
-				$datos = DB::select("SELECT * FROM pacientes WHERE concat(`cedula`,' ',`primer_nombre`,' ',`segundo_nombre`,' ',`primer_apellido`,' ',`segundo_apellido`) LIKE '%".$search."%' order by primer_apellido asc LIMIT ".$offset.",".$limit.";");
-				$c = DB::select("SELECT count(id) as cantidad FROM pacientes WHERE concat(`cedula`,' ',`primer_nombre`,' ',`segundo_nombre`,' ',`primer_apellido`,' ',`segundo_apellido`) LIKE '%".$search."%'");
+				$datos = DB::select("SELECT * FROM pacientes WHERE concat(`cedula`,' ',`primer_nombre`,' ',`primer_apellido`) LIKE '%".$search."%' order by primer_apellido asc LIMIT ".$offset.",".$limit.";");
+				$c = DB::select("SELECT count(id) as cantidad FROM pacientes WHERE concat(`cedula`,' ',`primer_nombre`,' ',`primer_apellido`) LIKE '%".$search."%'");
 				$cantidad = $c[0]->cantidad;
 			}	
 			$host = $_SERVER['HTTP_HOST'];
