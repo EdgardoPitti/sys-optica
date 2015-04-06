@@ -10,22 +10,24 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-
-Route::get('/', function()
+Route::group(array('after' => 'no-cache'), function()
 {
-	if(Auth::check()){
-		return Redirect::route('datos.pacientes.index');
-	}else {
-		return View::make('login');	
-	}		
-});
-Route::post('sigin', 'AuthController@postLogin');
-
-Route::group(array('before' => 'auth'), function(){
-	Route::get('logout', 'AuthController@getLogout');
-	Route::resource('datos/pacientes','PacientesController');
-	Route::resource('datos/citas','CitasController');
-	Route::get('getpacientes', 'DatosPacientesController@postPacientes');
-	Route::get('reportes/listapacientes', 'ReportesController@getMostrarPacientes');
-	Route::resource('print', 'PrintController');	
+	Route::get('/', function()
+	{
+		if(Auth::check()){
+			return Redirect::route('datos.pacientes.index');
+		}else {
+			return View::make('login');	
+		}		
+	});
+	Route::post('sigin', 'AuthController@postLogin');
+	
+	Route::group(array('before' => 'auth'), function(){
+		Route::get('logout', 'AuthController@getLogout');
+		Route::resource('datos/pacientes','PacientesController');
+		Route::resource('datos/citas','CitasController');
+		Route::get('getpacientes', 'DatosPacientesController@postPacientes');
+		Route::get('reportes/listapacientes', 'ReportesController@getMostrarPacientes');
+		Route::resource('print', 'PrintController');	
+	});
 });
