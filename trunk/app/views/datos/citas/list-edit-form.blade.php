@@ -6,7 +6,7 @@
 	<h2 class="titulo">Citas</h2>
 
 
-	{{ Form::model($datos['cita'], $datos['form'], array('role' => 'form')) }}
+	{{ Form::model($datos['cita'], $datos['form'] + array('id' => 'formulario'), array('role' => 'form')) }}
 	<a href="{{{URL::route('datos.pacientes.index')}}}" class="pull-left btn btn-primary" title="Retornar al Menú Pacientes"><i class="fa fa-arrow-left fa-1x" > Volver</i></a> 
 	<div class="row">
 		<div class="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
@@ -599,4 +599,5 @@
   	</center>
   	{{ Form::close() }}
 @stop
+
 
