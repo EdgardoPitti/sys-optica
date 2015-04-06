@@ -169,6 +169,11 @@
 	{{ HTML::script('assets/js/locales/bootstrap-datepicker.es.js') }}
 	<script type="text/javascript">
 		$(document).ready(function () {
+			$("#formulario").keypress(function(e) {//Para deshabilitar el uso de la tecla "Enter"
+				if (e.which == 13) {
+					return false;
+				}
+			});
 			$('.datepicker').datepicker({
 			    language: "es",
 			    format: 'yyyy-mm-dd',
@@ -205,7 +210,6 @@
 		var f = new Date();		
 		$("#tiempo").html(diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
 	</script>
-	
-
+		
 </body>
 </html>

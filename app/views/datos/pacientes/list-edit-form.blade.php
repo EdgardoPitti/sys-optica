@@ -43,7 +43,7 @@
       </div>
     </div>
 	</div>	
-	{{ Form::model($datos['paciente'], $datos['form'], array('role' => 'form')) }}
+	{{ Form::model($datos['paciente'], $datos['form'] + array('id' => 'formulario'), array('role' => 'form')) }}
   	<div class="panel panel-default">
   		<div class="panel-heading">
   			<h4 class="panel-title"><i class="fa fa-user"></i> Datos Personales</h4>
