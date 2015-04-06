@@ -182,7 +182,7 @@ class CitasController extends \BaseController {
 		$datos['form'] = array('route' => 'datos.citas.store', 'method' => 'POST');
 		$datos['lc'] = new LenteContacto;
 		
-		if(empty($datos['paciente']->fecha_nacimiento)){
+		if(strlen($datos['paciente']->fecha_nacimiento) <> 10){
 			$datos['edad'] = 0;
 		}else{
 			$datos['edad'] = $datos['paciente']->edad($datos['paciente']->fecha_nacimiento);
@@ -403,7 +403,7 @@ class CitasController extends \BaseController {
 		$datos['cita']->fecha_consulta = date("Y-m-d");  
 		$datos['lc'] = new LenteContacto;
 		
-		if(empty($datos['paciente']->fecha_nacimiento)){
+		if(strlen($datos['paciente']->fecha_nacimiento) <> 10){
 			$datos['edad'] = 0;
 		}else{
 			$datos['edad'] = $datos['paciente']->edad($datos['paciente']->fecha_nacimiento);
