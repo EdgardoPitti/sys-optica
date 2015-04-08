@@ -13,7 +13,7 @@
 	    	<div class="well profile">
 	            <div class="col-sm-12">
 	                <div class="col-xs-12 col-sm-8" >
-	                    <h2>{{ $datos['paciente']->primer_nombre.' '.$datos['paciente']->primer_apellido }}</h2>
+	                    <h2>{{ $datos['paciente']->primer_nombre.' '.$datos['paciente']->segundo_nombre.' '.$datos['paciente']->primer_apellido }}</h2>
 	                    <p><strong>Código: </strong> {{ $datos['paciente']->cedula }} </p>
 	                    <p><strong>Edad: </strong> {{ $datos['edad'] }} Años </p>
 	                    <p><strong>Fecha de la Consulta: </strong>
@@ -31,7 +31,7 @@
 	</div>
 	{{--*/$x=1;/*--}}
 		@if(!empty(Cita::where('id_paciente', $datos['paciente']->id)->first()->id))
-		<div class="table-responsive tabla-cita">
+		<div class="table-responsive tabla-cita" style="max-height:175px;">
 			<table class="table table-bordered" id="tabla-cita" cellpadding="0" cellspacing="0">
 				
 					<tr class="info">
@@ -48,8 +48,8 @@
 							<td>{{ $citas->instrucciones }}</td>
 							<td>{{ $citas->observaciones }}</td>
 							<td>
-								<a href="{{ route('print.edit', $citas->id) }}" class="btn btn-primary btn-sm" data-toggle="tooltip" title="Imprimir Receta" target="_blank"><span class="glyphicon glyphicon-print"></span> Imprimir</a>
 								<a href="{{ route('datos.citas.edit', $citas->id) }}" class="btn btn-primary btn-sm" data-toggle="tooltip" title="Editar Cita"><span class="glyphicon glyphicon-pencil"></span> Editar</a>
+								<a href="{{ route('print.edit', $citas->id) }}" class="btn btn-info btn-sm" data-toggle="tooltip" title="Imprimir Receta" target="_blank"><span class="glyphicon glyphicon-print"></span> Imprimir</a>
 							</td>
 						</tr>
 					@endforeach
@@ -83,7 +83,7 @@
 			    </div> 				
 				<div class="form-group col-sm-4 col-md-4 col-lg-4">
 			      {{ Form::label('exploracion_conj', 'Exploración Conj:') }}
-			      {{ Form::text('exploracion_conj', null, array('placeholder' => 'Exploración Conj', 'class' => 'form-control')) }}
+			      {{ Form::text('exploracion_conj', null, array('placeholder' => 'Exploración Conj', 'class' => 'form-control', 'required' => 'required')) }}
 			    </div>
 			    <div class="form-group col-sm-4 col-md-4 col-lg-4">
 			      {{ Form::label('esclerotica', 'Esclerótica:') }}
@@ -117,9 +117,9 @@
 					    	</div>
 							<div class="panel-body">
 					    		{{ Form::label('av_sc_od', 'Ojo Derecho (O.D):') }}		    
-								{{ Form::text('av_sc_od', null, array('placeholder' => 'O.D', 'class' => 'form-control')) }}
+								{{ Form::text('av_sc_od', null, array('placeholder' => 'O.D', 'class' => 'form-control', 'required' => 'required')) }}
 					    		{{ Form::label('av_sc_oi', 'Ojo Izquierdo (O.I):') }}		    
-								{{ Form::text('av_sc_oi', null, array('placeholder' => 'O.I', 'class' => 'form-control')) }}
+								{{ Form::text('av_sc_oi', null, array('placeholder' => 'O.I', 'class' => 'form-control', 'required' => 'required')) }}
 					    	</div>		    		
 					    </div>
 				    </div>
