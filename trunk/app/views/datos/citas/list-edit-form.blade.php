@@ -6,7 +6,7 @@
 	<h2 class="titulo">Citas</h2>
 
 
-	{{ Form::model($datos['cita'], $datos['form'] + array('id' => 'formulario'), array('role' => 'form')) }}
+	{{ Form::model($datos['cita'], $datos['form'] + array('id' => 'formulario', 'onsubmit' => 'return confirm("Desea almacenar la información...")'), array('role' => 'form')) }}
 	<a href="{{{URL::route('datos.pacientes.index')}}}" class="pull-left btn btn-primary" title="Retornar al Menú Pacientes"><i class="fa fa-arrow-left fa-1x" > Volver</i></a> 
 	<div class="row">
 		<div class="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
@@ -594,8 +594,9 @@
   		</div> 	
   	</div>
   	<center class="margen-bottom">
+		{{ Form::button('Guardar', array('type' => 'submit', 'class' => 'btn btn-success')) }}
 		 <a href="{{ route('datos.citas.show', $datos['paciente']->id) }}" class="btn btn-default"><span class="glyphicon glyphicon-trash"></span> Limpiar</a>
-		{{ Form::button('Guardar', array('type' => 'submit', 'class' => 'btn btn-default')) }}
+		
   	</center>
   	{{ Form::close() }}
 @stop
