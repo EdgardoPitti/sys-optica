@@ -4,6 +4,7 @@ $(document).ready(function() {
         limit: $('#footer').offset().top - $('.nav-aside').outerHeight() - 500
     });
     
+
 	// attach table filter plugin to inputs
 	$('.container-fluid').on('click', '.panel-heading span.filter', function(e){
 		var $this = $(this), 
@@ -20,4 +21,4 @@ $(document).ready(function() {
 		on: 'Si',
 		off: 'No'
 	});
-});	
+});
