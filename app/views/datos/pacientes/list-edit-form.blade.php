@@ -49,10 +49,15 @@
   			<h4 class="panel-title"><i class="fa fa-user"></i> Datos Personales</h4>
   		</div>
   		<div class="panel-body">
-			<div class="form-group col-sm-4 col-md-4 col-lg-4">
+  			@if($errors->has('cedula'))
+		    <div class="alert alert-danger">
+		    	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">x</span></button>
+				<p style="text-align:center;font-weight:bold;">{{ $errors->first("cedula") }}</p>	    
+		    </div>	    
+	      @endif
+			<div class="form-group col-sm-4 col-md-4 col-lg-4 @if($errors->has('cedula')) has-error @endif">
 		      {{ Form::label('cedula', 'N&uacute;mero de C&eacute;dula:') }}
-		      {{ Form::text('cedula', null, array('placeholder' => 'N&uacute;mero de C&eacute;dula', 'class' => 'form-control', 'required' => 'required', 'onkeyup' => 'verificarced()')) }}
-		      {{ $errors->first("cedula", "<p style='color:#f00;text-align:center;'>:message</p>") }}
+		      {{ Form::text('cedula', null, array('placeholder' => 'N&uacute;mero de C&eacute;dula', 'class' => 'form-control', 'required' => 'required', 'onkeyup' => 'verificarced()')) }}		   
 		    </div> 	
 			<div class="form-group col-sm-4 col-md-4 col-lg-4">
 		      {{ Form::label('fecha_nacimiento', 'Fecha Nacimiento:') }}
