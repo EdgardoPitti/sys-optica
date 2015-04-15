@@ -29,5 +29,6 @@ Route::group(array('after' => 'no-cache'), function()
 		Route::get('getpacientes', 'DatosPacientesController@postPacientes');
 		Route::get('reportes/listapacientes', 'ReportesController@getMostrarPacientes');
 		Route::resource('print', 'PrintController');	
+		Route::post('verificarced', 'PacientesController@getVerificarCed');
 	});
 });

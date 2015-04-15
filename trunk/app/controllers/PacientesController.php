@@ -34,7 +34,12 @@ class PacientesController extends \BaseController {
 	public function store()
 	{
 		$data = Input::all();
-		if(empty(Paciente::where('cedula', $data['cedula'])->first()->id)){
+		
+		$rules = array('cedula' => 'unique:pacientes,cedula');
+        $validator = Validator::make(array('cedula' => $data['cedula']), $rules);
+        if($validator->fails()){
+			return Redirect::back()->withInput()->withErrors($validator);
+		}else{			
 			$paciente = new Paciente;
 			$paciente->primer_nombre = $data['primer_nombre'];
 			$paciente->segundo_nombre = $data['segundo_nombre'];
@@ -55,11 +60,17 @@ class PacientesController extends \BaseController {
 			$paciente->celular = $data['celular'];
 			$paciente->email = $data['email'];
 			$paciente->save();
+			
+			return Redirect::route('datos.pacientes.index');
 		}
-		return Redirect::route('datos.pacientes.index');
 		
 	}
-
+	public function getVerificarCed()
+	{
+		$data = Input::all();
+		$paciente = Paciente::where('cedula', $data['ced']);
+		return ($paciente->get(['id']));
+	}
 
 	/**
 	 * Display the specified resource.

@@ -22,3 +22,27 @@ $(document).ready(function() {
 		off: 'No'
 	});
 });
+
+
+function verificarced(){
+		var host = window.location.host;
+		var c = 0;
+	    $.post("http://"+host+"/sys-optica/public/verificarced", 
+            { ced: $('#cedula').val() }, 
+            function(data){
+                $.each(data, function(index,element) {
+					if(c == 0){
+						c = 1;
+						//alert(msj);
+						swal({
+						  title: "¡Alerta!",
+						  text: "¡Este paciente ya existe!",
+						  type: "warning",
+						  confirmButtonClass: "btn-warning",
+						  confirmButtonText: "Aceptar",
+						});
+					}
+
+                });
+            });
+}
