@@ -7,6 +7,7 @@
 	<title>@yield('title', 'Opticentro Vega - Su optica amiga')</title>	
 	{{ HTML::style('assets/css/bootstrap.css', array('media'=>'screen', 'rel' => 'stylesheet')) }}	
 	{{ HTML::style('assets/css/datepicker3.css') }}	
+	{{ HTML::style('assets/css/sweet-alert.css') }}	
 	{{ HTML::style('assets/css/font-awesome.min.css', array('media' => 'screen', 'rel' => 'stylesheet')) }}
 	{{ HTML::style('assets/css/style.css', array('media' => 'screen', 'rel' => 'stylesheet')) }}
 	{{ HTML::style('assets/css/base.css', array('media' => 'screen', 'rel' => 'stylesheet')) }}
@@ -224,6 +225,7 @@
   {{ HTML::script('assets/js/jquery-scrolltofixed-min.js') }}
   {{ HTML::script('assets/js/bootstrap-toggle.min.js') }}
   {{ HTML::script('assets/js/script.js') }}
+  {{ HTML::script('assets/js/sweet-alert.js') }}
   {{ HTML::script('assets/js/bootstrap-table.min.js') }}  
   {{ HTML::script('assets/js/bootstrap-table-es-AR.min.js') }}
   {{ HTML::script('assets/js/dataGrid.js') }}
