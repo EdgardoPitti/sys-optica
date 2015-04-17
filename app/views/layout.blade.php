@@ -6,10 +6,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<title>@yield('title', 'Opticentro Vega - Su optica amiga')</title>	
 	{{ HTML::style('assets/css/bootstrap.css', array('media'=>'screen', 'rel' => 'stylesheet')) }}	
+	{{ HTML::style('assets/css/style.css', array('media' => 'screen')) }}
 	{{ HTML::style('assets/css/datepicker3.css') }}	
 	{{ HTML::style('assets/css/sweet-alert.css') }}	
 	{{ HTML::style('assets/css/font-awesome.min.css', array('media' => 'screen', 'rel' => 'stylesheet')) }}
-	{{ HTML::style('assets/css/style.css', array('media' => 'screen', 'rel' => 'stylesheet')) }}
 	{{ HTML::style('assets/css/base.css', array('media' => 'screen', 'rel' => 'stylesheet')) }}
 	<!-- Latest compiled and minified CSS -->   
    {{ HTML::style('assets/css/bootstrap-table.min.css') }}	

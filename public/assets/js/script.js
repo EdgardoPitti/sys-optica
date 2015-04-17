@@ -27,22 +27,30 @@ $(document).ready(function() {
 function verificarced(){
 		var host = window.location.host;
 		var c = 0;
-	    $.post("http://"+host+"/sys-optica/public/verificarced", 
+		var divParent = $('#errorCedula'); //obtiene el div padre del input		
+	   $.post("http://"+host+"/sys-optica/public/verificarced",
             { ced: $('#cedula').val() }, 
             function(data){
-                $.each(data, function(index,element) {
+               $.each(data, function(index,element) {
 					if(c == 0){
 						c = 1;
-						//alert(msj);
-						swal({
-						  title: "¡Alerta!",
-						  text: "¡Este paciente ya existe!",
-						  type: "warning",
-						  confirmButtonClass: "btn-warning",
-						  confirmButtonText: "Aceptar",
-						});
+						divParent.addClass('has-error has-feedback');
+						divParent.append("<span class='glyphicon glyphicon-remove form-control-feedback remove' aria-hidden='true' data-toggle='tooltip' data-placement='top' title='Cédula duplicada' onclick='clearInput();'></span> <span id='inputError' class='sr-only remove'>(error)</span>");						
+						$('.remove').tooltip('show');							
 					}
-
-                });
             });
+       });
+       if (c == 0) {
+				divParent.removeClass('has-error has-feedback');
+				$('span.remove').remove(); 	
+				divParent.find('.tooltip').remove();
+       }           
+}  
+function clearInput() {
+	var divParent = $('#errorCedula');
+ 	$('#cedula').val('');
+ 	divParent.removeClass('has-error has-feedback');
+	divParent.find('span.remove').remove();
+	divParent.find('.tooltip').remove();
+						
 }
