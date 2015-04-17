@@ -48,7 +48,7 @@ html .clearf{height: 1%;}
 	position: absolute;
 	right: 12px;
 }
-.remove:hover{
+span.remove:hover{
 	cursor:pointer;
 }
 .navbar-toggle-left,
