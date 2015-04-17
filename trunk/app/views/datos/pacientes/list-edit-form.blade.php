@@ -55,10 +55,14 @@
 				<p style="text-align:center;font-weight:bold;">{{ $errors->first("cedula") }}</p>	    
 		    </div>	    
 	      @endif
-			<div class="form-group col-sm-4 col-md-4 col-lg-4 @if($errors->has('cedula')) has-error @endif">
-		      {{ Form::label('cedula', 'N&uacute;mero de C&eacute;dula:') }}
-		      {{ Form::text('cedula', null, array('placeholder' => 'N&uacute;mero de C&eacute;dula', 'class' => 'form-control', 'required' => 'required', 'onkeyup' => 'verificarced()')) }}		   
-		    </div> 	
+			<div class="form-group col-sm-4 col-md-4 col-lg-4 @if($errors->has('cedula')) has-error has-feedback @endif" id="errorCedula">
+	      {{ Form::label('cedula', 'N&uacute;mero de C&eacute;dula:', ['class' => 'control-label']) }}
+	      {{ Form::text('cedula', null, array('placeholder' => 'N&uacute;mero de C&eacute;dula', 'class' => 'form-control', 'required' => 'required', 'aria-describedby' => 'inputError', 'onkeyup' => 'verificarced()')) }}
+			@if($errors->has('cedula'))		
+		      <span class='glyphicon glyphicon-remove form-control-feedback remove' aria-hidden='true' data-toggle='tooltip' data-placement='top' title='Cédula duplicada'></span> 
+		      <span id='inputError' class='sr-only remove'>(error)</span>
+		   @endif	      
+		   </div>
 			<div class="form-group col-sm-4 col-md-4 col-lg-4">
 		      {{ Form::label('fecha_nacimiento', 'Fecha Nacimiento:') }}
 		      {{ Form::text('fecha_nacimiento', $datos['paciente']->fecha_nacimiento, array('class' => 'form-control datepicker', 'placeholder' => 'AAAA-MM-DD', 'min' => '1950-01-01', 'max' => '2020-12-31')) }}

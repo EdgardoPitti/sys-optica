@@ -44,7 +44,13 @@ html .clearf{height: 1%;}
   box-shadow: 0 1px 3px 1px rgba(150,150,150,0.1);
   -webkit-box-shadow: 0 1px 3px 1px rgba(150,150,150,0.1);
 }
-
+.has-feedback > span.remove{
+	position: absolute;
+	right: 12px;
+}
+.remove:hover{
+	cursor:pointer;
+}
 .navbar-toggle-left,
 .navbar-toggle-right {
     margin: 5px;
@@ -226,9 +232,3 @@ h2.titulo{
 .table > tfoot > tr.white > td{
   background-color: #fff;
 }
-/*
-.container-login button:hover,
-.container-login button:focus {
-    backgr ound: #de2f18;
-    bord er-color: #be2815;
-}*/
