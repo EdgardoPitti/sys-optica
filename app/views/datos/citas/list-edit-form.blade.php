@@ -6,6 +6,27 @@
 	<h2 class="titulo">Citas</h2>
 
 
+
+
+	<div class="modal fade" id="Show" tabindex="-1" role="dialog" aria-labelledby="showMedico" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header fondo-hd">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+	        <h4 class="modal-title"><i class="fa fa-plus-square"></i> Cita &nbsp;<div id="loading" style="position:absolute;top:13px;left:100px;"></div></h4>
+	      </div>
+	      <div class="modal-body" id="showdatos">
+	      	{{-- Datos obtenidos del archivo script.js --}}
+	      </div>
+	      <div class="modal-footer fondo-ft">	        
+	        <button type="button" class="btn btn-info" data-dismiss="modal">Cerrar</button>
+	       </div>
+	    </div>
+	  </div>
+	</div>
+	
+
+
 	{{ Form::model($datos['cita'], $datos['form'] + array('id' => 'formulario', 'onsubmit' => 'return confirm("¿Desea almacenar la información?")'), array('role' => 'form')) }}
 	<a href="{{{URL::route('datos.pacientes.index')}}}" class="pull-left btn btn-primary" title="Retornar al Menú Pacientes"><i class="fa fa-arrow-left fa-1x" > Volver</i></a> 
 	<div class="row">
@@ -28,7 +49,8 @@
 	            </div>    
 	        </div>    
 		</div>
-	</div>
+	</div>	
+	
 	{{--*/$x=1;/*--}}
 		@if(!empty(Cita::where('id_paciente', $datos['paciente']->id)->first()->id))
 		<div class="table-responsive tabla-cita" style="max-height:175px;">
@@ -49,7 +71,9 @@
 							<td>{{ $citas->observaciones }}</td>
 							<td>
 								<a href="{{ route('datos.citas.edit', $citas->id) }}" class="btn btn-primary btn-sm" data-toggle="tooltip" title="Editar Cita"><span class="glyphicon glyphicon-pencil"></span> Editar</a>
+								<a href="#Show" id="{{$citas->id}}" onclick="show({{$citas->id}})"  class="btn btn-info btn-sm ver" data-toggle="modal"  title="Ver Médico" style="margin:3px 0px;"><span class="glyphicon glyphicon-eye-open"></span> Ver </a>
 								<a href="{{ route('print.edit', $citas->id) }}" class="btn btn-info btn-sm" data-toggle="tooltip" title="Imprimir Receta" target="_blank"><span class="glyphicon glyphicon-print"></span> Imprimir</a>
+								
 							</td>
 						</tr>
 					@endforeach
