@@ -30,5 +30,6 @@ Route::group(array('after' => 'no-cache'), function()
 		Route::get('reportes/listapacientes', 'ReportesController@getMostrarPacientes');
 		Route::resource('print', 'PrintController');	
 		Route::post('verificarced', 'PacientesController@getVerificarCed');
+		Route::post('getcita', 'CitasController@postData');
 	});
 });

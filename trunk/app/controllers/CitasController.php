@@ -16,7 +16,34 @@ class CitasController extends \BaseController {
 		
 	}
 
-
+	public function postData(){
+		if(Request::ajax()) {
+			$cita = new Cita;
+	
+			$id = Input::get('cita');
+			
+			$datos = $cita->find($id);
+			
+			$data = array(
+				'fecha_cita' => $datos[0]->foto,
+				'first_name' => $datos[0]->primer_nombre,
+				'second_name' => $datos[0]->segundo_nombre,
+				'last_name' => $datos[0]->apellido_paterno,
+				'last_sec_name' => $datos[0]->apellido_materno,
+				'extension' => $datos[0]->extension,
+				'especiality' => $datos[0]->especialidad,
+				'level' => $datos[0]->nivel,
+				'ubicacion' => $datos[0]->ubicacion,
+				'observacion' => $datos[0]->observacion
+					
+			);
+			
+			return Response::json($data);
+		}else {
+			App::abort(403);		
+		}
+	
+	}
 	/**
 	 * Show the form for creating a new resource.
 	 *
