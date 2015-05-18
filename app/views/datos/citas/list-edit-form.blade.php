@@ -9,14 +9,227 @@
 
 
 	<div class="modal fade" id="Show" tabindex="-1" role="dialog" aria-labelledby="showMedico" aria-hidden="true">
-	  <div class="modal-dialog">
+	  <div class="modal-dialog modal-lg">
 	    <div class="modal-content">
 	      <div class="modal-header fondo-hd">
 	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-	        <h4 class="modal-title"><i class="fa fa-plus-square"></i> Cita &nbsp;<div id="loading" style="position:absolute;top:13px;left:100px;"></div></h4>
+	        <h4 class="modal-title">Cita &nbsp;<div id="loading" style="position:absolute;top:13px;left:100px;"></div></h4>
 	      </div>
 	      <div class="modal-body" id="showdatos">
 	      	{{-- Datos obtenidos del archivo script.js --}}
+	      	<div class="row">
+					<div class="col-md-12">
+						<p><b>Fecha de Cita:</b></p> 
+					</div>	 
+					<div class="col-md-12">
+						<div class="panel with-nav-tabs panel-info">
+		                <div class="panel-heading">
+		                        <ul class="nav nav-tabs show-tabs show-info">
+		                            <li class="active"><a href="#tab1" data-toggle="tab" style="font-size:12px;">Datos</a></li>
+		                            <li><a href="#tab2" data-toggle="tab" style="font-size:12px;">Pruebas</a></li>
+		                            <li><a href="#tab3" data-toggle="tab" style="font-size:12px;">Cap. Visual</a></li>
+		                            <li class="dropdown">
+		                                <a href="#" data-toggle="dropdown" style="font-size:12px;">Más <span class="caret"></span></a>
+		                                <ul class="dropdown-menu" role="menu">
+					                           <li><a href="#tab3" data-toggle="tab" style="font-size:12px;">A V cc</a></li>
+		                                    <li><a href="#tab4" data-toggle="tab" style="font-size:12px;">Oftalmoscopía</a></li>
+		                                    <li><a href="#tab5" data-toggle="tab" style="font-size:12px;">Queratrometria</a></li>
+		                                    <li><a href="#tab6" data-toggle="tab" style="font-size:12px;">Motilidad Ocular</a></li>
+		                                    <li><a href="#tab7" data-toggle="tab" style="font-size:12px;">Tonometría</a></li>
+		                                    <li><a href="#tab8" data-toggle="tab" style="font-size:12px;">Graduación</a></li>
+		                                    <li><a href="#tab9" data-toggle="tab" style="font-size:12px;">Cerca</a></li>
+		                                </ul>
+		                            </li>
+		                        </ul>
+		                </div>
+		                <div class="panel-body">
+		                    <div class="tab-content">
+		                        <div class="tab-pane fade in active" id="tab1">
+											<div class="row">
+												<div class="col-sm-3 col-md-3">
+													<strong>Interrogatorio: </strong>
+												</div>
+												<div class="col-sm-9 col-md-9">
+													
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-sm-3 col-md-3">
+													<strong>Exploración Conj:</strong>
+												</div>
+												<div class="col-sm-3 col-md-3">
+													
+												</div>
+											
+												<div class="col-sm-3 col-md-3">
+													<strong>Esclerótica:</strong>												
+												</div>
+												<div class="col-sm-3 col-md-3">
+												</div>											
+											</div>
+											<div class="row">
+												<div class="col-sm-3 col-md-3">
+													<strong>Párpados:</strong>
+												</div>
+												<div class="col-sm-3 col-md-3">
+													
+												</div>
+											
+												<div class="col-sm-3 col-md-3">
+													<strong>Pestañas:</strong>												
+												</div>
+												<div class="col-sm-3 col-md-3">
+												</div>											
+											</div>
+											<div class="row">
+												<div class="col-sm-3 col-md-3">
+													<strong>Ref. Pup:</strong>
+												</div>
+												<div class="col-sm-3 col-md-3">
+													
+												</div>														
+											</div>
+											<div class="row">
+												<div class="col-md-3">
+													<div class="panel panel-default">
+												  		<div class="panel-heading">
+												  			<h4 class="panel-title">A V sc</h4>
+												  		</div>
+												  		<div class="panel-body">
+												  			<div class="row" style="font-size:12px;">
+													  			<div class="col-sm-4 italic">O. D:</div>
+													  			<div class="col-sm-8"></div>
+												  			</div>
+												  			<div class="row" style="font-size:12px;">	
+													  			<div class="col-sm-4 italic">O. I:</div>
+													  			<div class="col-sm-8"></div>
+												  			</div>
+												  		</div>
+												  	</div>
+												</div>
+												<div class="col-md-3">
+													<div class="panel panel-default">
+												  		<div class="panel-heading">
+												  			<h4 class="panel-title">Cap. Visual</h4>
+												  		</div>
+												  		<div class="panel-body">
+												  			<div class="row" style="font-size:12px;">
+													  			<div class="col-sm-4 italic">O. D:</div>
+													  			<div class="col-sm-8"></div>
+												  			</div>
+												  			<div class="row" style="font-size:12px;">	
+													  			<div class="col-sm-4 italic">O. I:</div>
+													  			<div class="col-sm-8"></div>
+												  			</div>
+												  		</div>
+												  	</div>
+												</div>
+												<div class="col-md-6">
+													<div class="panel panel-default">
+												  		<div class="panel-heading">
+												  			<h4 class="panel-title">A V cc</h4>
+												  		</div>
+												  		<div class="panel-body">
+												  			<div class="row">
+												  				<div class="col-md-12"><strong>Ojo Derecho</strong></div>
+												  			</div>
+												  			<div class="row" style="font-size:12px;">
+													  			<div class="col-sm-2 italic">O. D: </div>
+													  			<div class="col-sm-4">asdasd</div>
+													  			<div class="col-sm-2 italic">Esf: </div>
+													  			<div class="col-sm-4">asdasd</div>
+													  			
+																<div class="col-sm-2 italic">Cil: </div>
+																<div class="col-sm-4">asdasd</div>
+																<div class="col-sm-2 italic">Add: </div>
+																<div class="col-sm-4">asdasd</div>
+												  			</div>
+												  			<div class="row">
+																<div class="col-md-12"><strong>Ojo Izquierdo</strong></div>
+												  			</div>
+												  			<div class="row" style="font-size:12px;">
+												  				<div class="col-sm-2 italic">O. I: </div>
+													  			<div class="col-sm-4">asdasd</div>
+													  			<div class="col-sm-2 italic">Esf: </div>
+													  			<div class="col-sm-4">asdasd</div>
+													  			
+																<div class="col-sm-2 italic">Cil: </div>
+																<div class="col-sm-4">asdasd</div>
+																<div class="col-sm-2 italic">Add: </div>
+																<div class="col-sm-4">asdasd</div>
+												  			</div>
+												  		</div>
+												  	</div>
+												</div>
+											</div>		                        
+		                        </div>
+		                        <div class="tab-pane fade" id="tab2">
+		                        	<div class="row">
+												<div class="col-md-3">
+													<div class="panel panel-default">
+												  		<div class="panel-heading">
+												  			<h4 class="panel-title">Oftalmoscopía</h4>
+												  		</div>
+												  		<div class="panel-body">
+												  			<div class="row" style="font-size:12px;">
+													  			<div class="col-sm-4 italic">O. D:</div>
+													  			<div class="col-sm-8"></div>
+												  			</div>
+												  			<div class="row" style="font-size:12px;">	
+													  			<div class="col-sm-4 italic">O. I:</div>
+													  			<div class="col-sm-8"></div>
+												  			</div>
+												  		</div>
+												  	</div>
+												</div>
+												<div class="col-md-3">
+													<div class="panel panel-default">
+												  		<div class="panel-heading">
+												  			<h4 class="panel-title">Queratometría</h4>
+												  		</div>
+												  		<div class="panel-body">
+												  			<div class="row" style="font-size:12px;">
+													  			<div class="col-sm-4 italic">O. D:</div>
+													  			<div class="col-sm-8"></div>
+												  			</div>
+												  			<div class="row" style="font-size:12px;">	
+													  			<div class="col-sm-4 italic">O. I:</div>
+													  			<div class="col-sm-8"></div>
+												  			</div>
+												  		</div>
+												  	</div>
+												</div>
+												<div class="col-md-3">
+													<div class="panel panel-default">
+												  		<div class="panel-heading">
+												  			<h4 class="panel-title">Motilidad Ocular</h4>
+												  		</div>
+												  		<div class="panel-body">
+												  			<div class="row" style="font-size:12px;">
+													  			<div class="col-sm-4 italic">O. D:</div>
+													  			<div class="col-sm-8"></div>
+												  			</div>
+												  			<div class="row" style="font-size:12px;">	
+													  			<div class="col-sm-4 italic">O. I:</div>
+													  			<div class="col-sm-8"></div>
+												  			</div>
+												  		</div>
+												  	</div>
+												</div>
+												<div class="col-md-3">
+													<strong class="italic">Sentido Cromático:</strong>
+													<p></p>
+												</div>
+											</div>
+		                        </div>
+		                        <div class="tab-pane fade" id="tab3">Info 3</div>
+		                        <div class="tab-pane fade" id="tab4">Info 4</div>
+		                        <div class="tab-pane fade" id="tab5">Info 5</div>
+		                    </div>
+		                </div>
+		            </div>					
+					</div>   						
+	      	</div>
 	      </div>
 	      <div class="modal-footer fondo-ft">	        
 	        <button type="button" class="btn btn-info" data-dismiss="modal">Cerrar</button>
@@ -70,10 +283,9 @@
 							<td>{{ $citas->instrucciones }}</td>
 							<td>{{ $citas->observaciones }}</td>
 							<td>
-								<a href="{{ route('datos.citas.edit', $citas->id) }}" class="btn btn-primary btn-sm" data-toggle="tooltip" title="Editar Cita"><span class="glyphicon glyphicon-pencil"></span> Editar</a>
-								<a href="#Show" id="{{$citas->id}}" onclick="show({{$citas->id}})"  class="btn btn-info btn-sm ver" data-toggle="modal"  title="Ver Médico" style="margin:3px 0px;"><span class="glyphicon glyphicon-eye-open"></span> Ver </a>
-								<a href="{{ route('print.edit', $citas->id) }}" class="btn btn-info btn-sm" data-toggle="tooltip" title="Imprimir Receta" target="_blank"><span class="glyphicon glyphicon-print"></span> Imprimir</a>
-								
+								<a href="#Show" id="{{$citas->id}}" onclick="show({{$citas->id}})"  class="btn btn-primary btn-sm ver" data-toggle="modal" title="Ver Médico" style="margin:3px 0px;"><span class="glyphicon glyphicon-eye-open"></span> Ver </a>
+								<a href="{{ route('datos.citas.edit', $citas->id) }}" class="btn btn-warning btn-sm" data-toggle="tooltip" title="Editar Cita"><span class="glyphicon glyphicon-pencil"></span> Editar</a>
+								<a href="{{ route('print.edit', $citas->id) }}" class="btn btn-info btn-sm" data-toggle="tooltip" title="Imprimir Receta" target="_blank"><span class="glyphicon glyphicon-print"></span> Imprimir</a>								
 							</td>
 						</tr>
 					@endforeach
@@ -226,7 +438,7 @@
 				<div class="col-sm-6 col-md-6 col-lg-6">
 				    <div class="panel panel-default">
 				    	<div class="panel-heading">
-				    		<h4 class="panel-title">Queratrometria</h4>	
+				    		<h4 class="panel-title">Queratometría</h4>	
 				    	</div>
 				    	<div class="panel-body">
 				    		{{ Form::label('queratometria_od', 'Ojo Derecho:') }}		    
