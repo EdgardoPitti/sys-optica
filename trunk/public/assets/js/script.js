@@ -48,7 +48,11 @@ function show(id) {
 		            
 	}, 'json');
 }
-
+$(function () {
+	$('.btn-mas-info').on('click', function(event) {
+	     $( '.open_info' ).toggleClass( "hide" );
+	});
+});
 function verificarced(){
 		var host = window.location.host;
 		var c = 0;
