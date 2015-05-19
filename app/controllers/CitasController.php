@@ -22,22 +22,39 @@ class CitasController extends \BaseController {
 	
 			$id = Input::get('cita');
 			
-			$datos = $cita->find($id);
+			$data = $cita->find($id);
 			
-			$data = array(
-				'fecha_cita' => $datos[0]->foto,
-				'first_name' => $datos[0]->primer_nombre,
-				'second_name' => $datos[0]->segundo_nombre,
-				'last_name' => $datos[0]->apellido_paterno,
-				'last_sec_name' => $datos[0]->apellido_materno,
-				'extension' => $datos[0]->extension,
-				'especiality' => $datos[0]->especialidad,
-				'level' => $datos[0]->nivel,
-				'ubicacion' => $datos[0]->ubicacion,
-				'observacion' => $datos[0]->observacion
-					
-			);
-			
+			if($data->endurecido == '0'){
+				$data->endurecido = 'NO';
+			}else{
+				$data->endurecido = 'SI';
+			}
+			if($data->tratam_uv == '0'){
+				$data->tratam_uv = 'NO';
+			}else{
+				$data->tratam_uv = 'SI';
+			}
+			if($data->tratam_anti_rayas == '0'){
+				$data->tratam_anti_rayas = 'NO';
+			}else{
+				$data->tratam_anti_rayas = 'SI';
+			}
+			if($data->tratam_anti_reflejos == '0'){
+				$data->tratam_anti_reflejos = 'NO';
+			}else{
+				$data->tratam_anti_reflejos = 'SI';
+			}
+			if($data->hi_index == '0'){
+				$data->hi_index = 'NO';
+			}else{
+				$data->hi_index = 'SI';
+			}
+			if($data->hi_lite == '0'){
+				$data->hi_lite = 'NO';
+			}else{
+				$data->hi_lite = 'SI';
+			}
+						
 			return Response::json($data);
 		}else {
 			App::abort(403);		
