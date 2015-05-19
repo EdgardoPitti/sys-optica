@@ -27,14 +27,9 @@
 		                        <ul class="nav nav-tabs show-tabs show-info">
 		                            <li class="active"><a href="#tab1" data-toggle="tab" style="font-size:12px;">Datos</a></li>
 		                            <li><a href="#tab2" data-toggle="tab" style="font-size:12px;">Pruebas</a></li>
-		                            <li><a href="#tab3" data-toggle="tab" style="font-size:12px;">Cap. Visual</a></li>
 		                            <li class="dropdown">
 		                                <a href="#" data-toggle="dropdown" style="font-size:12px;">Más <span class="caret"></span></a>
 		                                <ul class="dropdown-menu" role="menu">
-					                           <li><a href="#tab3" data-toggle="tab" style="font-size:12px;">A V cc</a></li>
-		                                    <li><a href="#tab4" data-toggle="tab" style="font-size:12px;">Oftalmoscopía</a></li>
-		                                    <li><a href="#tab5" data-toggle="tab" style="font-size:12px;">Queratrometria</a></li>
-		                                    <li><a href="#tab6" data-toggle="tab" style="font-size:12px;">Motilidad Ocular</a></li>
 		                                    <li><a href="#tab7" data-toggle="tab" style="font-size:12px;">Tonometría</a></li>
 		                                    <li><a href="#tab8" data-toggle="tab" style="font-size:12px;">Graduación</a></li>
 		                                    <li><a href="#tab9" data-toggle="tab" style="font-size:12px;">Cerca</a></li>
@@ -49,44 +44,44 @@
 												<div class="col-sm-3 col-md-3">
 													<strong>Interrogatorio: </strong>
 												</div>
-												<div class="col-sm-9 col-md-9">
-													
+												<div id="interroatorio" class="col-sm-9 col-md-9">
 												</div>
 											</div>
 											<div class="row">
 												<div class="col-sm-3 col-md-3">
 													<strong>Exploración Conj:</strong>
 												</div>
-												<div class="col-sm-3 col-md-3">
-													
+												<div id="exploracion_conj" class="col-sm-3 col-md-3">
 												</div>
 											
 												<div class="col-sm-3 col-md-3">
 													<strong>Esclerótica:</strong>												
 												</div>
-												<div class="col-sm-3 col-md-3">
+												<div id="esclerotica" class="col-sm-3 col-md-3">
 												</div>											
 											</div>
 											<div class="row">
 												<div class="col-sm-3 col-md-3">
 													<strong>Párpados:</strong>
 												</div>
-												<div class="col-sm-3 col-md-3">
-													
+												<div id="parpados" class="col-sm-3 col-md-3">
 												</div>
-											
 												<div class="col-sm-3 col-md-3">
 													<strong>Pestañas:</strong>												
 												</div>
-												<div class="col-sm-3 col-md-3">
+												<div id="pestagnas" class="col-sm-3 col-md-3">
 												</div>											
 											</div>
 											<div class="row">
 												<div class="col-sm-3 col-md-3">
+													<strong>Pupilas:</strong>
+												</div>
+												<div id="pupilas" class="col-sm-3 col-md-3">
+												</div>														
+												<div class="col-sm-3 col-md-3">
 													<strong>Ref. Pup:</strong>
 												</div>
-												<div class="col-sm-3 col-md-3">
-													
+												<div id="ref_pup" class="col-sm-3 col-md-3">
 												</div>														
 											</div>
 											<div class="row">
@@ -98,7 +93,7 @@
 												  		<div class="panel-body">
 												  			<div class="row" style="font-size:12px;">
 													  			<div class="col-sm-4 italic">O. D:</div>
-													  			<div class="col-sm-8"></div>
+													  			<div id="av_sc_od" class="col-sm-8"></div>
 												  			</div>
 												  			<div class="row" style="font-size:12px;">	
 													  			<div class="col-sm-4 italic">O. I:</div>
@@ -164,7 +159,13 @@
 											</div>		                        
 		                        </div>
 		                        <div class="tab-pane fade" id="tab2">
-		                        	<div class="row">
+										<div class="row">
+											<div class="col-md-12">
+													<strong class="italic">Sentido Cromático:</strong>
+													<p></p>
+												</div>
+										</div>
+									 	<div class="row">
 												<div class="col-md-3">
 													<div class="panel panel-default">
 												  		<div class="panel-heading">
@@ -217,10 +218,113 @@
 												  	</div>
 												</div>
 												<div class="col-md-3">
-													<strong class="italic">Sentido Cromático:</strong>
-													<p></p>
+													<div class="panel panel-default">
+														<div class="panel-heading">
+															<h4 class="panel-title">Tonometría:</h4>
+														</div>
+														<div class="panel-body">
+															<div class="row" style="font-size:12px;">
+																<div class="col-sm-4 italic">O. D:</div>
+																<div class="col-sm-8"></div>
+															</div>
+															<div class="row" style="font-size:12px;">	
+																<div class="col-sm-4 italic">O. I:</div>
+																<div class="col-sm-8"></div>
+															</div>
+														</div>
+													</div>
 												</div>
-											</div>
+										</div>
+									<div class="row">											
+												<div class="col-md-6">
+													<div class="panel panel-default">
+												  		<div class="panel-heading">
+												  			<h4 class="panel-title">Graduación</h4>
+												  		</div>
+												  		<div class="panel-body">
+												  			<div class="row">
+												  				<div class="col-md-12"><strong>Ojo Derecho</strong></div>
+												  			</div>
+												  			<div class="row" style="font-size:12px;">
+													  			<div class="col-sm-2 italic">Esf: </div>
+													  			<div class="col-sm-4">asdasd</div>
+																<div class="col-sm-2 italic">Cil: </div>
+																<div class="col-sm-4">asdasd</div>
+																
+																<div class="col-sm-2 italic">Eje: </div>
+													  			<div class="col-sm-4">asdasd</div>
+																<div class="col-sm-2 italic">AV: </div>
+																<div class="col-sm-4">asdasd</div>
+												  			</div>
+												  			<div class="row">
+																<div class="col-md-12"><strong>Ojo Izquierdo</strong></div>
+												  			</div>
+												  			<div class="row" style="font-size:12px;">
+													  			<div class="col-sm-2 italic">Esf: </div>
+													  			<div class="col-sm-4">asdasd</div>
+																<div class="col-sm-2 italic">Cil: </div>
+																<div class="col-sm-4">asdasd</div>
+																
+																<div class="col-sm-2 italic">Eje: </div>
+													  			<div class="col-sm-4">asdasd</div>
+																<div class="col-sm-2 italic">AV: </div>
+																<div class="col-sm-4">asdasd</div>
+																<div class="col-sm-2 italic">D.I: </div>
+																<div class="col-sm-4">asdasd</div>
+												  			</div>
+												  			<div class="row">
+																<div class="col-md-12">
+																	<div class="panel panel-default">
+																		<div class="panel-heading">
+																			<h4 class="panel-title">Add:</h4>
+																		</div>
+																		<div class="panel-body">
+																			<div class="row" style="font-size:12px;">
+																				<div class="col-sm-2 italic">O. D:</div>
+																				<div class="col-sm-4"></div>
+																			
+																				<div class="col-sm-2 italic">O. I:</div>
+																				<div class="col-sm-4"></div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+												  		</div>
+												  	</div>
+												</div>
+												<div class="col-md-6">
+													<div class="panel panel-default">
+														<div class="panel-heading">
+															<h4 class="panel-title">Cerca:</h4>
+														</div>
+														<div class="panel-body">
+												  			<div class="row">
+												  				<div class="col-md-12"><strong>Ojo Derecho</strong></div>
+												  			</div>
+												  			<div class="row" style="font-size:12px;">
+													  			<div class="col-sm-2 italic">Esf: </div>
+													  			<div class="col-sm-2">asdasd</div>
+																<div class="col-sm-2 italic">Cil: </div>
+																<div class="col-sm-2">asdasd</div>
+																<div class="col-sm-2 italic">Eje: </div>
+													  			<div class="col-sm-2">asdasd</div>
+												  			</div>
+												  			<div class="row">
+																<div class="col-md-12"><strong>Ojo Izquierdo</strong></div>
+												  			</div>
+												  			<div class="row" style="font-size:12px;">
+													  			<div class="col-sm-2 italic">Esf: </div>
+													  			<div class="col-sm-2">asdasd</div>
+																<div class="col-sm-2 italic">Cil: </div>
+																<div class="col-sm-2">asdasd</div>
+																<div class="col-sm-2 italic">Eje: </div>
+													  			<div class="col-sm-2">asdasd</div>
+												  			</div>
+												  		</div>
+													</div>
+												</div>
+									</div>
 		                        </div>
 		                        <div class="tab-pane fade" id="tab3">Info 3</div>
 		                        <div class="tab-pane fade" id="tab4">Info 4</div>
