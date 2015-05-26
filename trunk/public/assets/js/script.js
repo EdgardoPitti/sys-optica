@@ -23,23 +23,18 @@ $(document).ready(function() {
 	});
 });
 
-
-
 function show(id) {	
     var host = window.location.host; 
-	$.post("http://"+host+"/sys-optica/public/getcita",            
+ 	 $.post("http://"+host+"/sys-optica/public/getcita",            
 	  { cita: id }, 
 	  function(data){	    
-       $("#loading").fadeIn().html('<img alt="Cita" src="http://'+host+'/sys-optica/public/imgs/loading.gif" style="width:20px;">');
-		 console.table(data);
-		   $.each(data, function(index,element) {
-						$('#'+index+'').val(element);
-				});
+      // $("#loading").fadeIn().html('<img alt="Cita" src="http://'+host+'/sys-optica/public/imgs/loading.gif" style="width:20px;">');
+		    $.each(data, function(index,element) {		
+		   		$('#'+index+'').html(element);						
+			 });
        setTimeout(function() {
 			$("#loading").fadeOut();        
-		 }, 2500);
-       $("#showdatos").html(datos);      
-		            
+		 }, 2500);           		            
 	}, 'json');
 }
 $(function () {
