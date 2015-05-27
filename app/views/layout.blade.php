@@ -64,7 +64,7 @@
             <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="nav">
               <div class="navbar-header">
                 <div class="navbar-banner">
-                    <a href="{{URL::to('/')}}" class="navbar-brand navbar-brand-centered"><img src="{{URL::to('img/optica_vega.jpg')}}"></a>                        
+                    <a href="{{URL::to('/')}}" class="navbar-brand navbar-brand-centered"><img src="{{URL::to('img/optica_vega.jpg')}}" style="width:120px"></a>                        
                 </div>
               </div>
 				@if(Auth::check())                    
