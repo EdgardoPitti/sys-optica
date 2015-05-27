@@ -53,7 +53,7 @@ App::error(function(Exception $exception, $code)
 		$error = trans('errors.'.$code);        
 		$data = array('code' => $code, 'title' => $error['title'], 'message' => $error['message']);		
 		return Response::view('errors.default', $data, $code);	    
-	 }
+	}
 });
 
 /*
