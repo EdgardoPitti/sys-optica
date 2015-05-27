@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="shortcut icon" href="{{URL::to('img/favicon.ico')}}" type="image/x-icon">
 	<title>@yield('title', 'Opticentro Vega - Su optica amiga')</title>	
 	{{ HTML::style('assets/css/bootstrap.css', array('media'=>'screen', 'rel' => 'stylesheet')) }}	
 	{{ HTML::style('assets/css/style.css', array('media' => 'screen')) }}
@@ -61,9 +62,11 @@
 	<div id="wrap">		
 		<div id="main" class="clearf">
             <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="nav">
+              <div class="navbar-header">
                 <div class="navbar-banner">
-                    <a href="{{URL::to('/')}}" class="navbar-brand">Opticentro Vega</a>                        
+                    <a href="{{URL::to('/')}}" class="navbar-brand navbar-brand-centered"><img src="{{URL::to('img/optica_vega.jpg')}}"></a>                        
                 </div>
+              </div>
 				@if(Auth::check())                    
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle navbar-toggle-left toggle-menu menu-left push-body" data-toggle="collapse" data-target="#nav-left">
@@ -82,7 +85,7 @@
 				
                 <div class="navbar-collapse collapse cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="nav-left">
                 
-                {{--	<ul class="nav navbar-nav nav-left-hide">
+                <!--ul class="nav navbar-nav nav-left-hide">
                 	  <li class="menu">Menu</li>
                 	  <li class="dropdown open">
                 	  	<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-sliders icon"></i> Mantenimiento <span class="caret"></span></a>
@@ -114,8 +117,7 @@
                             <li><a href="#">Listado de Historia Clínica</a></li>
                 	  	</ul>
                 	  </li>	            
-		            </ul>
-		            --}}
+		            </ul-->
 		           @if(Auth::check())  
                     <ul class="nav navbar-nav navbar-right sign-hide">
                         <li class="dropdown">

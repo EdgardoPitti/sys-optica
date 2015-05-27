@@ -27,14 +27,11 @@ function show(id) {
     var host = window.location.host; 
  	 $.post("http://"+host+"/sys-optica/public/getcita",            
 	  { cita: id }, 
-	  function(data){	    
-      // $("#loading").fadeIn().html('<img alt="Cita" src="http://'+host+'/sys-optica/public/imgs/loading.gif" style="width:20px;">');
+	  function(data){	        
 		    $.each(data, function(index,element) {		
 		   		$('#'+index+'').html(element);						
 			 });
-       setTimeout(function() {
-			$("#loading").fadeOut();        
-		 }, 2500);           		            
+                 		            
 	}, 'json');
 }
 $(function () {

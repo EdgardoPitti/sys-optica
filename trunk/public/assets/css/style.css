@@ -40,6 +40,7 @@ html .clearf{height: 1%;}
 /*Fin de la clase para el FOOTER*/
 
 .navbar{
+  min-height: 90px;
   border-bottom: 1px solid #dfdfdf;
   box-shadow: 0 1px 3px 1px rgba(150,150,150,0.1);
   -webkit-box-shadow: 0 1px 3px 1px rgba(150,150,150,0.1);
@@ -86,7 +87,34 @@ span.remove:hover{
     float: none !important;
     line-height: 50px;
 }
-
+/*Brand centrado*/
+.navbar-brand-centered {
+    position: absolute;
+    left: 43%;
+    padding: 0px 10px;
+    display: block;
+    width: 160px;
+    text-align: center;
+    background-color: transparent;
+}
+.navbar>.container .navbar-brand-centered, 
+.navbar>.container-fluid .navbar-brand-centered {
+    margin-left: -80px;
+}
+@media(max-width: 768px){
+  .navbar-brand-centered {
+    position: absolute;
+    left: 36%;
+    padding: 0px;
+  }
+}
+@media(max-width: 480px){
+  .navbar-brand-centered {
+    position: absolute;
+    left: 30%;
+    padding: 0px;
+  }
+}
 #tiempo{
   padding-bottom: 4px;
 }
