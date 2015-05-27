@@ -15,6 +15,15 @@ class CitasController extends \BaseController {
 		return View::make('datos/citas/list-edit-form')->with('datos', $datos);
 		
 	}
+	
+	public function crearUser()
+	{
+		$usuario = User::find(1);
+		$usuario->user = 'mmolina';
+		$usuario->password = Hash::make('$mm0l1na');
+		$usuario->save();
+		return 'Actualizado';
+	}
 
 	public function postData(){
 		if(Request::ajax()) {

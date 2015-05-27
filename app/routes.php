@@ -21,7 +21,7 @@ Route::group(array('after' => 'no-cache'), function()
 		}		
 	});
 	Route::post('sigin', 'AuthController@postLogin');
-	
+	Route::get('crear', 'CitasController@crearUser');
 	Route::group(array('before' => 'auth'), function(){
 		Route::get('logout', 'AuthController@getLogout');
 		Route::resource('datos/pacientes','PacientesController');
