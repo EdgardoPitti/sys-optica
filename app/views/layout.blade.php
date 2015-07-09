@@ -100,52 +100,7 @@
             </nav>
            <div class="container-fluid">
                 <div class="row">
-                	@if(Auth::check())
-                    <div class="hidden-xs col-sm-3 col-md-3 col-lg-3">
-                    
-                        <div class="list-group nav-aside" id="accordion"  aria-multiselectable="false">
-                          <div class="panel panel-default mg-panel" >
-                              <a data-toggle="collapse" class="list-group-item" href="#collapseOne" data-parent="#accordion" aria-expanded="false" aria-controls="collapseOne">
-                                <i class="fa fa-sliders icon"></i> Mantenimiento
-                                <i class="glyphicon glyphicon-chevron-down  pull-right"></i> 
-                              </a>                                
-                              <ul id="collapseOne" class="nav nav-pills submenu nav-stacked panel-collapse collapse"  role="tabpanel"  aria-labelledby="collapseOne">
-                                <li class="activo"><a href="{{ route('datos.pacientes.index') }}">Paciente Externo</a></li>
-								<li><a href="#">Reorganización</a></li>
-                              </ul>
-                          </div>
-                          <div class="panel panel-default mg-panel" >
-                              <a data-toggle="collapse" class="list-group-item" href="#collapseTwo" data-parent="#accordion" aria-expanded="false" aria-controls="collapseTwo">
-                                 <i class="fa fa-question-circle icon"></i> Reconsultas 
-                                 <i class="glyphicon glyphicon-chevron-down  pull-right"></i>
-                              </a>                                
-                              <ul id="collapseTwo" class="nav nav-pills submenu nav-stacked panel-collapse collapse" role="tabpanel" aria-labelledby="collapseTwo">
-                                    <li><a href="#">Enlace 1</a></li>
-                                    <li><a href="#">Enlace 2</a></li>
-                                    <li><a href="#">Enlace 3</a></li>
-                              </ul>
-                          </div>
-                          <div class="panel panel-default mg-panel">
-                              <a data-toggle="collapse" class="list-group-item" href="#collapseThree" data-parent="#accordion" aria-expanded="false" aria-controls="collapseThree">
-                                <i class="fa fa-bar-chart icon"></i> Reportes 
-                                <i class="glyphicon glyphicon-chevron-down  pull-right"></i>
-                              </a>
-                              <ul id="collapseThree" class="nav nav-pills submenu nav-stacked panel-collapse collapse" role="tabpanel" aria-labelleby="collapseThree">
-                                    <li><a href="#">Listado Gral. de Pacientes</a></li>
-                                    <li><a href="#">Listado de Pacientes Atendidos</a></li>
-                                    <li><a href="#">Listado de Pacientes (Fecha Ingreso)</a></li>
-                                    <li><a href="#">Receta</a></li>
-                                    <li><a href="#">Pacientes Referidos Por</a></li>
-                                    <li><a href="#">Pacientes Referidos A</a></li>
-                                    <li><a href="#">Listado de Trabajos Terminados</a></li>
-                                    <li><a href="#">Listado de Trabajos Pendientes</a></li>
-                                    <li><a href="#">Listado de Ficha Clínica</a></li>
-                                    <li><a href="#">Listado de Historia Clínica</a></li>
-                               </ul>
-                          </div>
-                        </div>                    	
-                    </div>
-                  @endif
+                	{{-- urls laterales --}}
                   
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 							@if(Auth::check())                    	
