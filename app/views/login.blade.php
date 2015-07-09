@@ -14,7 +14,7 @@
 						@if(isset($error_login))
 		                    <div class="alert alert-danger" role="alert" style="text-align:center;margin-top:13px;"><strong>{{ $error_login }}</strong></div>    
 		                @endif		
-						{{ Form::open(array('url'=>'sigin', 'method'=>'POST', 'class' => 'form-horizontal' ), array('role' => 'form')) }}			
+						{{ Form::open(array('url'=>'sigin', 'method'=>'POST', 'class' => 'form-horizontal' ), array('role' => 'form')) }}
 							<div class="form-group @if ($errors->has('user')) has-error @endif">
 								{{ Form::label('user', 'Usuario', array('class' => 'sr-only'))}}
 								{{ Form::text('user', null, array('placeholder' => 'Usuario', 'class' => 'form-control', 'required' => 'required'))}}		
@@ -29,7 +29,7 @@
 							<div class="form-group ">				
 								<button type="submit" id="submit" class="btn btn-lg btn-primary">Ingresar</button>
 							</div>
-						{{ Form::close() }}		
+						{{ Form::close() }}	
 					</div>
 				</div>
 			</section>

@@ -1,9 +1,9 @@
 @extends('layout')
 
-@section('title') Listado de Pacientes @stop
+@section('title') Listado de Pacientes Atendidos@stop
 
 @section('contenido')
-	<h2 class="titulo">Listado de Pacientes</h2>
+	<h2 class="titulo">Listado de Pacientes Atendidos</h2>
 
 		  <div class="overthrow" style="height:100px;">        
 					<table id="pacientes">
