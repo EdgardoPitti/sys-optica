@@ -10,18 +10,19 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
+
 Route::group(array('after' => 'no-cache'), function()
 {
-	Route::get('/', function()
-	{
+
+	Route::get('/', function(){
 		if(Auth::check()){
 			return Redirect::route('datos.pacientes.index');
-		}else {
-			return View::make('login');	
+		}else{
+			return View::make('login');
 		}		
 	});
 	Route::post('sigin', 'AuthController@postLogin');
-	Route::get('crear', 'CitasController@crearUser');
+	//Route::get('crear', 'CitasController@crearUser');
 	Route::group(array('before' => 'auth'), function(){
 		Route::get('logout', 'AuthController@getLogout');
 		Route::resource('datos/pacientes','PacientesController');

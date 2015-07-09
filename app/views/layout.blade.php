@@ -10,8 +10,8 @@
 	{{ HTML::style('assets/css/style.css', array('media' => 'screen')) }}
 	{{ HTML::style('assets/css/datepicker3.css') }}	
 	{{ HTML::style('assets/css/sweet-alert.css') }}	
-	{{ HTML::style('assets/css/font-awesome.min.css', array('media' => 'screen', 'rel' => 'stylesheet')) }}
-	{{ HTML::style('assets/css/base.css', array('media' => 'screen', 'rel' => 'stylesheet')) }}
+	{{ HTML::style('assets/css/font-awesome.min.css', array('media' => 'screen')) }}
+	{{ HTML::style('assets/css/base.css', array('media' => 'screen')) }}
 	<!-- Latest compiled and minified CSS -->   
    {{ HTML::style('assets/css/bootstrap-table.min.css') }}	
    {{ HTML::style('assets/css/bootstrap-toggle.min.css') }}
@@ -85,39 +85,7 @@
 				
                 <div class="navbar-collapse collapse cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="nav-left">
                 
-                <!--ul class="nav navbar-nav nav-left-hide">
-                	  <li class="menu">Menu</li>
-                	  <li class="dropdown open">
-                	  	<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-sliders icon"></i> Mantenimiento <span class="caret"></span></a>
-                	  	<ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ route('datos.pacientes.index') }}">Paciente Externo</a></li>
-                            <li><a href="#">Reorganización</a></li>
-                	  	</ul>
-                	  </li>		 
-                	  <li class="dropdown">
-                	  	<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-question-circle icon"></i> Reconsultas <span class="caret"></span></a>
-                	  	<ul class="dropdown-menu" role="menu">
-                	  		<li><a href="#">Enlace 1</a></li>
-                            <li><a href="#">Enlace 2</a></li>
-                            <li><a href="#">Enlace 3</a></li>
-                	  	</ul>
-                	  </li>
-                	  <li class="dropdown">
-                	  	<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bar-chart icon"></i> Reportes <span class="caret"></span></a>
-                	  	<ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Listado Gral. de Pacientes</a></li>
-                            <li><a href="#">Listado de Pacientes Atendidos</a></li>
-                            <li><a href="#">Listado de Pacientes (Fecha Ingreso)</a></li>
-                            <li><a href="#">Receta</a></li>
-                            <li><a href="#">Pacientes Referidos Por</a></li>
-                            <li><a href="#">Pacientes Referidos A</a></li>
-                            <li><a href="#">Listado de Trabajos Terminados</a></li>
-                            <li><a href="#">Listado de Trabajos Pendientes</a></li>
-                            <li><a href="#">Listado de Ficha Clínica</a></li>
-                            <li><a href="#">Listado de Historia Clínica</a></li>
-                	  	</ul>
-                	  </li>	            
-		            </ul-->
+                  {{-- urls.txt --}}
 		           @if(Auth::check())  
                     <ul class="nav navbar-nav navbar-right sign-hide">
                         <li class="dropdown">
@@ -132,7 +100,7 @@
             </nav>
            <div class="container-fluid">
                 <div class="row">
-                	{{--@if(Auth::check())
+                	@if(Auth::check())
                     <div class="hidden-xs col-sm-3 col-md-3 col-lg-3">
                     
                         <div class="list-group nav-aside" id="accordion"  aria-multiselectable="false">
@@ -178,7 +146,7 @@
                         </div>                    	
                     </div>
                   @endif
-                  --}}
+                  
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 							@if(Auth::check())                    	
                     	<div class="row fecha">
