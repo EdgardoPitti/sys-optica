@@ -103,7 +103,10 @@ return array(
 
     'attributes' => array(
         'user' => 'usuario',
-        'password' => 'contraseña'
+        'password' => 'contraseña',
+        'exploracion_conj' => 'Exploracion Conj.', 
+        'av_sc_od' => 'AV SC Ojo Derecho', 
+        'av_sc_oi' => 'AV SC Ojo Izquierdo'
     ),
 
 );

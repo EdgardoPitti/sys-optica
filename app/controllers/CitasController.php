@@ -89,6 +89,12 @@ class CitasController extends \BaseController {
 	public function store()
 	{
 		$data = Input::all();
+		$rules = ['exploracion_conj' => 'required', 'av_sc_od' => 'required', 'av_sc_oi' => 'required'];
+		$v = Validator::make($data, $rules);
+		//Si falla mostrará la pantalla anterior con los errores correspondientes
+		if($v->fails()){
+			return Redirect::back()->withInput()->withErrors($v);
+		}
 		$cita = new Cita;
 		$cita->id_paciente = $data['id_paciente'];
 		$cita->interrogatorio = $data['interrogatorio'];
@@ -309,6 +315,12 @@ class CitasController extends \BaseController {
 	public function update($id)
 	{
 		$data = Input::all();
+		$rules = ['exploracion_conj' => 'required', 'av_sc_od' => 'required', 'av_sc_oi' => 'required'];
+		$v = Validator::make($data, $rules);
+		//Si falla mostrará la pantalla anterior con los errores correspondientes
+		if($v->fails()){
+			return Redirect::back()->withInput()->withErrors($v);
+		}
 		$cita = Cita::find($id);
 		$cita->id_paciente = $data['id_paciente'];
 		$cita->interrogatorio = $data['interrogatorio'];

@@ -394,6 +394,7 @@
 	  </div>
 	</div>
 
+	
 	{{ Form::model($datos['cita'], $datos['form'] + array('id' => 'formulario', 'onsubmit' => 'return confirm("¿Desea almacenar la información?")'), array('role' => 'form')) }}
 	<div class="row">
 		<div class="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
@@ -417,6 +418,17 @@
 	        </div>
 		</div>
 	</div>
+
+	@if (count($errors) > 0)
+	    <div class="alert alert-danger">
+	    	<p><strong>Por favor rellene los campos requeridos.</strong></p>	
+	    	<ul>
+	            @foreach ($errors->all() as $error)
+	                <li>{{ $error }}</li>
+	            @endforeach
+	        </ul>	        
+	    </div>
+	@endif
 
 	{{--*/$x=1;/*--}}
 		@if(!empty(Cita::where('id_paciente', $datos['paciente']->id)->first()->id))
@@ -460,6 +472,7 @@
 				<a href="{{ route('datos.citas.show', $datos['paciente']->id) }}" class="btn btn-default pull-right"><span class="glyphicon glyphicon-trash"></span> Limpiar Campos</a>
 			</div>
 		</div>
+
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="card">
@@ -482,9 +495,9 @@
 							      {{ Form::label('interrogatorio', 'Interrogatorio:') }}
 							      {{ Form::textarea('interrogatorio', null, array('placeholder' => 'Interrogatorio', 'class' => 'form-control', 'size' => '3x2')) }}
 							    </div>
-								<div class="form-group col-sm-4 col-md-4 col-lg-4">
+								<div class="form-group @if ($errors->has('exploracion_conj')) has-error @endif col-sm-4 col-md-4 col-lg-4">
 							      {{ Form::label('exploracion_conj', 'Exploración Conj:') }}
-							      {{ Form::text('exploracion_conj', null, array('placeholder' => 'Exploración Conj', 'class' => 'form-control', 'required' => 'required')) }}
+							      {{ Form::text('exploracion_conj', null, array('placeholder' => 'Exploración Conj', 'class' => 'form-control')) }}
 							    </div>
 							    <div class="form-group col-sm-4 col-md-4 col-lg-4">
 							      {{ Form::label('esclerotica', 'Esclerótica:') }}
@@ -520,10 +533,14 @@
 								    		<h4 class="panel-title"><b>A V sc</b></h4>
 								    	</div>
 										<div class="panel-body">
-								    		{{ Form::label('av_sc_od', 'Ojo Derecho (O.D):') }}
-											{{ Form::text('av_sc_od', null, array('placeholder' => 'O.D', 'class' => 'form-control', 'required' => 'required')) }}
-								    		{{ Form::label('av_sc_oi', 'Ojo Izquierdo (O.I):') }}
-											{{ Form::text('av_sc_oi', null, array('placeholder' => 'O.I', 'class' => 'form-control', 'required' => 'required')) }}
+											<div class="form-group @if ($errors->has('av_sc_od')) has-error @endif">
+									    		{{ Form::label('av_sc_od', 'Ojo Derecho (O.D):') }}
+												{{ Form::text('av_sc_od', null, array('placeholder' => 'O.D', 'class' => 'form-control')) }}
+											</div>
+											<div class="form-group @if ($errors->has('av_sc_oi')) has-error @endif">
+									    		{{ Form::label('av_sc_oi', 'Ojo Izquierdo (O.I):') }}
+												{{ Form::text('av_sc_oi', null, array('placeholder' => 'O.I', 'class' => 'form-control')) }}
+											</div>
 								    	</div>
 								    </div>
 							    </div>
@@ -1008,15 +1025,15 @@
 							    </div>
 							</div>
 
-							<center class="margen-bottom">
-								 <a href="{{ route('datos.citas.show', $datos['paciente']->id) }}" class="btn btn-default"><span class="glyphicon glyphicon-trash"></span> Limpiar</a>
-								{{ Form::button('Guardar', array('type' => 'submit', 'class' => 'btn btn-success')) }}
-
-						  	</center>
 						</div>
 					</div>
 				</div>
 				
+				<center class="margen-bottom">
+					 <a href="{{ route('datos.citas.show', $datos['paciente']->id) }}" class="btn btn-default"><span class="glyphicon glyphicon-trash"></span> Limpiar</a>
+					{{ Form::button('Guardar', array('type' => 'submit', 'class' => 'btn btn-success')) }}
+
+			  	</center>
 			</div>
 				
 		</div>
