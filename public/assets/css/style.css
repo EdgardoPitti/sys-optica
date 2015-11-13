@@ -5,7 +5,8 @@
 
 body{
  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
- background: #f1f1f1; 
+ font-size: 18px;
+ background: #f1f1f1;
  padding-top: 65px;
 }
 /*CSS PARA EL FOOTER*/
@@ -97,7 +98,7 @@ span.remove:hover{
     text-align: center;
     background-color: transparent;
 }
-.navbar>.container .navbar-brand-centered, 
+.navbar>.container .navbar-brand-centered,
 .navbar>.container-fluid .navbar-brand-centered {
     margin-left: -80px;
 }
@@ -125,19 +126,17 @@ span.remove:hover{
 #tiempo{
   padding-bottom: 4px;
 }
-.panel { 
-  border-left:1px solid #d3d3d3; 
-  border-right:1px solid #d3d3d3; 
+.panel {
   box-shadow: 0 1px 1px 1px rgba(150,150,150,0.1);
   -webkit-box-shadow: 0 1px 1px 1px rgba(150,150,150,0.1);
   width: 100%;/*cuando se utiliza sin las clases col*/
-  word-wrap:break-word;  
+  word-wrap:break-word;
 }
 .mg-panel{
   margin-bottom: 0px;
 }
 @media(max-width: 767px){
-  .panel{    
+  .panel{
     width: 100%;
   }
 }
@@ -171,7 +170,7 @@ h2.titulo{
 }
 /*CSS DE LOS PANELES*/
 .clickable{
-    cursor: pointer;   
+    cursor: pointer;
 }
 
 .panel-heading div {
@@ -182,7 +181,7 @@ h2.titulo{
   margin-left:5px;
 }
 /*CSS PERFIL CITA*/
-.profile 
+.profile
 {
   min-height: 215px;
   display: inline-block;
@@ -222,7 +221,7 @@ h2.titulo{
     background: #ffffff;
     border: medium none;
     margin-top: -1px;
-    padding: 10px 30px;    
+    padding: 10px 30px;
     box-shadow: 0 1px 3px 1px rgba(150,150,150,0.1);
     -webkit-box-shadow: 0 1px 3px 1px rgba(150,150,150,0.1);
 }
@@ -230,7 +229,7 @@ h2.titulo{
     c olor: #ea533f;
     color: #2e6da4;
 }
-.form-co ntrol {
+/*.form-control {
     background-color: #ffffff;
     background-image: none;
     border: 1px solid #999999;
@@ -244,7 +243,7 @@ h2.titulo{
     padding: 6px 12px;
     transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
     width: 100%;
-}
+}*/
 .container-login button {
     color: #ffffff;
     border-radius: 0;
@@ -252,6 +251,10 @@ h2.titulo{
     line-height: 1.33;
     padding: 10px 16px;
     width: 100%;
+}
+.input-table{
+    width: 130px;
+    display: inline;
 }
 .margen-bottom{
 	margin-bottom: 15px;
@@ -315,7 +318,7 @@ h2.titulo{
     border-color: #bce8f1;
 }
 .with-nav-tabs.panel-info .nav-tabs > li.dropdown .dropdown-menu > li > a {
-    color: #31708f;   
+    color: #31708f;
 }
 .with-nav-tabs.panel-info .nav-tabs > li.dropdown .dropdown-menu > li > a:hover,
 .with-nav-tabs.panel-info .nav-tabs > li.dropdown .dropdown-menu > li > a:focus {
@@ -327,3 +330,35 @@ h2.titulo{
     color: #fff;
     background-color: #31708f;
 }
+
+/*Paneles para la citas*/
+.panel-pruebas {
+  border-color: #5cb85c;
+}
+.panel-pruebas > .panel-heading {
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #5cb85c;
+}
+.panel-lentes {
+  border-color: #E49728;
+}
+.panel-lentes > .panel-heading {
+  color: #fff;
+  background-color: #E49728;
+  border-color: #E49728;
+}
+/*Fin de paneles de citas*/
+
+/*TABS PARA FORMULARIO DE CITAS*/
+.tab-citas { border-bottom: 2px solid #DDD; }
+    .tab-citas > li.active > a, .tab-citas > li.active > a:focus, .tab-citas > li.active > a:hover { border-width: 0; }
+    .tab-citas > li > a { border: none; color: #666; }
+        .tab-citas > li.active > a, .tab-citas > li > a:hover { border: none; color: #4285F4 !important; background: transparent; }
+        .tab-citas > li > a::after { content: ""; background: #4285F4; height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); }
+    .tab-citas > li.active > a::after, .tab-citas > li:hover > a::after { transform: scale(1); }
+.tab-pane.pane-citas { padding: 15px 0; }
+.tab-content.tab-citas-content{padding:20px}
+
+.card {background: #FFF none repeat scroll 0% 0%; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); margin-bottom: 30px; }
+/*TABS PARA FORMULARIO DE CITAS*/

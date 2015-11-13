@@ -16,14 +16,14 @@
               </span>
             </div>
           </div>
-          <div class="panel-body" style="display:block;">            
-        	  <div class="overthrow" style="min-height:200px;"> 
+          <div class="panel-body" style="display:block;">
+        	  <div class="overthrow" style="min-height:200px;">
         	  		<form class="form-inline" id="buscarPaciente">
         	  			<div class="pull-right search" style="padding-bottom:10px">
 							<input class="form-control" type="text" name="searchPatient" id="searchPatient" placeholder="Buscar"> <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-							<a href="#" class="btn btn-default" id="refresh"><i class="fa fa-refresh"></i></a>        	  			
+							<a href="#" class="btn btn-default" id="refresh"><i class="fa fa-refresh"></i></a>
         	  			</div>
-        	  		</form>       
+        	  		</form>
 					<table id="pacientes">
 					    <thead>
 						    <tr class="info">
@@ -36,13 +36,13 @@
 						        <th data-field="url" data-align="center"></th>
 						    </tr>
 					    </thead>
-					</table>	        
+					</table>
             </div>
             <div class="clear"></div>
         </div>
       </div>
     </div>
-	</div>	
+	</div>
 	{{ Form::model($datos['paciente'], $datos['form'] + array('id' => 'formulario'), array('role' => 'form')) }}
   	<div class="panel panel-default">
   		<div class="panel-heading">
@@ -52,69 +52,69 @@
   			@if($errors->has('cedula'))
 		    <div class="alert alert-danger">
 		    	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">x</span></button>
-				<p style="text-align:center;font-weight:bold;">{{ $errors->first("cedula") }}</p>	    
-		    </div>	    
+				<p style="text-align:center;font-weight:bold;">{{ $errors->first("cedula") }}</p>
+		    </div>
 	      @endif
 			<div class="form-group col-sm-4 col-md-4 col-lg-4 @if($errors->has('cedula')) has-error has-feedback @endif" id="errorCedula">
 	      {{ Form::label('cedula', 'N&uacute;mero de C&eacute;dula:', ['class' => 'control-label']) }}
 	      {{ Form::text('cedula', null, array('placeholder' => 'N&uacute;mero de C&eacute;dula', 'class' => 'form-control', 'required' => 'required', 'aria-describedby' => 'inputError', 'onkeyup' => 'verificarced()')) }}
-			@if($errors->has('cedula'))		
-		      <span class='glyphicon glyphicon-remove form-control-feedback remove' aria-hidden='true' data-toggle='tooltip' data-placement='top' title='Cédula duplicada'></span> 
+			@if($errors->has('cedula'))
+		      <span class='glyphicon glyphicon-remove form-control-feedback remove' aria-hidden='true' data-toggle='tooltip' data-placement='top' title='Cédula duplicada'></span>
 		      <span id='inputError' class='sr-only remove'>(error)</span>
-		   @endif	      
+		   @endif
 		   </div>
 			<div class="form-group col-sm-4 col-md-4 col-lg-4">
 		      {{ Form::label('fecha_nacimiento', 'Fecha Nacimiento:') }}
 		      {{ Form::text('fecha_nacimiento', $datos['paciente']->fecha_nacimiento, array('class' => 'form-control datepicker', 'placeholder' => 'AAAA-MM-DD', 'min' => '1950-01-01', 'max' => '2020-12-31')) }}
-		    </div> 
+		    </div>
 		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('primer_nombre', 'Primer Nombre:') }}		    
+				{{ Form::label('primer_nombre', 'Primer Nombre:') }}
 				{{ Form::text('primer_nombre', null, array('placeholder' => 'Primer Nombre', 'class' => 'form-control')) }}
-		    </div>			                       
+		    </div>
   		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('segundo_nombre', 'Segundo Nombre:') }}		    
+				{{ Form::label('segundo_nombre', 'Segundo Nombre:') }}
 				{{ Form::text('segundo_nombre', null, array('placeholder' => 'Segundo Nombre', 'class' => 'form-control')) }}
-		    </div>			                       
+		    </div>
 		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('primer_apellido', 'Primer Apellido:') }}		    
+				{{ Form::label('primer_apellido', 'Primer Apellido:') }}
 				{{ Form::text('primer_apellido', null, array('placeholder' => 'Primer Apellido', 'class' => 'form-control')) }}
-		    </div>			                       		    
+		    </div>
 		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('segundo_apellido', 'Segundo Apellido:') }}		    
+				{{ Form::label('segundo_apellido', 'Segundo Apellido:') }}
 				{{ Form::text('segundo_apellido', null, array('placeholder' => 'Segundo Apellido', 'class' => 'form-control')) }}
 		    </div>
 		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
 		      {{ Form::label('sexo', 'Sexo:') }}
-		      {{ Form::select('sexo',  array('0' => 'FEMENINO', '1' => 'MASCULINO'), null, array('class' => 'form-control')); }}    
-		    </div>  		
+		      {{ Form::select('sexo',  array('0' => 'FEMENINO', '1' => 'MASCULINO'), null, array('class' => 'form-control')); }}
+		    </div>
 		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
 		      {{ Form::label('id_tipo_sangre', 'Tipo de Sangre:') }}
-		      {{ Form::select('id_tipo_sangre',  array('0' => 'SELECCIONE EL TIPO DE SANGRE') + TipoSangre::lists('tipo_sangre', 'id'), null, array('class' => 'form-control')); }}    
-		    </div> 	
+		      {{ Form::select('id_tipo_sangre',  array('0' => 'SELECCIONE EL TIPO DE SANGRE') + TipoSangre::lists('tipo_sangre', 'id'), null, array('class' => 'form-control')); }}
+		    </div>
 		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('ocupacion', 'Ocupación:') }}		    
+				{{ Form::label('ocupacion', 'Ocupación:') }}
 				{{ Form::text('ocupacion', null, array('placeholder' => 'Ocupacion', 'class' => 'form-control')) }}
-		    </div>	
+		    </div>
 		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
 		      {{ Form::label('diabetes', 'Diabetes:') }}
-		      {{ Form::select('diabetes',  array('0' => 'NO', '1' => 'SI'), null, array('class' => 'form-control')); }}    
-		    </div> 
+		      {{ Form::select('diabetes',  array('0' => 'NO', '1' => 'SI'), null, array('class' => 'form-control')); }}
+		    </div>
 		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('clasificacion', 'Clasificación:') }}		    
+				{{ Form::label('clasificacion', 'Clasificación:') }}
 				{{ Form::select('clasificacion', array('PN' => 'PN', 'PA' => 'PA', 'PE' => 'PE'),null, array('class' => 'form-control')) }}
-		    </div>	
+		    </div>
 		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('examen', 'Exámen:') }}		    
+				{{ Form::label('examen', 'Exámen:') }}
 				{{ Form::select('examen', array('EG' => 'EG', 'LC' => 'LC', 'PC' => 'PC', 'EX' => 'EX'), null, array('class' => 'form-control')) }}
-		    </div>		    	
+		    </div>
 		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-				{{ Form::label('referido_por', 'Referido por:') }}		    
+				{{ Form::label('referido_por', 'Referido por:') }}
 				{{ Form::text('referido_por', null, array('placeholder' => 'Referido', 'class' => 'form-control')) }}
 		    </div>
 			<div class="form-group col-sm-4 col-md-4 col-lg-4">
 		      {{ Form::label('observaciones', 'Observaciones:') }}
-		      {{ Form::textarea('observaciones', null, array('placeholder' => 'Observaciones', 'class' => 'form-control', 'size' => '3x1')) }}        
-		    </div>  
+		      {{ Form::textarea('observaciones', null, array('placeholder' => 'Observaciones', 'class' => 'form-control', 'size' => '3x1')) }}
+		    </div>
   		</div>
   	</div>
 	<div class="panel panel-default">
@@ -124,25 +124,25 @@
   		<div class="panel-body">
 			<div class="form-group col-sm-4 col-md-4 col-lg-4">
 		      {{ Form::label('direccion', 'Dirección:') }}
-		      {{ Form::textarea('direccion', null, array('placeholder' => 'Dirección', 'class' => 'form-control', 'size' => '3x5')) }}        
-		    </div>  
+		      {{ Form::textarea('direccion', null, array('placeholder' => 'Dirección', 'class' => 'form-control', 'size' => '3x5')) }}
+		    </div>
   			<div class="form-group col-sm-4 col-md-4 col-lg-4">
 		      {{ Form::label('celular', 'Celular:') }}
-		      {{ Form::text('celular', null, array('placeholder' => 'Celular', 'class' => 'form-control')); }}    
-		    </div>  
+		      {{ Form::text('celular', null, array('placeholder' => 'Celular', 'class' => 'form-control')); }}
+		    </div>
 		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
 		      {{ Form::label('telefono', 'Teléfono:') }}
-		      {{ Form::text('telefono', null, array('placeholder' => 'Teléfono', 'class' => 'form-control')); }}    
-		    </div>  
+		      {{ Form::text('telefono', null, array('placeholder' => 'Teléfono', 'class' => 'form-control')); }}
+		    </div>
 		    <div class="form-group col-sm-4 col-md-4 col-lg-4">
 		      {{ Form::label('email', 'Correo Electrónico:') }}
-		      {{ Form::text('email', null, array('placeholder' => 'Correo Electrónico', 'class' => 'form-control')); }}    
+		      {{ Form::text('email', null, array('placeholder' => 'Correo Electrónico', 'class' => 'form-control')); }}
 		    </div>
   		</div>
   	</div>
   	<center class="margen-bottom">
 		 <a href="{{ route('datos.pacientes.index') }}" class="btn btn-default">Limpiar</a>
-		{{ Form::button('Guardar', array('type' => 'submit', 'class' => 'btn btn-default')) }}
+		{{ Form::button('Guardar', array('type' => 'submit', 'class' => 'btn btn-success')) }}
   	</center>
   	{{ Form::close() }}
 @stop
