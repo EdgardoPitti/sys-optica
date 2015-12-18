@@ -6,6 +6,11 @@
 
 @section('contenido')
 	<div class="login-body">
+		@if(Session::has('msg_expired'))
+			<div class="alert alert-warning" role="alert">
+				<b>{{ Session::get('msg_expired') }}</b>
+			</div>
+		@endif
 	    <article class="container-login center-block">
 			<section>
 				<div class="tab-content tabs-login col-lg-12 col-md-12 col-sm-12 cols-xs-12">

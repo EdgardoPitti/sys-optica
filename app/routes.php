@@ -21,7 +21,7 @@ Route::group(array('after' => 'no-cache'), function()
 			return View::make('login');
 		}		
 	});
-	Route::post('sigin', 'AuthController@postLogin');
+	Route::post('sigin', array('before' => 'expired', 'uses' => 'AuthController@postLogin'));
 	//Route::get('crear', 'CitasController@crearUser');
 	Route::group(array('before' => 'auth'), function(){
 		Route::get('logout', 'AuthController@getLogout');

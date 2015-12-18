@@ -94,3 +94,16 @@ Route::filter('no-cache',function($route, $request, $response){
     header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
 
 });
+
+//Filtro para vencimiento de la aplicacion
+Route::filter('expired', function (){
+	$dateNow = Carbon::now(); //Fecha en que se encuentra al iniciar
+	$dateExpired = Carbon::createFromFormat('Y-m-d', '2016-01-31')->toDateTimeString(); //Fecha de expiracion
+
+	//Si la fecha actual es mayor a la de expiracion, termina el periodo de prueba.
+	if($dateNow > $dateExpired){
+		
+		Session::flash('msg_expired', 'Lo sentimos el período de uso de la aplicación a vencido.');
+		return Redirect::to('/');		
+	}
+});
